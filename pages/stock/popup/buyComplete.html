@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no">
+        <title>한국투자증권</title>               
+        <link rel="stylesheet" href="/inc/css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="/inc/css/style.css">        
+        <script type="text/javascript" src="/inc/js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="/inc/js/swiper-bundle.min.js"></script>
+        <script type="text/javascript" src="/inc/js/common-ui.js"></script>
+    </head>
+    <body>
+        <!-- 여기부터 레이어로 띄움  style="visibility: visible; 삭제-->
+        <div id="layer-pop" class="full-pop" style="visibility: visible;">
+            <div class="header-pop">
+                <div class="header-inner">
+                    <button type="button" class="btn-close-pop" data-layer-close><span class="ir">닫기</span></button>
+                </div>
+            </div>
+            <!-- // header -->
+            
+            <div class="contents">
+                <section class="content-trade">
+                    <div class="section-inner">
+                        <div class="page-last-complete full">
+                            <div class="page-top">
+                                <p class="page-tit"><span class="color-buy">매수</span> 주문이<br />완료되었습니다.</p>
+                            </div>                            
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- toast -->
+                <div id="toast-popup"></div>
+                <!-- // toast -->
+                
+                <div class="wrap-btn-fixed">
+                    <button type="button" class="btn-lg btn-confirm btn-line">홈으로</button>
+                    <button type="button" class="btn-lg bg-primary">주문내역 보기</button>
+                </div>
+            </div>
+            <!-- // contents -->
+            
+        </div>
+        <!-- // layer-pop -->       
+        
+        <script>
+            $(document).ready(function() {
+                showToast();
+            });
+            function showToast() {
+                toast({
+                    title:`<span class="color-red">매수</span> 접수 완료되었습니다.`,
+                    message:"LG생활건강 20주 100,1000원",
+                    type: "info",
+                    duration: 3000
+                })
+            }      
+        </script>
+    </body>
+</html>

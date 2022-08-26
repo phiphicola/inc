@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no">
+        <title>한국투자증권</title>               
+        <link rel="stylesheet" href="/inc/css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="/inc/css/style.css">        
+        <script type="text/javascript" src="/inc/js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="/inc/js/swiper-bundle.min.js"></script>
+        <script type="text/javascript" src="/inc/js/common-ui.js"></script>
+    </head>
+    <body>
+        <!-- 여기부터 레이어로 띄움  style="visibility: visible; 삭제-->
+        <div id="layer-pop" class="full-pop" style="visibility: visible;">
+            <div class="header-pop">
+                <div class="header-inner">
+                    <button type="button" class="btn-close-pop" data-layer-close><span class="ir">닫기</span></button>
+                </div>
+            </div>
+            <!-- // header -->
+        
+            <div class="contents">
+                <section class="content-trade">
+                    <div class="section-inner">
+                        <div class="wrap-btn-round flex-center">
+                            <button type="button" class="btn-sm btn-round">시장가</button>
+                            <button type="button" class="btn-sm btn-round on">지정가 <span>145,145</span></button>
+                        </div>
+                        <div class="trade-info">
+                            <p class="info-text">
+                                몇 주<br />매수할까요?
+                            </p>
+                            <div class="output">
+                                <span class="screen">5</span><span>주</span>
+                            </div>
+                            <div class="label-text">구매가능 <span>123,456,789</span>원 <span class="text-line">(최대 <span>30</span>주)</span></div>
+                            <div class="label-text color-red"><span>123,456,789</span>원(<span>880,000</span> 부족)</div>
+                            <div class="text-line">최대<span>30</span>주</div>                        
+                        </div>                    
+                        <div class="input-btn-wrap">
+                            <div class="input-buttons">
+                                <div class="btns"><button type="button" class="btn-number"><img src="/inc/img/num-1.svg" alt="1"></button></div>
+                                <div class="btns"><button type="button" class="btn-number"><img src="/inc/img/num-2.svg" alt="2"></button></div>
+                                <div class="btns"><button type="button" class="btn-number"><img src="/inc/img/num-3.svg" alt="3"></button></div>
+                                <div class="btns"><button type="button" class="btn-number"><img src="/inc/img/num-4.svg" alt="4"></button></div>
+                                <div class="btns"><button type="button" class="btn-number"><img src="/inc/img/num-5.svg" alt="5"></button></div>
+                                <div class="btns"><button type="button" class="btn-number"><img src="/inc/img/num-6.svg" alt="6"></button></div>
+                                <div class="btns"><button type="button" class="btn-number"><img src="/inc/img/num-7.svg" alt="7"></button></div>
+                                <div class="btns"><button type="button" class="btn-number"><img src="/inc/img/num-8.svg" alt="8"></button></div>
+                                <div class="btns"><button type="button" class="btn-number"><img src="/inc/img/num-9.svg" alt="9"></button></div>
+                                <div class="btns del-all"><button type="button" class="del-all">전체삭제</button></div>
+                                <div class="btns zero"><button type="button" class="btn-number"><img src="/inc/img/num-0.svg" alt="0"></button></div>
+                                <div class="btns del"><button type="button" class="btn-delete"><span class="ir">삭제</span></button></div>
+                            </div>
+                        </div>                  
+                    </div>
+                </section>
+                
+                
+                <div class="wrap-btn-fixed">
+                    <!-- 활성화 disabled 삭제 -->
+                    <button type="button" class="btn-lg bg-buy" disabled>매수하기</button>
+                    <!-- <button type="button" class="btn-lg bg-buy">부족한 금액 가져오기 후 매수하기</button> -->
+                </div>
+            </div>
+            <!-- // contents -->
+        </div>
+        <!-- // layer-pop -->
+    </body>
+</html>

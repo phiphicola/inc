@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no">
+        <title>한국투자증권</title>               
+        <link rel="stylesheet" href="/inc/css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="/inc/css/style.css">        
+        <script type="text/javascript" src="/inc/js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="/inc/js/swiper-bundle.min.js"></script>
+        <script type="text/javascript" src="/inc/js/common-ui.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="header-inner">
+                <button type="button" class="btn-prev"><span class="ir">이전</span></button>
+                <h1 class="header-title-center">투자현황</h1>
+            </div>
+        </header>
+        <div class="contents">
+            <div class="tabs">
+                <ul>
+                    <li><button type="button" data-target="#tabs1">보유종목</button></li>
+                    <li><button type="button" data-target="#tabs2">주문내역</button></li>
+                </ul>    
+            </div>
+            <div id="tabs1" class="tab-content">
+                <section class="section amount">
+                    <div class="rate-container">
+                        <div class="top-content">
+                            <div class="inner">
+                                <div class="price-wrap">
+                                    <span class="price"><span>999,999,000</span>원</span>
+                                    <button type="button" class="btn-reflash"><span class="ir">새로고침</span></button>
+                                </div>
+                                <div class="stock-increase">
+                                    <span class="won"><span>900,000</span>원</span><span class="per">(20%)</span>
+                                </div>
+                                <!-- 하락 -->
+                                <!-- <div class="stock-decrease">
+                                    <span class="won"><span>900,000</span>원</span><span class="per">(20%)</span>
+                                </div> -->
+                                <!-- 보합 -->
+                                <!-- <div class="stock-steady">
+                                    <span class="won"><span>900,000</span>원</span><span class="per">(20%)</span>
+                                </div> -->
+                                <div class="account-copy">
+                                    <button type="button">1234567-01(위탁계좌) 복사</button>
+                                </div>
+                                <div class="summary">
+                                    <dl>
+                                        <dt>예수금</dt>
+                                        <dd><span>9,999,999</span>원</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>주문가능금액</dt>
+                                        <dd class="em"><span>9,999,999</span>원</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="option">
+                            <button type="button">조회순</button>
+                            <button type="button" class="on">평가금액순</button>
+                        </div>
+                    </div>   
+                </section>
+                
+                <section class="section-list">
+                    <!-- 08-17 무한 스크롤 추가 -->
+                    <div id="list-scroll" class="list-stock-type">
+                        <ul id="list"> 
+                            <li>
+                                <a href="#" title="종목명">
+                                    <div class="stock-top">
+                                        <!-- 08-16 종목명 텍스트 노출 -->
+                                        <div class="stock-icon"><span>삼성전자</span></div>
+                                        <div class="stock-name">
+                                            <div class="stock-title">삼성전자</div>
+                                            <span class="label">국내</span>
+                                        </div>
+                                    </div>
+                                    <div class="stock-per">
+                                        <div class="stock-increase"><span>+42,242</span><span>(4.1%)</span></div> <!-- 상승 -->
+                                        <!-- <span class="stock-decrease"><span>-42,242</span><span>(4.1%)</span></span> --> <!-- 하락 -->
+                                        <!-- <span class="stock-steady"><span>42,242</span><span>(4.1%)</span></span> --> <!-- 보합 -->
+                                    </div>
+                                    <div class="price-cont">
+                                        <div class="count">
+                                            <span>1,000주</span>
+                                            <span>169,000</span>
+                                        </div>
+                                        <p class="price"><span>9,999,999,999</span>원</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="종목명">
+                                    <div class="stock-top">
+                                        <div class="stock-icon"><img src="/inc/img/dummy-bank.png" alt=""></div>
+                                        <div class="stock-name">
+                                            <div class="stock-title">삼성전자</div>
+                                            <span class="label">국내</span>
+                                        </div>
+                                    </div>
+                                    <div class="stock-per">
+                                        <div class="stock-increase"><span>+42,242</span><span>(4.1%)</span></div> <!-- 상승 -->
+                                        <!-- <span class="stock-decrease"><span>-42,242</span><span>(4.1%)</span></span> --> <!-- 하락 -->
+                                        <!-- <span class="stock-steady"><span>42,242</span><span>(4.1%)</span></span> --> <!-- 보합 -->
+                                    </div>
+                                    <div class="price-cont">
+                                        <div class="count">
+                                            <span>1,000주</span>
+                                            <span>169,000</span>
+                                        </div>
+                                        <p class="price"><span>9,999,999,999</span>원</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="종목명">
+                                    <div class="stock-top">
+                                        <div class="stock-icon"><img src="/inc/img/dummy-bank.png" alt=""></div>
+                                        <div class="stock-name">
+                                            <div class="stock-title">카카오뱅크</div>
+                                            <span class="label">국내</span>
+                                        </div>
+                                    </div>
+                                    <div class="stock-per">
+                                        <div class="stock-increase"><span>+42,242</span><span>(4.1%)</span></div> <!-- 상승 -->
+                                        <!-- <span class="stock-decrease"><span>-42,242</span><span>(4.1%)</span></span> --> <!-- 하락 -->
+                                        <!-- <span class="stock-steady"><span>42,242</span><span>(4.1%)</span></span> --> <!-- 보합 -->
+                                    </div>
+                                    <div class="price-cont">
+                                        <div class="count">
+                                            <span>1,000주</span>
+                                            <span>169,000</span>
+                                        </div>
+                                        <p class="price"><span>9,999,999,999</span>원</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="unactive">
+                                <a href="#" title="종목명">
+                                    <div class="stock-top">
+                                        <div class="stock-icon"><img src="/inc/img/dummy-bank.png" alt=""></div>
+                                        <div class="stock-name">
+                                            <div class="stock-title">카카오뱅크</div>
+                                            <span class="label">국내</span>
+                                        </div>
+                                    </div>
+                                    <div class="stock-per">
+                                        <!-- <div class="stock-increase"><span>+42,242</span><span>(4.1%)</span></div> --> <!-- 상승 -->
+                                        <span class="stock-decrease"><span>-42,242</span><span>(4.1%)</span></span> <!-- 하락 -->
+                                        <!-- <span class="stock-steady"><span>42,242</span><span>(4.1%)</span></span> --> <!-- 보합 -->
+                                    </div>
+                                    <div class="price-cont">
+                                        <div class="count">
+                                            <span>1,000주</span>
+                                            <span>169,000</span>
+                                        </div>
+                                        <p class="price"><span>9,999,999,999</span>원</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- // list-stock-type -->                    
+                </section>
+            </div>
+            <!-- // tabs1 --> 
+            
+            <div id="tabs2" class="tab-content">
+                <section class="section mb0">
+                    <div class="stock-order">
+                        <div class="order-count">
+                            <dl>
+                                <dt>주문접수</dt>
+                                <dd><span>5</span>건</dd>
+                            </dl>
+                            <dl>
+                                <dt>주문체결</dt>
+                                <dd><span>13</span>건</dd>
+                            </dl>
+                        </div>
+                        <div class="wrap-btn">
+                            <button type="button" class="btn-select on">전체 <span>18</span></button>
+                            <button type="button" class="btn-select">매수 <span>14</span></button>
+                            <button type="button" class="btn-select">매도 <span>4</span></button>
+                        </div>
+                    </div>   
+                </section>
+                
+                <section class="section-list">
+                    <div class="period-view">
+                        <!-- 디자인 없음 -->
+                        <div class="form-group">
+                            <input type="checkbox" id="chk">
+                            <label for="chk">미체결 내역만</label>
+                        </div>
+                        <!-- // 디자인 없음 -->
+                        <p class="period">최근 3개월 내역</p>
+                    </div>
+                    <div class="list-stock-type">
+                        <ul>
+                            <!-- 주문완료 -->
+                            <li>
+                                <a href="#" title="종목명" data-layer-href="slide-popup">
+                                    <div class="stock-top">
+                                        <div class="stock-name">
+                                            <div class="stock-title">삼성전자</div>                                            
+                                        </div>                                        
+                                    </div>
+                                    <div class="order-date">16일(수)<span class="time">16:27</span></div>
+                                    
+                                    <div class="stock-trade">
+                                        <!-- 매수 -->
+                                        <div class="stock-buy color-buy">
+                                            <span class="trade">매수</span>
+                                            <span class="count">3주</span>
+                                            <span class="price"><span>300,000</span>원</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="wrap-btn fix">
+                                    <button type="button" class="btn-xs btn-line">수정</button>
+                                    <button type="button" class="btn-xs btn-line">취소</button>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" title="종목명" data-layer-href="slide-popup">
+                                    <div class="stock-top">
+                                        <div class="stock-name">
+                                            <div class="stock-title">삼성전자</div>                                            
+                                        </div>                                        
+                                    </div>
+                                    <div class="order-date">16일(수)<span class="time">16:27</span></div>
+                                    
+                                    <div class="stock-trade">
+                                        <!-- 매도 -->
+                                        <div class="stock-sell color-sell">
+                                            <span class="trade">매도</span>
+                                            <span class="count">3주</span>
+                                            <span class="price"><span>300,000</span>원</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="wrap-btn fix">
+                                    <button type="button" class="btn-xs btn-line">수정</button>
+                                    <button type="button" class="btn-xs btn-line">취소</button>
+                                </div>
+                            </li>
+                            
+                            <!-- 주문체결 -->
+                            <li>
+                                <a href="#" title="종목명">
+                                    <div class="stock-top">
+                                        <div class="stock-name">
+                                            <div class="stock-title">카카오뱅크</div>
+                                            <span class="label-text">주문체결</span>
+                                        </div>                                        
+                                    </div>
+                                    <div class="order-date">16일(수)<span class="time">16:27</span></div>
+                                    
+                                    <div class="stock-trade">
+                                        <!-- 매수 -->
+                                        <div class="stock-buy color-buy">
+                                            <span class="trade">매수</span>
+                                            <span class="count">3주</span>
+                                            <span class="price"><span>300,000</span>원</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="종목명">
+                                    <div class="stock-top">
+                                        <div class="stock-name">
+                                            <div class="stock-title">카카오뱅크</div>
+                                            <span class="label-text">주문체결</span>
+                                        </div>                                        
+                                    </div>
+                                    <div class="order-date">16일(수)<span class="time">16:27</span></div>
+                                    
+                                    <div class="stock-trade">
+                                        <!-- 매도 -->
+                                        <div class="stock-sell color-sell">
+                                            <span class="trade">매도</span>
+                                            <span class="count">3주</span>
+                                            <span class="price"><span>300,000</span>원</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <!-- 부분체결 -->
+                            <li>
+                                <a href="#" title="종목명">
+                                    <div class="stock-top">
+                                        <div class="stock-name">
+                                            <div class="stock-title">카카오뱅크</div>
+                                        </div>                                        
+                                    </div>
+                                    <div class="order-date">16일(수)<span class="time">16:27</span></div>
+                                    
+                                    <div class="stock-trade">
+                                        <!-- 매도 (매도,매수 색상 같음)-->
+                                        <div class="stock-sell">
+                                            <span class="trade">매도</span>
+                                            <span class="count">3주</span>
+                                            <span class="price"><span>300,000</span>원</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="wrap-btn fix">
+                                    <button type="button" class="btn-xs btn-line">수정</button>
+                                    <button type="button" class="btn-xs btn-line">취소</button>
+                                </div>
+                            </li>
+                            
+                            <!-- 주문취소 -->
+                            <li class="cancel">
+                                <a href="#" title="종목명">
+                                    <div class="stock-top">
+                                        <div class="stock-name">
+                                            <div class="stock-title">카카오뱅크</div>
+                                            <span class="label-text">주문취소</span>
+                                        </div>                                        
+                                    </div>
+                                    <div class="order-date">16일(수)<span class="time">16:27</span></div>
+                                    
+                                    <div class="stock-trade">
+                                        <!-- 매수 -->
+                                        <div class="stock-buy">
+                                            <span class="trade">매수</span>
+                                            <span class="count">3주</span>
+                                            <span class="price"><span>300,000</span>원</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>                            
+                        </ul>
+                    </div>
+                    <!-- // list-stock-type -->                    
+                </section>
+            </div>
+            <!-- // tabs2 -->
+        </div>
+        <!-- // contents -->
+        
+        
+        <!-- slide-popup -->
+        <!-- 디자인 없음 -->
+        <div id="layer-pop" class="layer-pop" slide-popup>
+            <div class="slide-content">
+                <div class="pop-content">
+                    <div class="pop-info-txt">
+                        <span class="color-sell">매수</span>
+                        <p class="stock-name">LG생활건강</p>
+                    </div>
+                    <div class="trade-info-txt">
+                        <dl>
+                            <dt>주문구분</dt>
+                            <dd><strong>지정가</strong></dd>
+                        </dl>
+                        <dl>
+                            <dt>주문가격</dt>
+                            <dd><span>1,222,999</span>원</dd>
+                        </dl>
+                        <dl>
+                            <dt>주문수량</dt>
+                            <dd>30주</dd>
+                        </dl>
+                    </div>
+                    <div class="trade-info-txt">
+                        <dl>
+                            <dt>체결가격</dt>
+                            <dd><span>1,222,999</span>원</dd>
+                        </dl>
+                        <dl>
+                            <dt>체결수량</dt>
+                            <dd>30주</dd>
+                        </dl>
+                    </div>
+                    <div class="trade-info-txt">
+                        <dl>
+                            <dt>주문시간</dt>
+                            <dd><span>5월 16일(수)</span>14:40</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="wrap-btn">
+                    <button type="button" class="btn-lg bg-primary" data-layer-close>확인</button>
+                </div>
+            </div>
+            <div class="dim"></div>
+        </div>
+        <!-- // slide-popup -->
+    </body>
+</html>

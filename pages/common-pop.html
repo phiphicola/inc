@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no">
+        <title>한국투자증권</title>               
+        <link rel="stylesheet" href="/inc/css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="/inc/css/style.css">        
+        <script type="text/javascript" src="/inc/js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="/inc/js/swiper-bundle.min.js"></script>
+        <script type="text/javascript" src="/inc/js/common-ui.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="header-inner">
+                <button type="button" class="btn-prev"><span class="ir">이전</span></button>
+            </div>
+        </header>
+        <!-- // header -->
+        
+        <div class="contents">
+            <div class="wrap-btn">
+                <button type="button" class="btn-lg bg-buy" data-layer-href="layer-full-popup">layer-full(기본 전체 팝업)</button>
+            </div>            
+            <div class="wrap-btn">
+                <button type="button" class="btn-lg bg-buy" data-layer-href="slide-popup">slide-up(매도/매수 확인)</button>
+            </div>
+            <div class="wrap-btn">
+                <button type="button" class="btn-lg bg-buy" data-layer-href="slide-popup2">slide-up(지정가 선택)</button>
+            </div>
+            <div class="wrap-btn">
+                <button type="button" class="btn-lg bg-buy" data-layer-href="modal-popup">modal (버튼 두개)</button>
+            </div>
+            <div class="wrap-btn">
+                <button type="button" class="btn-lg bg-buy" data-layer-href="modal-popup2">modal (버튼 한개)</button>
+            </div>
+            <div class="wrap-btn">
+                <button type="button" class="btn-lg bg-buy" onclick="showToast();">토스트 팝업</button>
+            </div>
+            <div class="wrap-btn">
+                <button type="button" class="btn-lg bg-buy" onclick="showToastTop();">토스트 팝업(상단 노출)</button>
+            </div>
+            <div class="wrap-btn">
+                <button type="button" class="btn-lg bg-buy" onclick="showToastClose();">토스트 팝업(닫기 버튼)</button>
+            </div>
+            <div class="wrap-btn">
+                <button type="button" class="btn-lg bg-buy" onclick="showToastLink();">토스트 팝업(이동 버튼)</button>
+            </div>
+        </div>
+        <!-- // contents -->
+        
+        <!-- layer-full-popup -->
+        <div id="layer-pop" class="full-pop" layer-full-popup>
+            <div class="header-pop">
+                <div class="header-inner">
+                    <button type="button" class="btn-close-pop" data-layer-close><span class="ir">닫기</span></button>
+                </div>
+            </div>
+            <!-- // header -->
+            
+            <div class="contents">
+                <section class="content-trade">
+                    <div class="section-inner">
+                        <div class="page-last-complete">
+                            <div class="page-top">
+                                <p class="page-tit">보내기 완료</p>
+                                <div class="page-msg">
+                                    <p><span class="account">카카오뱅크 계좌</span>에</p>
+                                    <span class="amount">999,999,999,999</span>원을 보냈어요.
+                                </div>
+                            </div>                            
+                        </div>
+                        <div class="page-info">
+                            <dl>
+                                <dt>이체 후 잔액</dt>
+                                <dd><span>999,999,999,999</span>원</dd>
+                            </dl>
+                            <dl>
+                                <dt>계좌번호</dt>
+                                <dd>
+                                    <div class="name"><span class="bank-name">카카오뱅크</span>(이윤경)</div>
+                                    <p class="account-num">1234-456-7890</p>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </section>
+            
+            
+                <div class="wrap-btn-fixed">
+                    <button type="button" class="btn-lg bg-primary">닫기</button>
+                </div>
+            </div>
+            <!-- // contents -->
+        </div>
+        <!-- // layer-full-popup -->
+        
+        <!-- slide-popup -->
+        <div id="layer-pop" class="layer-pop" slide-popup>
+            <div class="slide-content">
+                <div class="pop-content">
+                    <div class="pop-info-txt">
+                        <p class="stock-name">LG생활건강</p>
+                        <span class="color-sell"><span>20</span>주 매도</span> 할까요?
+                        <!-- 매수 -->
+                        <!-- <span class="color-buy"><span>20</span>주 매수</span> 할까요? -->
+                    </div>
+                    <div class="trade-info-txt">
+                        <dl>
+                            <dt>주문유형</dt>
+                            <dd>지정가</dd>
+                        </dl>
+                        <dl>
+                            <dt>1주당 가격</dt>
+                            <dd><span>1,222,999</span>원</dd>
+                        </dl>
+                        <!-- 08-23 line-top class 추가 -->
+                        <dl class="line-top"> 
+                            <dt>예상 매수금액</dt>
+                            <dd><strong><span>22,222,999</span>원</strong></dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="wrap-btn">
+                    <button type="button" class="btn-lg bg-primary" data-layer-close>확인</button>
+                </div>
+            </div>
+            <div class="dim"></div>
+        </div>
+        <!-- // slide-popup -->
+        
+        <!-- slide-popup2 -->
+        <div id="layer-pop" class="layer-pop" slide-popup2>
+            <div class="slide-content">
+                <div class="pop-content">
+                    <section class="search-form">
+                        <form action="">
+                            <div class="search-wrap">
+                                <input type="number" placeholder="직접입력" required="true">
+                                <button type="button" class="btn-clear"><span class="ir">삭제</span></button>
+                            </div>
+                        </form>
+                    </section>
+                    
+                    <div class="wrap-btn control">
+                        <button type="button" class="btn-sm btn-round-line minus"><span class="ir">빼기</span></button>
+                        <button type="button" class="btn-sm btn-round-line">시장가</button>
+                        <button type="button" class="btn-sm btn-round-line plus"><span class="ir">더하기</span></button>
+                    </div>
+                    
+                    <div class="input-btn-wrap">
+                        <div class="input-buttons">
+                            <div class="btns"><button type="button" class="btn-number"><img src="/inc/img/num-1.svg" alt="1"></button></div>
+                            <div class="btns"><button type="button" class="btn-number"><img src="/inc/img/num-2.svg" alt="2"></button></div>
+                            <div class="btns"><button type="button" class="btn-number"><img src="/inc/img/num-3.svg" alt="3"></button></div>
+                            <div class="btns"><button type="button" class="btn-number"><img src="/inc/img/num-4.svg" alt="4"></button></div>
+                            <div class="btns"><button type="button" class="btn-number"><img src="/inc/img/num-5.svg" alt="5"></button></div>
+                            <div class="btns"><button type="button" class="btn-number"><img src="/inc/img/num-6.svg" alt="6"></button></div>
+                            <div class="btns"><button type="button" class="btn-number"><img src="/inc/img/num-7.svg" alt="7"></button></div>
+                            <div class="btns"><button type="button" class="btn-number"><img src="/inc/img/num-8.svg" alt="8"></button></div>
+                            <div class="btns"><button type="button" class="btn-number"><img src="/inc/img/num-9.svg" alt="9"></button></div>
+                            <div class="btns zero"><button type="button" class="btn-number"><img src="/inc/img/num-0.svg" alt="0"></button></div>
+                            <div class="btns del"><button type="button" class="btn-delete"><span class="ir">삭제</span></button></div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="wrap-btn">
+                    <button type="button" class="btn-lg btn-confirm btn-line">호가선택</button>
+                    <button type="button" class="btn-lg bg-primary" data-layer-close>확인</button>
+                </div>
+            </div>
+            <div class="dim"></div>
+        </div>
+        <!-- // slide-popup2 -->
+        
+        <!-- modal-popup -->
+        <div id="layer-pop" class="layer-pop" modal-popup>
+            <div class="modal-content">
+                <div class="pop-content">
+                    <div class="pop-info-txt">
+                        <p class="stock-name">카카오뱅크에서</p>
+                        <span class="color-red"><span>678,900</span>원</span>을 가져온 후<br />매수할까요?
+                    </div>
+                    <div class="label-text">실제 주문시점 부족금액과<br />차이가 발생할 수 있어요.</div>
+                </div>
+                <!-- <div class="pop-content">
+                    <div class="pop-info-txt">
+                        <p class="text-box">국내주식 서비스 이용을<br/>종료하시겠어요?</p>
+                    </div>
+                </div> -->
+                <div class="wrap-btn">
+                    <button type="button" class="btn-lg btn-line btn-half" data-layer-close>아니요</button>
+                    <button type="button" class="btn-lg bg-primary btn-half">네</button>
+                </div>
+            </div>
+            <div class="dim"></div>
+        </div>
+        <!-- // modal-popup -->
+        
+        <!-- modal-popup2 -->
+        <div id="layer-pop" class="layer-pop" modal-popup2>
+            <div class="modal-content">
+                <div class="pop-content">
+                    <div class="pop-info-txt">
+                        <p class="text-box">카카오뱅크 입출금통장<br/>잔액이 부족합니다.</p>
+                    </div>
+                    <div class="label-text">월급통장(1234) : <span>120,000</span>원</div>
+                </div>
+                <!-- <div class="pop-content">
+                    <div class="pop-info-txt">
+                        <p class="text-box">시장가 변동으로<br/>잔액이 부족합니다.</p>
+                    </div>
+                    <div class="label-text">12주<span class="color-red">(<span>120,000</span>원 부족)</span></div>
+                </div>
+                <div class="pop-content">
+                    <div class="pop-info-txt">
+                        <p class="text-box">서비스 점검 중입니다.<br/>잠시 후 이용해 주시기 바랍니다.</p>
+                    </div>
+                    <div class="label-text">점검 시간 : 매일 23:50 ~ 00:10</div>
+                </div>
+                <div class="pop-content">
+                    <div class="pop-info-txt">
+                        <p class="text-box">대기시간이 길어지고 있으니<br/>잠시 후 다시 시도해주세요.</p>
+                    </div>
+                    <div class="label-text">앞서 접수한 고객님들의 신청이 진행 중입니다.</div>
+                </div> -->
+                <div class="wrap-btn">
+                    <button type="button" class="btn-lg bg-primary" data-layer-close>닫기</button>
+                </div>
+            </div>
+            <div class="dim"></div>
+        </div>
+        <!-- // modal-popup2 -->
+        
+        <!-- toast -->
+        <div id="toast-popup"></div>
+        <!-- // toast -->
+        
+        
+        <!-- 토스트 팝업 스크립트 -->
+        <script>
+            $(document).ready(function() {
+                showToast();
+            });
+            function showToast() {
+                toast({
+                    // title: "토스트 제목", //제목 필요 있을 경우만 노출
+                    message: "토스트 팝업의 내용ㅇㅇ",
+                    type: "info",
+                    duration: 3000
+                })
+            }
+            
+            function showToastClose() {
+                toast({
+                    title: "토스트 제목", //제목 필요 있을 경우만 노출
+                    message: "토스트 팝업의 내용ㅇㅇ",
+                    type: "close",
+                    duration: 3000,
+                    
+                    // 닫기 버튼
+                    btns: `       
+                    <div class="close-btn">
+                        <button type="button" class="btn-close-pop"><span class="ir">닫기</span></button>
+                    </div>              
+                    `
+                    // 닫기 버튼 텍스트
+                    // btns: `       
+                    // <div class="close-btn">
+                    //     <button type="button" class="btn-close-txt">확인</button>
+                    // </div>             
+                    // `
+                })
+            }
+            function showToastLink() {
+                toast({
+                    title: "매도접수 완료되었습니다.", //제목 필요 있을 경우만 노출
+                    
+                    //제목, 안내 텍스트 같이 노출되는 경우
+                    // title: `
+                    // <span>매수완료</span>
+                    // <span class="normal ellipsis flex1">카카오뱅크의 매수가 완료되었습니다</span> 
+                    // `, 
+                    message: "토스트 팝업의 내용ㅇㅇ",
+                    type: "link",
+                    duration: 3000,
+                    btns: `
+                    <div class="link-btn">
+                        <a href="" class="btn-text-link">주문내역</a>
+                    </div>                  
+                    `
+                })
+            }               
+            
+            function showToastTop() {
+                toast({
+                    message: `
+                    <span class="color-red">상승 발동중!</span>
+                    단일가 거래만 가능합니다.
+                    `,
+                    type: "top",
+                    duration: 3000,
+                })
+            }
+        </script>
+    </body>
+</html>
