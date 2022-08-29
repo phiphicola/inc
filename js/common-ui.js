@@ -275,7 +275,7 @@ function bottomSheet() {
         }
 
         const onDragMove = (event) => {
-            if (dragPosition === undefined) returnƒ
+            if (dragPosition === undefined) return
             
             const y = touchPosition(event).pageY
             const deltaY = dragPosition - y
