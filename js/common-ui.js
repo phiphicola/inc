@@ -44,6 +44,19 @@ $(function(){
 });
 
 $(function(){
+    var fixBtn = $('.wrap-btn-fixed');
+    var inputType = $('.dl-list .input-type');
+
+    inputType.on('focus', function(){
+        fixBtn.addClass('sticky');
+    })
+    inputType.on('blur', function(){
+        fixBtn.removeClass('sticky');
+    })
+
+});
+
+$(function(){
     var fixButton = $('.wrap-btn-sticky');
     var elHeight = $('.notice-section').outerHeight();
     $(window).scroll(function() {
