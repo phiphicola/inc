@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no">
+        <title>한국투자증권</title>    
+        <link rel="stylesheet" href="/inc/css/style.css">
+        <script type="text/javascript" src="/inc/js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="/inc/js/swiper-bundle.min.js"></script>
+        <script type="text/javascript" src="/inc/js/common-ui.js"></script>
+    </head>
+    <body class="bg-gray">
+        <header>
+            <div class="header-inner">
+                <button type="button" class="btn-prev"><span class="ir">이전</span></button>
+                <h1 class="header-title-center">투자자정보 확인</h1>
+                <button type="button" class="btn-close">닫기</button>
+            </div>
+        </header>
+        <!-- // header -->
+        
+        <div class="contents fix-bottom">
+            <div class="service-info">
+                <div class="service-text">
+                    '고객확인의무'를 확인하기 위해<br />
+                    고객님의 투자자정보를 입력해주세요.
+                </div>
+            </div>
+            <div class="agree-content">
+                <div class="info">
+                    <button type="button"><span>투자정보 확인 안내</span></button>
+                </div>
+                <div class="agree-box">
+                    <div class="chk-sub">                        
+                        <div class="dl-list">
+                            <dl>
+                                <dt>거래자금출처</dt>
+                                <dd class="open-sheet">
+                                    <span class="select">급여 및 연금</span>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="dl-list">
+                            <dl>
+                                <dt>상세내용</dt>
+                                <dd>
+                                    <input type="text" class="input-type" placeholder="입력해주세요">
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="agree-box">
+                    <div class="chk-sub">
+                        <div class="dl-list">
+                            <dl>
+                                <dt>거래목적</dt>
+                                <dd data-layer-href="slide-popup2">
+                                    <span class="select" placeholder>선택해주세요</span>
+                                    <!-- 선택 후 placeholder 삭제해주세요. -->
+                                </dd>
+                            </dl>
+                        </div>                    
+                        <div class="dl-list">
+                            <dl>
+                                <dt>상세내용</dt>
+                                <dd>
+                                    <input type="text" class="input-type" placeholder="입력해주세요">
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="agree-box">
+                    <div class="chk-sub">
+                        <div class="dl-list">
+                            <dl>
+                                <dt>조세목적상<br />거주지</dt>
+                                <dd data-layer-href="slide-popup3">
+                                    <span class="select">대한민국</span>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="form-content">
+                    <dl>
+                        <dt>미국인여부</dt>
+                        <dd>
+                            <div class="form-group">
+                                <input type="radio" id="area1-1" name="radio-area" checked>
+                                <label for="area1-1">아니요</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="radio" id="area1-2" name="radio-area">
+                                <label for="area1-2">네</label>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>미국 또는 대한민국 외 조세목적상 거주지 여부</dt>
+                        <dd>
+                            <div class="form-group">
+                                <input type="radio" id="area2-1" name="radio-area2" checked>
+                                <label for="area2-1">없습니다</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="radio" id="area2-2" name="radio-area2">
+                                <label for="area2-2">있습니다</label>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="wrap-btn-fixed">
+                <button type="button" class="btn-lg bg-primary">다음</button>
+            </div>
+        </div>
+        <!-- // contents -->
+        
+        <!-- slide-popup -->
+        <div class="sheet" aria-hidden="true">            
+            <div class="sheet-contents">
+                <div class="controls">
+                    <div class="draggable-area">
+                        <span class="draggable-thumb"></span>
+                    </div>
+                </div>
+                <div class="pop-content">
+                    <ul class="select-form">
+                        <li class="on">
+                            <button type="button" class="select">직장인</button>   
+                        </li>
+                        <li>
+                            <button type="button" class="select">학생</button>
+                        </li>
+                        <li>
+                            <button type="button" class="select">자영업 전문직(변호사, 법무사, 회계사, 의사 등)</button>
+                        </li>
+                        <li>
+                            <button type="button" class="select">판매직(귀금속, 예술품, 환전, 전당포)</button>
+                        </li>
+                        <li>
+                            <button type="button" class="select">개인사업자</button>
+                        </li>
+                        <li>
+                            <button type="button" class="select">주부</button>
+                        </li>
+                        <li>
+                            <button type="button" class="select">자유직/프리랜서</button>
+                        </li>
+                        <li>
+                            <button type="button" class="select">자유직/프리랜서</button>
+                        </li>
+                        <li>
+                            <button type="button" class="select">자유직/프리랜서</button>
+                        </li>
+                        <li>
+                            <button type="button" class="select">자유직/프리랜서</button>
+                        </li>
+                        <li>
+                            <button type="button" class="select">자유직/프리랜서</button>
+                        </li>
+                        <li>
+                            <button type="button" class="select">자유직/프리랜서</button>
+                        </li>
+                        <li>
+                            <button type="button" class="select">자유직/프리랜서</button>
+                        </li>
+                        <li>
+                            <button type="button" class="select">자유직/프리랜서</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dim"></div>
+        </div>
+        <!-- // slide-popup -->        
+    </body>
+</html>

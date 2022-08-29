@@ -8,7 +8,7 @@ $(function(){
     accordion();
     accordion2();
     bottomSheet();
-    listDrag();
+    // listDrag();
 })
 // 이벤트 배너
 $(document).ready(function() {
@@ -44,19 +44,6 @@ $(function(){
 });
 
 $(function(){
-    var fixBtn = $('.wrap-btn-fixed');
-    var inputType = $('.dl-list .input-type');
-
-    inputType.on('focus', function(){
-        fixBtn.addClass('sticky');
-    })
-    inputType.on('blur', function(){
-        fixBtn.removeClass('sticky');
-    })
-
-});
-
-$(function(){
     var fixButton = $('.wrap-btn-sticky');
     var elHeight = $('.notice-section').outerHeight();
     $(window).scroll(function() {
@@ -83,6 +70,31 @@ $(function(){
         }
     });
 });
+
+
+$(function(){
+    $('.chk-sub').on('change', function() {
+        if($(this).is(':checked')) {
+            $(this).next('label').find('.chk-sm').text('동의');            
+        } else {
+            $(this).next('label').find('.chk-sm').text('미동의');
+        }
+    })
+    
+});
+
+$(function(){
+    var fixBtn = $('.wrap-btn-fixed');
+    
+    $('.input-type').on('focus', function() {
+        fixBtn.addClass('sticky');
+    })
+    $('.input-type').on('blur', function() {
+        fixBtn.removeClass('sticky');
+    })
+    
+});
+
 
 
 // 관심종목 등록
@@ -128,8 +140,7 @@ function fixedBg () {
         }else {
             fixButton.removeClass('bg-gray2');
         }
-    });
-    
+    });    
 }
 
 // 호가 정보 스크롤 시 디자인 변경
@@ -156,10 +167,8 @@ function accordion () {
 }
 
 function accordion2 () {
-    var parent = $('.accordion2>li'); 
-    $('.accordion2>li .btn-link').on('click', function() {
-        $(this).parents('li').siblings().removeClass('on');
-        $(this).parents('li').addClass('on');
+    $('.accordion2 .btn-select').on('click', function() {
+        $(this).parents('.chk-top').toggleClass('on');
     });
 }
 
@@ -218,30 +227,32 @@ function toast({title = '', message = '', type = 'info', duration = 3000, btns =
 
 // 터치 바텀 시트
 function bottomSheet() {
-    const bottomSheetCont = $('.sheet');
+    const bottomSheetCont = $('.sheet')
+    
     
     if (bottomSheetCont.length) {
         const $ = document.querySelector.bind(document)
-        const openSheetButton = $('.open-sheet');
+        const openSheetButton = $('.open-sheet')
         const sheet = $('.sheet') 
         const sheetContents = sheet.querySelector('.sheet-contents')
         const draggableArea = sheet.querySelector('.draggable-area')
         var targetSheet = '';
         var $targetSheet = '';
-        var targetSheetContet = '';
-        var $targetSheetContet = '';
-        var targetSheetDrag  = '';
-        var $targetSheetDrag  = '';
+        var targetSheetContents = '';
+        var $targetSheetContents = '';
+        var targetSheetDrag = '';
+        var $targetSheetDrag = '';
 
         let sheetHeight
 
         const setSheetHeight = (value) => {
             sheetHeight = Math.max(0, Math.min(100, value))
-            targetSheetContet.style.height = `${sheetHeight}vh`
+            targetSheetContents.style.height = `${sheetHeight}vh`
+            
             if (sheetHeight === 100) { 
-                targetSheetContet.classList.add('fullscreen')
+                targetSheetContents.classList.add('fullscreen')
             } else {
-                targetSheetContet.classList.remove('fullscreen')
+                targetSheetContents.classList.remove('fullscreen')
             }
         }
 
@@ -249,21 +260,32 @@ function bottomSheet() {
             targetSheet.setAttribute('aria-hidden', String(!value))
         }
 
-        jQuery('.open-sheet').on('click', function (){
+        // openSheetButton.addEventListener('click', () => {
+        //     setSheetHeight(Math.min(50, 720 / window.innerHeight * 100))
+        //     setIsSheetShow(true)
+        //     document.body.classList.add('hidden')
+        // })
+
+        // sheet.querySelector('.dim').addEventListener('click', () => {
+        //     setIsSheetShow(false)
+        //     document.body.classList.remove('hidden')
+        // })
+        
+        jQuery('.open-sheet').on('click', function () {
             var openSheetHref = jQuery(this).attr('data-sheet-trigger');
             $targetSheet = jQuery('[data-sheet-target=' + openSheetHref + ']')
             targetSheet = $targetSheet[0];
-            $targetSheetContet = $targetSheet.find('.sheet-contents');
-            targetSheetContet = $targetSheetContet[0];
+            $targetSheetContents = $targetSheet.find('.sheet-contents');
+            targetSheetContents = $targetSheetContents[0];
             $targetSheetDrag = $targetSheet.find('.draggable-area');
-            targetSheetDrag = $targetSheetDrag[0]
-
+            targetSheetDrag = $targetSheetDrag[0];
+            
             setSheetHeight(Math.min(50, 720 / window.innerHeight * 100))
             setIsSheetShow(true)
-            document.body.classList.add('hidden');
-
-            targetSheetContet.addEventListener('mousedown', onDragStart)
-            targetSheetContet.addEventListener('touchstart', onDragStart)
+            document.body.classList.add('hidden')
+            
+            targetSheetContents.addEventListener('mousedown', onDragStart)
+            targetSheetContents.addEventListener('touchstart', onDragStart)
 
             window.addEventListener('mousemove', onDragMove)
             window.addEventListener('touchmove', onDragMove)
@@ -271,7 +293,8 @@ function bottomSheet() {
             window.addEventListener('mouseup', onDragEnd)
             window.addEventListener('touchend', onDragEnd)
         })
-        jQuery('.sheet .dim').on('click', function (){
+        
+        jQuery('.sheet .dim').on('click', function (){            
             setIsSheetShow(false)
             document.body.classList.remove('hidden')
         })
@@ -283,8 +306,8 @@ function bottomSheet() {
 
         const onDragStart = (event) => {
             dragPosition = touchPosition(event).pageY
-            $targetSheetContet.addClass('not-selectable');
-            console.log($targetSheetContet)
+            $targetSheetContents.addClass('not-selectable');
+            draggableArea.style.cursor = document.body.style.cursor = 'grabbing'
         }
 
         const onDragMove = (event) => {
@@ -300,7 +323,8 @@ function bottomSheet() {
 
         const onDragEnd = () => {
             dragPosition = undefined
-            $targetSheetContet.addClass('not-selectable')
+            $targetSheetContents.addClass('not-selectable')
+            draggableArea.style.cursor = document.body.style.cursor = ''
             
             if (sheetHeight < 25) {
                 setIsSheetShow(false)
@@ -312,124 +336,123 @@ function bottomSheet() {
             }
         }
 
-
+        
     }
 }
-
 
 
 // 리스트 드래그
-function listDrag() {
+// function listDrag() {
 
 
-    const listDragContent = $('.list-drag');
-    if (listDragContent.length) {
+//     const listDragContent = $('.list-drag');
+//     if (listDragContent.length) {
 
-        const list = document.querySelector('.list-drag')
-        const listItems = document.querySelectorAll('.list-item')
-        const listHidden = document.querySelector('.list-hidden')
+//         const list = document.querySelector('.list-drag')
+//         const listItems = document.querySelectorAll('.list-item')
+//         const listHidden = document.querySelector('.list-hidden')
         
-        // let dragIndex, dragSource
+//         // let dragIndex, dragSource
     
-        const getMouseOffset = (evt) => {
-        const targetRect = evt.target.getBoundingClientRect()
-        const offset = {
-            x: evt.pageX - targetRect.left,
-            y: evt.pageY - targetRect.top
-        }
-        return offset
-        }
+//         const getMouseOffset = (evt) => {
+//         const targetRect = evt.target.getBoundingClientRect()
+//         const offset = {
+//             // x: evt.pageX - targetRect.left,
+//             y: evt.pageY - targetRect.top
+//         }
+//         return offset
+//         }
     
-        const getElementVerticalCenter = (el) => {
-        const rect = el.getBoundingClientRect()
-        return (rect.bottom - rect.top) / 2
-        }
+//         const getElementVerticalCenter = (el) => {
+//         const rect = el.getBoundingClientRect()
+//         return (rect.bottom - rect.top) / 2
+//         }
     
-        const appendPlaceholder = (evt, idx) => {
-        evt.preventDefault()
-        if (idx === dragIndex) {
-            return
-        }
+//         const appendPlaceholder = (evt, idx) => {
+//         evt.preventDefault()
+//         if (idx === dragIndex) {
+//             return
+//         }
         
-        const offset = getMouseOffset(evt)
-        const middleY = getElementVerticalCenter(evt.target)
-        const placeholder = list.children[dragIndex]
+//         const offset = getMouseOffset(evt)
+//         const middleY = getElementVerticalCenter(evt.target)
+//         const placeholder = list.children[dragIndex]
         
-        // console.log(`hover on ${idx} ${offset.y > middleY ? 'bottom half' : 'top half'}`)
-        if (offset.y > middleY) {
-            list.insertBefore(evt.target, placeholder)
-        } else if (list.children[idx + 1]) {
-            list.insertBefore(evt.target.nextSibling || evt.target, placeholder)
-        }
-        return
-        }
+//         // console.log(`hover on ${idx} ${offset.y > middleY ? 'bottom half' : 'top half'}`)
+//         if (offset.y > middleY) {
+//             list.insertBefore(evt.target, placeholder)
+//         } else if (list.children[idx + 1]) {
+//             list.insertBefore(evt.target.nextSibling || evt.target, placeholder)
+//         }
+//         return
+//         }
     
-        function sortable(rootEl, onUpdate) {
-        var dragEl;
+//         function sortable(rootEl, onUpdate) {
+//         var dragEl;
         
-        // Making all siblings movable
-        [].slice.call(rootEl.children).forEach(function (itemEl) {
-            itemEl.draggable = true;
-        });
+//         // Making all siblings movable
+//         [].slice.call(rootEl.children).forEach(function (itemEl) {
+//             itemEl.draggable = true;
+//         });
         
-        // Function responsible for sorting
-        function _onDragOver(evt) {
-            evt.preventDefault();
-            evt.dataTransfer.dropEffect = 'move';
+//         // Function responsible for sorting
+//         function _onDragOver(evt) {
+//             evt.preventDefault();
+//             evt.dataTransfer.dropEffect = 'move';
             
-            var target = evt.target;
-            if (target && target !== dragEl && target.nodeName == 'LI') {
-                // Sorting
-            const offset = getMouseOffset(evt)
-            const middleY = getElementVerticalCenter(evt.target)
+//             var target = evt.target;
+//             if (target && target !== dragEl && target.nodeName == 'LI') {
+//                 // Sorting
+//             const offset = getMouseOffset(evt)
+//             const middleY = getElementVerticalCenter(evt.target)
     
-            if (offset.y > middleY) {
-                rootEl.insertBefore(dragEl, target.nextSibling)
-            } else {
-                rootEl.insertBefore(dragEl, target)
-            }
-            }
-        }
+//             if (offset.y > middleY) {
+//                 rootEl.insertBefore(dragEl, target.nextSibling)
+//             } else {
+//                 rootEl.insertBefore(dragEl, target)
+//             }
+//             }
+//         }
         
-        // End of sorting
-        function _onDragEnd(evt){
-            evt.preventDefault();
+//         // End of sorting
+//         function _onDragEnd(evt){
+//             evt.preventDefault();
             
-            dragEl.classList.remove('ghost');
-            rootEl.removeEventListener('dragover', _onDragOver, false);
-            rootEl.removeEventListener('dragend', _onDragEnd, false);
+//             dragEl.classList.remove('ghost');
+//             rootEl.removeEventListener('dragover', _onDragOver, false);
+//             rootEl.removeEventListener('dragend', _onDragEnd, false);
     
     
-            // Notification about the end of sorting
-            onUpdate(dragEl);
-        }
+//             // Notification about the end of sorting
+//             onUpdate(dragEl);
+//         }
         
-        // Sorting starts
-        rootEl.addEventListener('dragstart', function (evt){
-            dragEl = evt.target; // Remembering an element that will be moved
+//         // Sorting starts
+//         rootEl.addEventListener('dragstart', function (evt){
+//             dragEl = evt.target; // Remembering an element that will be moved
             
-            // Limiting the movement type
-            evt.dataTransfer.effectAllowed = 'move';
-            evt.dataTransfer.setData('Text', dragEl.textContent);
+//             // Limiting the movement type
+//             evt.dataTransfer.effectAllowed = 'move';
+//             evt.dataTransfer.setData('Text', dragEl.textContent);
     
     
-            // Subscribing to the events at dnd
-            rootEl.addEventListener('dragover', _onDragOver, false);
-            rootEl.addEventListener('dragend', _onDragEnd, false);
+//             // Subscribing to the events at dnd
+//             rootEl.addEventListener('dragover', _onDragOver, false);
+//             rootEl.addEventListener('dragend', _onDragEnd, false);
     
     
-            setTimeout(function () {
-                // If this action is performed without setTimeout, then
-                // the moved object will be of this class.
-                dragEl.classList.add('ghost');
-            }, 0)
-        }, false);
-        }
+//             setTimeout(function () {
+//                 // If this action is performed without setTimeout, then
+//                 // the moved object will be of this class.
+//                 dragEl.classList.add('ghost');
+//             }, 0)
+//         }, false);
+//         }
                             
-        // Using                    
-        sortable(list, function (item) {
-        // console.log(item);
-        });
-    }
+//         // Using                    
+//         sortable(list, function (item) {
+//         // console.log(item);
+//         });
+//     }
 
-}
+// }
