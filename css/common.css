@@ -211,7 +211,7 @@ header .btn-share{
     background-color: #f1f1f1;
 }
 .bg-gray .wrap-btn-fixed.sticky{
-    position: sticky;
+    position: relative;
 }
 [class^="wrap-btn"] [class^="btn-"]{
     width:100%;
