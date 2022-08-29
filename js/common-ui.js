@@ -205,38 +205,60 @@ function toast({title = '', message = '', type = 'info', duration = 3000, btns =
 
 // 터치 바텀 시트
 function bottomSheet() {
-    var elNameExists = !!document.getElementsByClassName('sheet');
-    if (elNameExists.length) {
+    const bottomSheetCont = $('.sheet');
+    
+    if (bottomSheetCont.length) {
         const $ = document.querySelector.bind(document)
-        const openSheetButton = $('.open-sheet')
+        const openSheetButton = $('.open-sheet');
         const sheet = $('.sheet') 
         const sheetContents = sheet.querySelector('.sheet-contents')
         const draggableArea = sheet.querySelector('.draggable-area')
+        var targetSheet = '';
+        var $targetSheet = '';
+        var targetSheetContet = '';
+        var $targetSheetContet = '';
+        var targetSheetDrag  = '';
+        var $targetSheetDrag  = '';
 
         let sheetHeight
 
         const setSheetHeight = (value) => {
             sheetHeight = Math.max(0, Math.min(100, value))
-            sheetContents.style.height = `${sheetHeight}vh`
-            
+            targetSheetContet.style.height = `${sheetHeight}vh`
             if (sheetHeight === 100) { 
-                sheetContents.classList.add('fullscreen')
+                targetSheetContet.classList.add('fullscreen')
             } else {
-                sheetContents.classList.remove('fullscreen')
+                targetSheetContet.classList.remove('fullscreen')
             }
         }
 
         const setIsSheetShow = (value) => {
-            sheet.setAttribute('aria-hidden', String(!value))
+            targetSheet.setAttribute('aria-hidden', String(!value))
         }
 
-        openSheetButton.addEventListener('click', () => {
+        jQuery('.open-sheet').on('click', function (){
+            var openSheetHref = jQuery(this).attr('data-sheet-trigger');
+            $targetSheet = jQuery('[data-sheet-target=' + openSheetHref + ']')
+            targetSheet = $targetSheet[0];
+            $targetSheetContet = $targetSheet.find('.sheet-contents');
+            targetSheetContet = $targetSheetContet[0];
+            $targetSheetDrag = $targetSheet.find('.draggable-area');
+            targetSheetDrag = $targetSheetDrag[0]
+
             setSheetHeight(Math.min(50, 720 / window.innerHeight * 100))
             setIsSheetShow(true)
-            document.body.classList.add('hidden')
-        })
+            document.body.classList.add('hidden');
 
-        sheet.querySelector('.dim').addEventListener('click', () => {
+            targetSheetContet.addEventListener('mousedown', onDragStart)
+            targetSheetContet.addEventListener('touchstart', onDragStart)
+
+            window.addEventListener('mousemove', onDragMove)
+            window.addEventListener('touchmove', onDragMove)
+
+            window.addEventListener('mouseup', onDragEnd)
+            window.addEventListener('touchend', onDragEnd)
+        })
+        jQuery('.sheet .dim').on('click', function (){
             setIsSheetShow(false)
             document.body.classList.remove('hidden')
         })
@@ -248,12 +270,12 @@ function bottomSheet() {
 
         const onDragStart = (event) => {
             dragPosition = touchPosition(event).pageY
-            sheetContents.classList.add('not-selectable')
-            draggableArea.style.cursor = document.body.style.cursor = 'grabbing'
+            $targetSheetContet.addClass('not-selectable');
+            console.log($targetSheetContet)
         }
 
         const onDragMove = (event) => {
-            if (dragPosition === undefined) return
+            if (dragPosition === undefined) returnƒ
             
             const y = touchPosition(event).pageY
             const deltaY = dragPosition - y
@@ -265,8 +287,7 @@ function bottomSheet() {
 
         const onDragEnd = () => {
             dragPosition = undefined
-            sheetContents.classList.remove('not-selectable')
-            draggableArea.style.cursor = document.body.style.cursor = ''
+            $targetSheetContet.addClass('not-selectable')
             
             if (sheetHeight < 25) {
                 setIsSheetShow(false)
@@ -278,107 +299,124 @@ function bottomSheet() {
             }
         }
 
-        draggableArea.addEventListener('mousedown', onDragStart)
-        draggableArea.addEventListener('touchstart', onDragStart)
 
-        window.addEventListener('mousemove', onDragMove)
-        window.addEventListener('touchmove', onDragMove)
-
-        window.addEventListener('mouseup', onDragEnd)
-        window.addEventListener('touchend', onDragEnd)
     }
 }
 
 
+
 // 리스트 드래그
 function listDrag() {
-    const list = document.querySelector('.list-stock')
-    const listItem = document.querySelectorAll('.list-item')
-    const listHidden = document.querySelector('.list-hidden')
+
+
+    const listDragContent = $('.list-drag');
+    if (listDragContent.length) {
+
+        const list = document.querySelector('.list-drag')
+        const listItems = document.querySelectorAll('.list-item')
+        const listHidden = document.querySelector('.list-hidden')
+        
+        // let dragIndex, dragSource
     
-    const getMouseOffset = (evt) => {
+        const getMouseOffset = (evt) => {
         const targetRect = evt.target.getBoundingClientRect()
         const offset = {
             x: evt.pageX - targetRect.left,
             y: evt.pageY - targetRect.top
         }
         return offset
-    }
+        }
     
-    const getElementVerticalCenter = (el) => {
+        const getElementVerticalCenter = (el) => {
         const rect = el.getBoundingClientRect()
         return (rect.bottom - rect.top) / 2
-    }
+        }
     
-    const appendPlacehoder = (evt, idx) => {
+        const appendPlaceholder = (evt, idx) => {
         evt.preventDefault()
         if (idx === dragIndex) {
             return
         }
         
         const offset = getMouseOffset(evt)
-        const middelY = getElementVerticalCenter(evt.target)
+        const middleY = getElementVerticalCenter(evt.target)
         const placeholder = list.children[dragIndex]
         
-        if (offset.y > middelY) {
+        // console.log(`hover on ${idx} ${offset.y > middleY ? 'bottom half' : 'top half'}`)
+        if (offset.y > middleY) {
             list.insertBefore(evt.target, placeholder)
         } else if (list.children[idx + 1]) {
             list.insertBefore(evt.target.nextSibling || evt.target, placeholder)
         }
         return
-    }
+        }
     
-    function sortable(rootEl, onUpdate) {
+        function sortable(rootEl, onUpdate) {
         var dragEl;
         
+        // Making all siblings movable
         [].slice.call(rootEl.children).forEach(function (itemEl) {
             itemEl.draggable = true;
         });
         
+        // Function responsible for sorting
         function _onDragOver(evt) {
             evt.preventDefault();
-            evt.dataTransfer.dropEffect = 'name';
+            evt.dataTransfer.dropEffect = 'move';
             
             var target = evt.target;
-            if (target && target !== dragEl && target.nodeName == 'DIV') {
-                
-                const offset = getMouseOffset(evt)
-                const middelY = getElementVerticalCenter(evt.target)
-                
-                if (offset.y > middelY) {
-                    rootEl.insertBefore(dragEl, target.nextSibling)
-                } else {
-                    rootEl.insertBefore(dragEl, target)
-                }
+            if (target && target !== dragEl && target.nodeName == 'LI') {
+                // Sorting
+            const offset = getMouseOffset(evt)
+            const middleY = getElementVerticalCenter(evt.target)
+    
+            if (offset.y > middleY) {
+                rootEl.insertBefore(dragEl, target.nextSibling)
+            } else {
+                rootEl.insertBefore(dragEl, target)
+            }
             }
         }
         
-        function _onDragEnd(evt) {
+        // End of sorting
+        function _onDragEnd(evt){
             evt.preventDefault();
             
             dragEl.classList.remove('ghost');
             rootEl.removeEventListener('dragover', _onDragOver, false);
             rootEl.removeEventListener('dragend', _onDragEnd, false);
-            
+    
+    
+            // Notification about the end of sorting
             onUpdate(dragEl);
         }
         
-        rootEl.addEventListener('dragStart', function (evt) {
-            dragEl = evt.target;
+        // Sorting starts
+        rootEl.addEventListener('dragstart', function (evt){
+            dragEl = evt.target; // Remembering an element that will be moved
             
+            // Limiting the movement type
             evt.dataTransfer.effectAllowed = 'move';
             evt.dataTransfer.setData('Text', dragEl.textContent);
-            
+    
+    
+            // Subscribing to the events at dnd
             rootEl.addEventListener('dragover', _onDragOver, false);
             rootEl.addEventListener('dragend', _onDragEnd, false);
-            
+    
+    
             setTimeout(function () {
+                // If this action is performed without setTimeout, then
+                // the moved object will be of this class.
                 dragEl.classList.add('ghost');
             }, 0)
         }, false);
+        }
+                            
+        // Using                    
+        sortable(list, function (item) {
+        // console.log(item);
+        });
     }
-    
-    sortable(list, function (item) {
-        console.log(item);
-    })
+
 }
