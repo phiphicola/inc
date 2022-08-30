@@ -176,9 +176,12 @@
     background: url(/inc/img/ico-del.svg) no-repeat center;
     padding: 13px;
 }
-.list-item{
+.list-item .handle{
+    width: 24px;
+    height: 24px;
     background: url(/inc/img/ico-handle.svg) no-repeat right center;
     background-size: 24px;
+    display: block;
 }
 .list-account li + li{
     border-top:var(--line-e6);
