@@ -284,8 +284,8 @@ function bottomSheet() {
             setIsSheetShow(true)
             document.body.classList.add('hidden')
             
-            targetSheetContents.addEventListener('mousedown', onDragStart)
-            targetSheetContents.addEventListener('touchstart', onDragStart)
+            targetSheetDrag.addEventListener('mousedown', onDragStart)
+            targetSheetDrag.addEventListener('touchstart', onDragStart)
 
             window.addEventListener('mousemove', onDragMove)
             window.addEventListener('touchmove', onDragMove)
