@@ -315,7 +315,6 @@ function listDrag() {
 
 
     const listDragContent = $('.list-drag');
-    if (listDragContent.length) {
 
         const list = document.querySelector('.list-drag')
         const listItems = document.querySelectorAll('.list-item')
@@ -422,6 +421,5 @@ function listDrag() {
         sortable(list, function (item) {
         // console.log(item);
         });
-    }
 
 }

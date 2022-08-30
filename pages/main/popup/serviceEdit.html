@@ -8,8 +8,8 @@
         <link rel="stylesheet" href="/inc/css/style.css">        
         <script type="text/javascript" src="/inc/js/jquery-3.6.0.min.js"></script>
         <script type="text/javascript" src="/inc/js/swiper-bundle.min.js"></script>
-        <script type="text/javascript" src="/inc/js/common-ui-.js"></script>
-        <!-- <script type="text/javascript" src="/inc/js/sortable.js"></script> -->
+        <script type="text/javascript" src="/inc/js/common-ui.js"></script>
+        <script type="text/javascript" src="/inc/js/sortable.js"></script>
     </head>
     <body>
         <!-- 여기부터 레이어로 띄움  style="visibility: visible; 삭제-->
@@ -27,7 +27,7 @@
                     <div class="section-inner">
                         <div class="list-stock">
                             <div class="list-hidden"></div>
-                            <ul id="listDrag" class="list-drag">
+                            <ul id="listDrag">
                                 <li class="list-item" draggable="true">
                                     <button type="button" class="btn-delete handle"><span class="ir">삭제</span></button>
                                     <div class="stock-icon"><img src="/inc/img/dummy-bank.png" alt=""></div>
@@ -85,10 +85,10 @@
         </div>
         <!-- // layer-pop -->       
         <script>
-            // new Sortable(listDrag, {
-            //     handle: '.handle', // handle's class
-            //     animation: 150
-            // });
+            new Sortable(listDrag, {
+                handle: '.handle', // handle's class
+                animation: 150
+            });
         </script>
     </body>
 </html>
