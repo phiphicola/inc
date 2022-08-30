@@ -43,7 +43,8 @@ header .btn-close{
     color:#222;
     margin-left:auto;
     padding:10px;
-    margin-right:-10px;
+    position:absolute;
+    right:6px;
 }
 .header-pop .btn-close-pop{
     position:absolute;
