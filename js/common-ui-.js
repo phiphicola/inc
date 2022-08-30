@@ -326,7 +326,7 @@ function listDrag() {
         const getMouseOffset = (evt) => {
         const targetRect = evt.target.getBoundingClientRect()
         const offset = {
-            x: evt.pageX - targetRect.left,
+            // x: evt.pageX - targetRect.left,
             y: evt.pageY - targetRect.top
         }
         return offset
