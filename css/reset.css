@@ -75,7 +75,6 @@ button,[type='button'],[type='reset'],[type='submit']{
     border:0;
     font-family:inherit;
     position:relative;
-    overflow:hidden;
     color: #222;
 }
 button[type='button']:disabled{

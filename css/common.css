@@ -89,7 +89,7 @@ header .btn-share{
     overflow-y:auto;
     height:100%;
 }
-.contents{
+header + .contents{
     padding-top:50px;
 }
 
