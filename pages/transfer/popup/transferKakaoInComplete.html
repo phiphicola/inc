@@ -13,34 +13,33 @@
     <body>
         <!-- 여기부터 레이어로 띄움  style="visibility: visible; 삭제-->
         <div id="layer-pop" class="full-pop" style="visibility: visible;">
-            <div class="header-pop">
-                <div class="header-inner">
-                    <button type="button" class="btn-close-pop" data-layer-close><span class="ir">닫기</span></button>
-                </div>
-            </div>
-            <!-- // header -->
+            <!-- 08-31 header 삭제 -->
             
             <div class="contents">
-                <section class="content-trade">
+                <section class="section last"><!-- 08-31 클래스 변경 -->
                     <div class="section-inner">
-                        <div class="page-last-complete">
-                            <div class="page-top">
-                                <p class="page-tit">보내기 완료</p>
-                                <div class="page-msg">
-                                    <p><span class="account">한국투자증권 계좌</span>에</p>
-                                    <span class="amount">999,999,999,999</span>원을 보냈어요.
+                        <div class="page-last">
+                            <!-- <div class="page-last-complete">
+                                <div class="page-top">
+                                    <p class="page-tit"><strong>가져오기 완료</strong></p>
+                                    <div class="page-msg">
+                                        <p><span class="account">한국투자증권 계좌</span>에</p>
+                                        <span class="amount">999,999,999,999</span>원을 보냈어요.
+                                    </div>
                                 </div>
-                            </div>                            
+                            </div> -->
+                            <div class="page-last-fail">
+                                <div class="page-top">
+                                    <p class="page-tit"><strong>가져오기 실패</strong></p><!-- 08-31 strong 추가 -->
+                                    <div class="page-msg">
+                                        보내기 실패 안내문구
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <!-- <div class="page-last-fail">
-                            <div class="page-top">
-                                <p class="page-tit">보내기 실패</p>
-                                <div class="page-msg">
-                                    보내기 실패 안내문구
-                                </div>
-                            </div>                            
-                        </div> -->
-                        <div class="page-info">
+                        
+                        <!-- 08-29 이체 후 잔액 삭제 -->
+                        <!-- <div class="page-info">
                             <dl>
                                 <dt>이체 후 잔액</dt>
                                 <dd><span>999,999,999,999</span>원</dd>
@@ -52,7 +51,7 @@
                                     <p class="account-num">1234-456-7890</p>
                                 </dd>
                             </dl>
-                        </div>
+                        </div> -->
                     </div>
                 </section>
             

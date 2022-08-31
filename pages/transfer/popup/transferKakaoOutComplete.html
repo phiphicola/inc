@@ -13,20 +13,15 @@
     <body>
         <!-- 여기부터 레이어로 띄움  style="visibility: visible; 삭제-->
         <div id="layer-pop" class="full-pop" style="visibility: visible;">
-            <div class="header-pop">
-                <div class="header-inner">
-                    <button type="button" class="btn-close-pop" data-layer-close><span class="ir">닫기</span></button>
-                </div>
-            </div>
-            <!-- // header -->
+            <!-- 08-31 header 삭제 -->
             
             <div class="contents">
-                <section class="content-trade">
+                <section class="section last"><!-- 08-31 클래스 변경 -->
                     <div class="section-inner">
                         <div class="page-last">
                             <div class="page-last-complete">
                                 <div class="page-top">
-                                    <p class="page-tit">보내기 완료</p>
+                                    <p class="page-tit"><strong>보내기 완료</strong></p><!-- 08-31 strong 추가 -->
                                     <div class="page-msg">
                                         <p><span class="account">카카오뱅크 계좌</span>에</p>
                                         <span class="amount">999,999,999,999</span>원을 보냈어요.
@@ -35,7 +30,7 @@
                             </div>
                             <!-- <div class="page-last-fail">
                                 <div class="page-top">
-                                    <p class="page-tit">보내기 실패</p>
+                                    <p class="page-tit"><strong>보내기 실패</strong></p>
                                     <div class="page-msg">
                                         보내기 실패 안내문구
                                     </div>
@@ -43,17 +38,7 @@
                             </div> -->
                         </div>
                         <div class="page-info">
-                            <dl>
-                                <dt>이체 후 잔액</dt>
-                                <dd><span>999,999,999,999</span>원</dd>
-                            </dl>
-                            <dl>
-                                <dt>계좌번호</dt>
-                                <dd>
-                                    <div class="name"><span class="bank-name">카카오뱅크</span>(이윤경)</div>
-                                    <p class="account-num">1234-456-7890</p>
-                                </dd>
-                            </dl>
+                            <p class="text-cont">출금으로 인해 주문 체결된 금액 정산시, 부족금액(미수금)과 부족금액에 대한 연체이자가 발생할 수 있으니 주문가능금액이 충분한지 확인해주세요.</p>
                         </div>
                     </div>
                 </section>

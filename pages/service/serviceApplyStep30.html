@@ -28,7 +28,8 @@
             </div>
             <div class="agree-content">
                 <div class="info">
-                    <button type="button"><span>투자정보 확인 안내</span></button>
+                    <!-- 08-31 팝업 연결 추가 -->
+                    <button type="button" class="btn-tooltip" data-layer-href="modal-popup"><span>투자정보 확인 안내</span></button>
                 </div>
                 <div class="agree-box">
                     <div class="chk-sub">                        
@@ -208,5 +209,22 @@
             <div class="dim"></div>
         </div>
         <!-- // bottom sheet -->  
+        
+        <!-- 08-31 팝업 추가 -->
+        <div id="layer-pop" class="layer-pop" modal-popup>
+            <div class="modal-content">
+                <div class="pop-content">
+                    <div class="pop-info-txt">
+                        <p class="text-box">미국납세의무(시민권/영주권자, 미국세법상 미국 거주자 등)또는 대한민국 외 조세목적상 거주지가 있는 경우 계좌개설이 불가능하오니 가까운 영업점을 방문하여 주시기 바랍니다.</p>
+                    </div>
+                </div>
+                <div class="wrap-btn">
+                    <button type="button" class="btn-lg bg-primary" data-layer-close>확인</button>
+                </div>
+            </div>
+            <div class="dim"></div>
+        </div>
+        <!-- // modal-popup -->
+        
     </body>
 </html>

@@ -75,7 +75,7 @@ button,[type='button'],[type='reset'],[type='submit']{
     border:0;
     font-family:inherit;
     position:relative;
-    color: #222;
+    color:#222;
 }
 button[type='button']:disabled{
     background-color:#ddd !important;
@@ -87,7 +87,7 @@ button[type='button']:disabled{
     height:100%;
     display:block;
     animation:btnAction 0.2s both;
-    position: absolute;
+    position:absolute;
     left:50%;
     top:0;
     background-color:rgba(0, 0, 0, 0.1);
@@ -123,13 +123,14 @@ input::placeholder{
     font-size:16px;
 }
 input[readonly]::placeholder{
-    color: #ddd !important;
+    color:#ddd !important;
 }
 input[type="text"]{
     border:1px solid #ddd;
     border-radius:10px;
     padding:14px 10px;
     width:100%;
+    color: #222;
 }
 img{
     display:block;
@@ -142,12 +143,10 @@ img{
 [readonly]{
     color:#ddd !important;    
 }
-[placeholder]{
+.select[placeholder]{
     color:#aaa !important;    
 }
-::-webkit-calendar-picker-indicator {
-    display: none;
-  }
+
 .ir{
     position:absolute;
     clip:rect(0 0 0 0);
@@ -157,7 +156,7 @@ img{
     overflow:hidden;
 }
 
-.normal{font-weight: 400;}
+.normal{font-weight:400;}
 .flex1{flex:1}
 
 /* align */
@@ -175,8 +174,10 @@ img{
 .f14{font-size:14px !important;}
 .f15{font-size:15px !important;}
 .f17{font-size:17px !important;}
+.f18{font-size:18px !important;}
 
 /* space */
+.m0{margin:0 !important}
 .mt0{margin-top:0px !important;}
 .mt24{margin-top:24px !important;}
 .mt40{margin-top:40px !important;}

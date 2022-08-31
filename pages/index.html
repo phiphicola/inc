@@ -26,9 +26,9 @@
             .proc strong{color:#333b58;font-size: 18px;}
             .proc p:last-child strong{color:#ff6800}
             .fixed-wrap{position:fixed;top:80px;left:0;height: 140px;width:100%;background-color: #f1f1f1;z-index:10;}
-            .marker{font-weight: 900;width: 300px;}
+            .marker{font-weight: 900;width: 200px;}
             .marker{display: flex;text-align: right;}
-            .marker li{width:calc(100% / 3);justify-content:flex-start;}
+            .marker li{width:calc(100% / 2);justify-content:flex-start;}
             .marker li::after{margin-left: 8px;}
             
             .page-list li span{color:#666;font-size: 12px;}
@@ -46,11 +46,16 @@
             table.page-list tr td{border:1px solid #ddd;padding:5px}
             table.page-list tr td a{text-decoration: underline;}
             
-            table.page-list tr td a{display: block;position:relative}
-            table.page-list tr td a::after{width: 20px;height:20px;display: inline-block;border-radius: 50%;text-align: center;color: #fff;margin-left: 5px;position:absolute;right:0}
-            table.page-list tr td a.s1::after{content: '진';background-color: #666;}
-            table.page-list tr td a.s2::after{content: '완';background-color: #0083d1;}
-            table.page-list tr td a.s3::after{content: '수';background-color: #fdb813;}
+            table.page-list tr td a,
+            table.page-list tr td span{display: block;position:relative}
+            table.page-list tr td a::after,
+            table.page-list tr td span::after{width: 20px;height:20px;display: inline-block;border-radius: 50%;text-align: center;color: #fff;margin-left: 5px;position:absolute;right:0}
+            table.page-list tr td a.s1::after,
+            table.page-list tr td span.s1::after{content: '진';background-color: #666;}
+            table.page-list tr td a.s2::after,
+            table.page-list tr td span.s2::after{content: '완';background-color: #0083d1;}
+            table.page-list tr td a.s3::after,
+            table.page-list tr td span.s3::after{content: '수';background-color: #fdb813;}
             
             .section{margin-top: 10px;margin-left:14px}
             #tab2 .section{margin-left:0}            
@@ -68,7 +73,7 @@
             .guide-h2{color:#666;font-size:16px;margin:20px 0 5px}
             .guide-h2::before{content: '';width:3px;height:3px;border-radius: 50%;display: inline-block;background-color: #666;vertical-align: middle;margin-right: 5px;}
             
-            .add > td{background-color: #e5f1ff;}
+            .add > td{background-color: #fdffde;}
             .pop{color: #0083d1;}
             .memo{color:#ff6800}
             @media (max-width:640px) {
@@ -99,18 +104,18 @@
                         <ul class="marker">
                             <li class="s1">진행중</li>
                             <li class="s2">완료</li>
-                            <li class="s3">수정</li>
+                            <!-- <li class="s3">수정</li> -->
                         </ul>
                     </div>
                     <div class="section">
                         <ul>
                             <li><a href="#section1">01.계좌개설</a></li>
                             <li><a href="#section2">02.홈</a></li>
-                            <li><a href="#section3">03.stock</a></li>
-                            <li><a href="#section4">04.transfer</a></li>
-                            <li><a href="#section5">05.inquiry</a></li>
-                            <li><a href="#section6">06.order</a></li>
-                            <li><a href="#section7">팝업/로딩</a></li>
+                            <li><a href="#section3">03.종목</a></li>
+                            <li><a href="#section4">04.이체</a></li>
+                            <li><a href="#section5">05.투자현황</a></li>
+                            <li><a href="#section6">06.거래</a></li>
+                            <li><a href="#section7">07.공통</a></li>
                         </ul>
                     </div>
                 </div>
@@ -143,13 +148,15 @@
                                 <td>등록계좌 선택</td>
                                 <td><a href="/inc/pages/service/serviceApplyStep20.html" target="_blank" class="s2">serviceApplyStep20.html</a></td>
                             </tr>                            
-                            <tr>
+                            <tr class="add">
                                 <td class="hide"></td>
                                 <td class="hide">투자자정보 확인</td>
                                 <td>투자자정보 확인</td>
-                                <td><a href="/inc/pages/service/serviceApplyStep30.html" target="_blank" class="s2">serviceApplyStep30.html</a></td>
+                                <td><a href="/inc/pages/service/serviceApplyStep30.html" target="_blank" class="s2">serviceApplyStep30.html</a>
+                                    <p class="memo">08-31 팝업 추가</p>
+                                </td>
                             </tr>
-                            <tr class="add">
+                            <tr>
                                 <td class="hide"></td>
                                 <td class="hide"></td>
                                 <td>투자자정보 확인2</td>
@@ -161,25 +168,27 @@
                                 <td>약관/설명서 동의</td>
                                 <td><a href="/inc/pages/service/serviceApplyStep40.html" target="_blank" class="s2">serviceApplyStep40.html</a></td>
                             </tr>
-                            <tr class="add">
+                            <tr>
                                 <td class="hide"></td>
                                 <td class="hide">약관상세</td>
                                 <td>약관상세</td>
                                 <td><a href="/inc/pages/service/popup/termsType.html" target="_blank" class="s2">termsType.html</a></td>
                             </tr>
-                            <tr class="add">
+                            <tr>
                                 <td class="hide"></td>
                                 <td class="hide">약관상세 - 탭형</td>
                                 <td>약관상세</td>
                                 <td><a href="/inc/pages/service/popup/termsTypeTab.html" target="_blank" class="s2">termsTypeTab.html</a></td>
                             </tr>
-                            <tr>
+                            <tr class="add">
                                 <td class="hide"></td>
                                 <td class="hide">신청완료</td>
                                 <td>신청완료</td>
-                                <td><a href="/inc/pages/service/serviceApplyStep60.html" target="_blank" class="s2">serviceApplyStep60.html</a></td>
+                                <td><a href="/inc/pages/service/serviceApplyStep60.html" target="_blank" class="s2">serviceApplyStep60.html</a>
+                                    <p class="memo">08-31 클래스 추가</p>
+                                </td>
                             </tr>
-                            <tr class="add">
+                            <tr>
                                 <td class="hide"></td>
                                 <td class="hide">해지하기</td>
                                 <td>해지하기</td>
@@ -209,22 +218,26 @@
                                 <td class="hide"></td>
                                 <td class="hide">종목리스트</td>
                                 <td>종목리스트</td>
-                                <td><a href="/inc/pages/main/serviceList.html" target="_blank" class="s1">serviceList.html</a></td>
+                                <td><a href="/inc/pages/main/serviceList.html" target="_blank" class="s2">serviceList.html</a>
+                                    <p class="memo">08-31 footer 수정</p>
+                                </td>
                             </tr>
-                            <tr class="add">
+                            <tr>
                                 <td class="hide"></td>
                                 <td class="hide"></td>
                                 <td>종목편집<span class="pop">(팝업)</span></td>
-                                <td><a href="/inc/pages/main/popup/serviceEdit.html" target="_blank" class="s1">serviceEdit.html</a></td>
+                                <td><a href="/inc/pages/main/popup/serviceEdit.html" target="_blank" class="s2">serviceEdit.html</a></td>
                             </tr>
                             <tr class="add">
                                 <td class="hide"></td>
                                 <td class="hide">조회/거래 best</td>
                                 <td>조회/거래 best</td>
-                                <td><a href="/inc/pages/main/popup/bestList.html" target="_blank" class="s1">bestList.html</a></td>
+                                <td><a href="/inc/pages/main/popup/bestList.html" target="_blank" class="s2">bestList.html</a>
+                                    <p class="memo">08-31 footer 수정</p>
+                                </td>
                             </tr>
-                            <tr>
-                                <td class="hide">종목검색</td>
+                            <tr class="add">
+                                <td class="hide"></td>
                                 <td class="hide"></td>
                                 <td>종목검색<span class="pop">(팝업)</span></td>
                                 <td><a href="/inc/pages/stock/popup/stockSearch.html" target="_blank" class="s2">stockSearch.html</a>
@@ -235,13 +248,16 @@
                             
                             
                             <!-- stock -->
-                            <tr id="section3">
+                            <tr id="section3" class="add">
                                 <td class="hide">종목상세</td>
                                 <td class="hide">현재가</td>
                                 <td>현재가</td>
-                                <td><a href="/inc/pages/stock/stockPriceChart.html" target="_blank" class="s1">stockPriceChart.html</a></td>
+                                <td><a href="/inc/pages/stock/stockPriceChart.html" target="_blank" class="s2">stockPriceChart.html</a>
+                                    <p class="memo">08-29 수정</p>
+                                    <p class="memo">08-31 footer 수정</p>
+                                </td>
                             </tr>
-                            <tr class="add">
+                            <tr>
                                 <td class="hide"></td>
                                 <td class="hide">관련태그</td>
                                 <td>상세</td>
@@ -251,9 +267,12 @@
                                 <td class="hide"></td>
                                 <td class="hide">뉴스</td>
                                 <td>뉴스<span class="pop">(팝업)</span></td>
-                                <td><a href="/inc/pages/stock/popup/newsList.html" target="_blank" class="s2">newsList.html</a></td>
+                                <td><a href="/inc/pages/stock/popup/newsList.html" target="_blank" class="s2">newsList.html</a>
+                                    <p class="memo">08-29 상세 삭제</p>
+                                    <p class="memo">08-31 디자인 변경</p>
+                                </td>
                             </tr>
-                            <tr class="add">
+                            <tr>
                                 <td class="hide"></td>
                                 <td class="hide"></td>
                                 <td>뉴스 - 상세<span class="pop">(팝업)</span></td>
@@ -263,7 +282,7 @@
                                 <td class="hide"></td>
                                 <td class="hide"></td>
                                 <td>호가<span class="pop">(팝업)</span></td>
-                                <td><a href="/inc/pages/stock/popup/stockAskingPrice.html" target="_blank" class="s1">stockAskingPrice.html</a></td>
+                                <td><a href="/inc/pages/stock/popup/stockAskingPrice.html" target="_blank" class="s2">stockAskingPrice.html</a></td>
                             </tr>
                             <tr>
                                 <td class="hide"></td>
@@ -284,87 +303,101 @@
                                 <td class="hide">카테고리??</td>
                                 <td class="hide"></td>
                                 <td>투자현황</td>
-                                <td><a href="/inc/pages/stock/popup/categoryList.html" target="_blank" class="s3">categoryList.html</a>
+                                <td><a href="/inc/pages/stock/popup/categoryList.html" target="_blank" class="s2">categoryList.html</a>
                                     <p class="memo">08-16 팝업 > 페이지로 분리</p>
                                 </td>
                             </tr> -->
                             
                             
                             <!-- transfer -->
-                            <tr id="section4">
+                            <tr id="section4" class="add">
                                 <td class="hide">이체</td>
                                 <td class="hide">이체내역</td>
                                 <td>이체내역</td>
-                                <td><a href="/inc/pages/inquiry/popup/transferList.html" target="_blank" class="s3">transferList.html</a>
-                                    <p class="memo">08-16 팝업 > 페이지로 분리 / 총 자산 삭제</p>
+                                <td><a href="/inc/pages/transfer/transferList.html" target="_blank" class="s2">transferList.html</a>
+                                    <p class="memo">08-29 조회기간 디자인 업데이트</p>
+                                </td>
+                            </tr>
+                            <tr class="add">
+                                <td class="hide"></td>
+                                <td class="hide">카카오뱅크로 내보내기</td>
+                                <td>금액입력<span class="pop">(팝업)</span></td>
+                                <td><a href="/inc/pages/transfer/popup/transferKakaoOutPrice.html" target="_blank" class="s2">transferKakaoOutPrice.html</a>
+                                    <p class="memo">08-29 디자인 업데이트</p>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="hide"></td>
-                                <td class="hide">카카오뱅크로 내보내기</td>
-                                <td>금액입력<span class="pop">(팝업)</span></td>
-                                <td><a href="/inc/pages/transfer/popup/transferKakaoOutPrice.html" target="_blank" class="s2">transferKakaoOutPrice.html</a></td>
-                            </tr>
-                            <tr>
-                                <td class="hide"></td>
                                 <td class="hide"></td>
                                 <td>비밀번호 입력<span class="pop">(팝업)</span></td>
-                                <td><span>공통 비밀번호 입력</span></td>
+                                <td><span class="s2">공통 비밀번호 입력</span></td>
                             </tr>
-                            <tr>
+                            <tr class="add">
                                 <td class="hide"></td>
                                 <td class="hide"></td>
                                 <td>완료/실패<span class="pop">(팝업)</span></td>
-                                <td><a href="/inc/pages/transfer/popup/transferKakaoOutComplete.html" target="_blank" class="s2">transferKakaoOutComplete.html</a></td>
+                                <td><a href="/inc/pages/transfer/popup/transferKakaoOutComplete.html" target="_blank" class="s2">transferKakaoOutComplete.html</a>
+                                    <p class="memo">08-29 디자인 업데이트</p>
+                                    <p class="memo">08-31 디자인 수정</p>
+                                </td>
                             </tr>     
-                            <tr>
+                            <tr class="add">
                                 <td class="hide"></td>
                                 <td class="hide">카카오뱅크에서 가져오기</td>
                                 <td>금액입력<span class="pop">(팝업)</span></td>
-                                <td><a href="/inc/pages/transfer/popup/transferKakaoInPrice.html" target="_blank" class="s2">transferKakaoInPrice.html</a></td>
+                                <td><a href="/inc/pages/transfer/popup/transferKakaoInPrice.html" target="_blank" class="s2">transferKakaoInPrice.html</a>
+                                    <p class="memo">08-29 디자인 업데이트</p>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="hide"></td>
                                 <td class="hide"></td>
                                 <td>비밀번호 입력<span class="pop">(팝업)</span></td>
-                                <td><span>공통 비밀번호 입력</span></td>
+                                <td><span class="s2">공통 비밀번호 입력</span></td>
                             </tr>
-                            <tr>
+                            <tr class="add">
                                 <td class="hide"></td>
                                 <td class="hide"></td>
                                 <td>완료/실패<span class="pop">(팝업)</span></td>
-                                <td><a href="/inc/pages/transfer/popup/transferKakaoInComplete.html" target="_blank" class="s2">transferKakaoInComplete.html</a></td>
+                                <td><a href="/inc/pages/transfer/popup/transferKakaoInComplete.html" target="_blank" class="s2">transferKakaoInComplete.html</a>
+                                    <p class="memo">08-29 디자인 업데이트</p>
+                                    <p class="memo">08-31 디자인 수정</p>
+                                </td>
                             </tr>
                                                    
                             
                             <!-- inquiry -->
-                            <tr id="section5">
+                            <tr id="section5" class="add">
                                 <td class="hide">투자현황</td>
                                 <td class="hide">보유종목</td>
                                 <td>보유종목</td>
-                                <td><a href="/inc/pages/inquiry/popup/orderList.html" target="_blank" class="s3">orderList.html</a>
-                                    <p class="memo">08-16 팝업 > 페이지로 분리</p>
+                                <td><a href="/inc/pages/inquiry/orderList.html" target="_blank" class="s2">orderList.html</a>
+                                    <p class="memo">08-29 디자인 업데이트</p>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="hide"></td>
                                 <td class="hide">주문내역</td>
                                 <td>주문내역</td>
-                                <td><a href="/inc/pages/inquiry/popup/orderList.html" target="_blank" class="s3">orderList.html</a>
-                                    <p class="memo">08-16 팝업 > 페이지로 분리</p>
+                                <td><a href="/inc/pages/inquiry/orderList.html" target="_blank" class="s2">orderList.html</a>
+                                    
                                 </td>
                             </tr>
-                            <tr>
+                            <tr class="add">
                                 <td class="hide"></td>
-                                <td class="hide">판매</td>
-                                <td>판매</td>
-                                <td><a href="/inc/pages/inquiry/popup/orderSellList.html" target="_blank" class="">orderSellList.html</a></td>
+                                <td class="hide">정정완료</td>
+                                <td>정정완료</td>
+                                <td><a href="/inc/pages/inquiry/popup/orderEditComplete.html" target="_blank" class="s2">orderEditComplete.html</a>
+                                    <p class="memo">08-31 디자인 수정</p>
+                                </td>
                             </tr>
-                            <tr>
+                            <tr class="add">
                                 <td class="hide"></td>
                                 <td class="hide">취소완료</td>
                                 <td>취소완료<span class="pop">(팝업)</span></td>
-                                <td><a href="/inc/pages/inquiry/popup/cancelOrderComplete.html" target="_blank" class="s2">cancelOrderComplete.html</a></td>
+                                <td><a href="/inc/pages/inquiry/popup/cancelOrderComplete.html" target="_blank" class="s2">cancelOrderComplete.html</a>
+                                    <p class="memo">08-31 디자인 수정</p>
+                                </td>
                             </tr>
                             
                             <!-- order -->
@@ -384,13 +417,16 @@
                                 <td class="hide"></td>
                                 <td class="hide"></td>
                                 <td>계좌 비밀번호 입력<span class="pop">(팝업)</span></td>
-                                <td><span>공통 비밀번호 입력</span></td>
+                                <td><span class="s2">공통 비밀번호 입력</span></td>
                             </tr>
-                            <tr>
+                            <tr class="add">
                                 <td class="hide"></td>
                                 <td class="hide"></td>
                                 <td>주문접수 완료<span class="pop">(팝업)</span></td>
-                                <td><a href="/inc/pages/stock/popup/buyComplete.html" target="_blank" class="s2">buyComplete.html</a></td>
+                                <td><a href="/inc/pages/stock/popup/buyComplete.html" target="_blank" class="s2">buyComplete.html</a>
+                                    <p class="memo">08-29 타이틀 수정</p>
+                                    <p class="memo">08-31 디자인 수정</p>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="hide">매도</td>
@@ -404,29 +440,34 @@
                                 <td>지정가 매도<span class="pop">(팝업)</span></td>
                                 <td><a href="/inc/pages/stock/popup/limitPriceSell.html" target="_blank" class="s1">limitPriceSell.html</a></td>
                             </tr>
-                            <tr>
+                            <tr class="add">
                                 <td class="hide"></td>
                                 <td class="hide"></td>
                                 <td>주문접수 완료<span class="pop">(팝업)</span></td>
-                                <td><a href="/inc/pages/stock/popup/sellComplete.html" target="_blank" class="s2">sellComplete.html</a></td>
+                                <td><a href="/inc/pages/stock/popup/sellComplete.html" target="_blank" class="s2">sellComplete.html</a>
+                                    <p class="memo">08-29 타이틀 수정</p>
+                                    <p class="memo">08-31 디자인 수정</p>
+                                </td>
                             </tr>
                             
                             
                                 
                             <!-- 공통 -->
-                            <tr id="section7">
+                            <tr id="section7" class="add">
                                 <td class="hide">공통</td>
                                 <td class="hide"></td>
                                 <td>팝업 공통</td>
-                                <td><a href="/inc/pages/common-pop.html" target="_blank" class="s3">common-pop.html</a>
-                                    <p class="memo">08-16 토스트 팝업 텍스트 이동 버튼 추가</p>
+                                <td><a href="/inc/pages/common-pop.html" target="_blank" class="s2">common-pop.html</a>
+                                    <p class="memo">08-29 토스트 팝업</p>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr class="add">
                                 <td class="hide"></td>
                                 <td class="hide">공지사항</td>
                                 <td>공지사항</td>
-                                <td><a href="/inc/pages/stock/stockNoti.html" target="_blank" class="s2">stockNoti.html</a></td>
+                                <td><a href="/inc/pages/stock/stockNoti.html" target="_blank" class="s2">stockNoti.html</a>
+                                    <p class="memo">08-31 footer 수정</p>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="hide"></td>
@@ -434,11 +475,13 @@
                                 <td>공지사항 - 상세<span class="pop">(팝업)</span></td>
                                 <td><a href="/inc/pages/stock/popup/stockNotiContent.html" target="_blank" class="s2">stockNotiContent.html</a></td>
                             </tr>
-                            <tr>
+                            <tr class="add">
                                 <td class="hide"></td>
                                 <td class="hide">자주묻는 질문</td>
                                 <td>자주묻는 질문</td>
-                                <td><a href="/inc/pages/stock/stockFaq.html" target="_blank" class="s2">stockFaq.html</a></td>
+                                <td><a href="/inc/pages/stock/stockFaq.html" target="_blank" class="s2">stockFaq.html</a>
+                                    <p class="memo">08-31 footer 수정</p>
+                                </td>
                             </tr>                           
                             <tr>
                                 <td class="hide"></td>
@@ -452,7 +495,7 @@
                                 <td>리스트 로딩</td>
                                 <td><a href="/inc/pages/loading-list.html" target="_blank" class="s2">loading-list.html</a></td>
                             </tr>
-                            <tr class="add">
+                            <tr>
                                 <td class="hide"></td>
                                 <td class="hide"></td>
                                 <td>비밀번호 입력<span class="pop">(팝업)</span></td>
@@ -515,7 +558,7 @@
                 var locN = $('.page-list a').length;
                 var locTemp = $('.page-list a.temp').length;
                 var locHidden = $('.page-list a.hidden').length;
-                var locEd = $('.page-list a.s2').length;
+                var locEd = $('.page-list .s2, .page-list .s3').length;
                 var locNa = locN - locTemp - locHidden;
                 $('.proc-wrap').append('<div class=\"proc\"><p>총 페이지 : <strong>' + locNa + '</strong></p><p>완료된 페이지 : <strong>' + locEd + '</strong></p></div>');
                 
@@ -531,19 +574,6 @@
                     $(activeTab).show();
                     return false;
                 });
-                
-                // $('.section ul li:first-child').addClass('on');
-                // $('.section-content').hide();
-                // $('.section-content:first').show();
-                // $('.section ul li').click(function() {
-                //     $('.section ul li').removeClass('on');
-                //     $(this).addClass('on');
-                //     $('.section-content').hide();
-                    
-                //     var activeTab = $(this).find('a').attr('href');
-                //     $(activeTab).show();
-                //     return false;
-                // });
                 
                 $(function(){
                     $('.section li a').click(function() {
