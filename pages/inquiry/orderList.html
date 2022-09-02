@@ -479,7 +479,7 @@
                 
                 $(window).scroll(function() {
                     // if ($(document).height() - win.height() == win.scrollTop()) {
-                    if($(window).scrollTop() >= $(document).height() - $(window).height()){
+                    if($(window).scrollTop() >= $(document).height() - $(window).height()-60){
                         // $('.loader').show();
                         
                         $('#list-scroll ul').append(listCont());
