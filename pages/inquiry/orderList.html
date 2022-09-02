@@ -475,11 +475,11 @@
         <!-- 08-17 무한 스크롤 스크립트 추가 -->
         <script>
             $(document).ready(function() {
-                var win = $(window);
+                // var win = $(window);
                 
-                win.scroll(function() {
+                $(window).scroll(function() {
                     // if ($(document).height() - win.height() == win.scrollTop()) {
-                    if(win.scrollTop() >= $(document).height() - win.height()){
+                    if($(window).scrollTop() >= $(document).height() - $(window).height()){
                         // $('.loader').show();
                         
                         $('#list-scroll ul').append(listCont());
