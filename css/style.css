@@ -39,6 +39,9 @@
 .section{
     margin:40px 0 0;
 }
+.section:last-child{
+    margin-bottom: 40px;
+}
 .section.gap,
 .section-swiper.gap,
 .section.gap + .section.gap{
@@ -1704,7 +1707,7 @@ p + .label-text{
     margin-top:8px;
 }
 .agree-content{
-    padding:32px 16px 120px;
+    padding:32px 16px 0;
     flex:1;
 }
 .agree-content .info{
@@ -1898,8 +1901,6 @@ p + .label-text{
 }
 .select-form{
     padding:24px;
-    overflow-y:scroll;
-    min-height:50vh;
 }
 .select-form li button{
     font-size:16px;
@@ -1969,7 +1970,10 @@ p + .label-text{
     z-index:1;
     width:100%;
 }
-
+.sheet .sheet-contents .pop-content{
+    height: 100%;
+    overflow-y: scroll;
+}
 .sheet .sheet-contents:not(.not-selectable){
     transition:transform 0.3s, height 0.3s;
 }
