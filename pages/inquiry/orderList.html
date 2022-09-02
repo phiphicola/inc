@@ -479,11 +479,11 @@
                 
                 win.scroll(function() {
                     // if ($(document).height() - win.height() == win.scrollTop()) {
-                    if($(window).scrollTop() >= $(document).height() - $(window).height()){
-                        $('.loader').show();
+                    if(win.scrollTop() >= $(document).height() - win.height()){
+                        // $('.loader').show();
                         
                         $('#list-scroll ul').append(listCont());
-                        $('.loader').hide();
+                        // $('.loader').hide();
                     }
                 })
             })
