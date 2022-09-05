@@ -441,6 +441,26 @@ div + .wrap-btn{
 .loading-container{
     padding:0 16px
 }
+.loading-spinner{
+    background:rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.loading-spinner svg{
+    width:24px;
+    height: 24px;
+    fill: none;
+    stroke: #fff;
+    stroke-width: 12;
+    stroke-linecap: round;
+}
 .loading-list li + li{
     margin-top:24px
 }
