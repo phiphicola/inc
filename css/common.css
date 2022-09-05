@@ -452,6 +452,7 @@ div + .wrap-btn{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 100;
 }
 .loading-spinner svg{
     width:24px;
