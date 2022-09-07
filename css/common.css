@@ -91,7 +91,7 @@ header .btn-share{
     justify-content: space-between;
     height: 100%;
     width: 100%;
-    overflow: hidden;
+    
     transform: translate3d(0,0,0);
     -webkit-transform: translateZ(0);
 }
