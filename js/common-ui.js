@@ -447,13 +447,12 @@ function bottomSheet() {
 function checkMobile(){
  
     var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
-    const btnFix = document.getElementsByClassName('wrap-btn-fixed')
     if ( varUA.indexOf('android') > -1) {
         //안드로이드
         return "android";
     } else if ( varUA.indexOf("iphone") > -1||varUA.indexOf("ipad") > -1||varUA.indexOf("ipod") > -1 ) {
         //IOS
-        btnFix.classList.add('ios')
+        document.body.classList.add('ios')
         return "ios";
     } 
     
