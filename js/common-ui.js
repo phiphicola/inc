@@ -7,6 +7,7 @@ $(function(){
     accordion();
     accordion2();
     bottomSheet();
+    checkMobile();
     // listDrag();
 })
 // 이벤트 배너
