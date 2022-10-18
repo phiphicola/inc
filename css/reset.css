@@ -18,9 +18,12 @@
     src:url(/inc/font/Pretendard-Bold.woff) format('woff'),url(/inc/font/Pretendard-Bold.woff2) format('woff2');
 }
 
-*{-webkit-tap-highlight-color:transparent;outline:0;}
+*{-webkit-tap-highlight-color:transparent;outline:0;-webkit-user-select: none}
 *,*::before,*::after{
     box-sizing:border-box;    
+}
+input,textarea{
+    -webkit-user-select: auto;
 }
 html{
     line-height:1.4;
