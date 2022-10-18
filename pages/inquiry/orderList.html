@@ -46,9 +46,9 @@
                                 <!-- <div class="stock-steady">
                                     <span class="won"><span>900,000</span>원</span><span class="per">(20%)</span>
                                 </div> -->
-                                <div class="account-copy" id="accountCopy">
+                                <div class="account-copy">
                                     <input type="hidden" id="iptAccount">
-                                    <button type="button">1234567-01(위탁계z좌) 복사</button>
+                                    <button type="button" id="accountCopy">1234567-01(위탁계z좌) 복사</button>
                                 </div>
                                 <div class="summary">
                                     <dl>
@@ -473,6 +473,7 @@
         </div>
         <!-- // slide-popup -->
         
+        <div id="toast-popup"></div>
         <!-- 08-17 무한 스크롤 스크립트 추가 -->
         <script>
             $(document).ready(function() {
@@ -487,6 +488,22 @@
                         $('.loader').hide();
                     }
                 })
+
+                $('#accountCopy').on('click', function() {
+                    $('#iptAccount').attr('type', 'text');
+                    $('#iptAccount').select();
+
+                    var copyText = document.execCommand('copy');
+                    $('#iptAccount').attr('type', 'hidden');
+
+                    toast({
+                        message: "복사됨",
+                        type: "center",
+                        duration: 1000
+                    })
+                });
+
+                
             })
             function listCont() {
                 var el =  [   

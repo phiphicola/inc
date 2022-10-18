@@ -8,7 +8,6 @@ $(function(){
     accordion2();
     bottomSheet();
     checkMobile();
-    accoutCopy();
     // listDrag();
 })
 // 이벤트 배너
@@ -184,15 +183,6 @@ function popupFunc () {
     })
 }
 
-function accoutCopy () {
-    $('#accountCopy').on('click', function() {
-        $('#iptAccount').attr('type', 'text');
-        $('#iptAccount').select();
-
-        var copyText = document.execCommand('copy');
-        $('#iptAccount').attr('type', 'hidden');
-     });
-}
 // 토스트 팝업 스크립트
 function toast({title = '', message = '', type = 'info', duration = 3000, btns = ''}) {
     const main = document.getElementById('toast-popup')
@@ -468,4 +458,3 @@ function checkMobile(){
     } 
     
 }
-
