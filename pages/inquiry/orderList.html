@@ -47,7 +47,7 @@
                                     <span class="won"><span>900,000</span>원</span><span class="per">(20%)</span>
                                 </div> -->
                                 <div class="account-copy">
-                                    <input type="hidden" id="iptAccount">
+                                    <span id="iptAccount"></span>
                                     <button type="button" id="accountCopy">1234567-01(위탁계z좌) 복사</button>
                                 </div>
                                 <div class="summary">
@@ -490,11 +490,11 @@
                 })
 
                 $('#accountCopy').on('click', function() {
-                    $('#iptAccount').attr('type', 'text');
-                    // $('#iptAccount').select();
+                    // $('#iptAccount').attr('type', 'text');
+                    $('#iptAccount').select();
 
                     var copyText = document.execCommand('copy');
-                    $('#iptAccount').attr('type', 'hidden');
+                    // $('#iptAccount').attr('type', 'hidden');
 
                     toast({
                         message: "복사됨",
