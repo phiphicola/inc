@@ -23,8 +23,8 @@
     box-sizing:border-box;    
 }
 input,textarea{
-    -webkit-user-select: auto;
-    user-select: auto;
+    -webkit-user-select: text;
+    user-select: text;
 }
 html{
     line-height:1.4;
