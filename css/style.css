@@ -252,12 +252,14 @@ section + section{
     align-items:center;
     justify-content:center;
     background-color:#f7f7f7;
-    overflow:hidden;
+    /* overflow:hidden; */
 }
 .stock-icon img{
     object-fit:cover;
     width:100%;
     height:100%;
+    max-width:initial;
+    clip-path: circle(50px);
 }
 .stock-icon span{
     width:20px;
