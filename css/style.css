@@ -275,8 +275,8 @@ section + section{
     padding:32px 16px 60px 16px;
     text-align:center;
     background-color:#f7f7f7;
-    padding-bottom calc(constant(safe-area-inset-bottom) + 30px);
-    padding-bottom calc(env(safe-area-inset-bottom) + 30px);
+    padding-bottom: calc(constant(safe-area-inset-bottom) + 34px);
+    padding-bottom: calc(env(safe-area-inset-bottom) + 34px);
 }
 .bottom-content .info-text{
     font-size:13px;
