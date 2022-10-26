@@ -2,7 +2,7 @@
 <html lang="ko">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no">
+        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no,viewport-fit=cover">
         <title>한국투자증권</title>               
         <link rel="stylesheet" href="/inc/css/swiper-bundle.min.css">
         <link rel="stylesheet" href="/inc/css/style.css">        
@@ -26,11 +26,33 @@
                 </div>
             </section>
             
+            <section class="section-swiper">
+                <div class="swiper main-slider">
+                    <div class="swiper-wrapper main-card">
+                        <div class="swiper-slide card">
+                            <a href="#">
+                                <p>코스피 &#x1F1F0;&#x1F1F7;</p>
+                                <strong class="price color-plus">2,243.70</strong>
+                                <div class="stock-increase"><span>+99.99</span>%</div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide card">
+                            <a href="#">
+                                <p>코스피200 &#x1F1F0;&#x1F1F7;</p>
+                                <strong class="price color-minus">2,243.70</strong>
+                                <div class="stock-decrease"><span>-99.99</span>%</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // 배너 -->
+            
             <section class="section">
                 <div class="section-inner">
                     <div class="title-wrap">
-                        <h2>관심종목</h2>
-                        <div class="text-sm ml-auto"><button type="button" class="filter" data-layer-href="slide-popup">등락률 높은순</button></div>
+                        <h2>조회 BEST</h2>
+                        <div class="text-sm ml-auto">KOSPI</div>
                     </div>
                     <div class="list-stock">
                         <ul>
@@ -38,93 +60,104 @@
                                 <a href="#" title="종목명">
                                     <div class="stock-icon"><img src="/inc/img/dummy-bank.png" alt=""></div>
                                     <div class="stock-name">
-                                        <div class="stock-title">삼성전자</div>
-                                        <p class="price text-sm"><span>59,333</span>원</p>
-                                    </div>
-                                    <div class="stock-per">
-                                        <div class="stock-increase"><span>99.99</span>%</div> <!-- 상승 -->
-                                        <!-- <div class="stock-decrease"><span>99.99</span>%</div> --> <!-- 하락 -->
-                                        <!-- <div class="stock-steady"><span>99.99</span>%</div> --> <!-- 보합 -->
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" title="종목명">
-                                    <div class="stock-icon"><span>카카오뱅크</span></div>
-                                    <div class="stock-name">
                                         <div class="stock-title">카카오뱅크</div>
-                                        <p class="price text-sm"><span>59,333</span>원</p>
-                                    </div>
-                                    <div class="stock-per">
-                                        <!-- <div class="stock-increase"><span>99.99</span>%</span> --> <!-- 상승 -->
-                                        <div class="stock-decrease"><span>99.99</span>%</div> <!-- 하락 -->
-                                        <!-- <div class="stock-steady"><span>99.99</span>%</div> --> <!-- 보합 -->
+                                        <div class="flex-start">
+                                            <p class="price text-sm"><span>59,333</span>원</p>
+                                            <div class="stock-per">
+                                                <!-- <div class="stock-increase"><span>+99.99</span>%</div> --> <!-- 상승 -->
+                                                <!-- <div class="stock-decrease"><span>-99.99</span>%</div> --> <!-- 하락 -->
+                                                <div class="stock-steady"><span>99.99</span>%</div> <!-- 보합 -->
+                                            </div>
+                                        </div>
                                     </div>
                                 </a>
+                                <div class="favorite">
+                                    <button type="button"><span class="ir">관심종목</span></button>
+                                </div>
                             </li>
                             <li>
                                 <a href="#" title="종목명">
                                     <div class="stock-icon"><span>삼성전자</span></div>
                                     <div class="stock-name">
                                         <div class="stock-title">삼성전자</div>
-                                        <p class="price text-sm"><span>59,333</span>원</p>
-                                    </div>
-                                    <div class="stock-per">
-                                        <div class="stock-increase"><span>99.99</span>%</span> <!-- 상승 -->
-                                        <!-- <div class="stock-decrease"><span>99.99</span>%</div> --> <!-- 하락 -->
-                                        <!-- <div class="stock-steady"><span>99.99</span>%</div> --> <!-- 보합 -->
+                                        <div class="flex-start">
+                                            <p class="price text-sm"><span>59,333</span>원</p>
+                                            <div class="stock-per">
+                                                <div class="stock-increase"><span>+99.99</span>%</div> <!-- 상승 -->
+                                                <!-- <div class="stock-decrease"><span>-99.99</span>%</div> --> <!-- 하락 -->
+                                                <!-- <div class="stock-steady"><span>99.99</span>%</div> --> <!-- 보합 -->
+                                            </div>
+                                        </div>
                                     </div>
                                 </a>
+                                <div class="favorite">
+                                    <button type="button"><span class="ir">관심종목</span></button>
+                                </div>
                             </li>
                             <li>
                                 <a href="#" title="종목명">
                                     <div class="stock-icon"><span>카카오뱅크</span></div>
                                     <div class="stock-name">
                                         <div class="stock-title">카카오뱅크</div>
-                                        <p class="price text-sm"><span>59,333</span>원</p>
-                                    </div>
-                                    <div class="stock-per">
-                                        <!-- <div class="stock-increase"><span>99.99</span>%</div> --> <!-- 상승 -->
-                                        <div class="stock-decrease"><span>99.99</span>%</div> <!-- 하락 -->
-                                        <!-- <div class="stock-steady"><span>99.99</span>%</div> --> <!-- 보합 -->
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" title="종목명">
-                                    <div class="stock-icon"><span>삼성전자</span></div>
-                                    <div class="stock-name">
-                                        <div class="stock-title">삼성전자</div>
-                                        <p class="price text-sm"><span>59,333</span>원</p>
-                                    </div>
-                                    <div class="stock-per">
-                                        <div class="stock-increase"><span>99.99</span>%</span> <!-- 상승 -->
-                                        <!-- <div class="stock-decrease"><span>99.99</span>%</div> --> <!-- 하락 -->
-                                        <!-- <div class="stock-steady"><span>99.99</span>%</div> --> <!-- 보합 -->
+                                        <div class="flex-start">
+                                            <p class="price text-sm"><span>59,333</span>원</p>
+                                            <div class="stock-per">
+                                                <!-- <div class="stock-increase"><span>+99.99</span>%</div> --> <!-- 상승 -->
+                                                    <div class="stock-decrease"><span>-99.99</span>%</div> <!-- 하락 -->
+                                                    <!-- <div class="stock-steady"><span>99.99</span>%</div> --> <!-- 보합 -->
+                                            </div>
+                                        </div>
                                     </div>
                                 </a>
+                                <div class="favorite">
+                                    <button type="button"><span class="ir">관심종목</span></button>
+                                </div>
                             </li>
                             <li>
                                 <a href="#" title="종목명">
                                     <div class="stock-icon"><span>카카오뱅크</span></div>
                                     <div class="stock-name">
                                         <div class="stock-title">카카오뱅크</div>
-                                        <p class="price text-sm"><span>59,333</span>원</p>
-                                    </div>
-                                    <div class="stock-per">
-                                        <!-- <div class="stock-increase"><span>99.99</span>%</div> --> <!-- 상승 -->
-                                        <div class="stock-decrease"><span>99.99</span>%</div> <!-- 하락 -->
-                                        <!-- <div class="stock-steady"><span>99.99</span>%</div> --> <!-- 보합 -->
+                                        <div class="flex-start">
+                                            <p class="price text-sm"><span>59,333</span>원</p>
+                                            <div class="stock-per">
+                                                <!-- <div class="stock-increase"><span>+99.99</span>%</div> --> <!-- 상승 -->
+                                                    <div class="stock-decrease"><span>-99.99</span>%</div> <!-- 하락 -->
+                                                    <!-- <div class="stock-steady"><span>99.99</span>%</div> --> <!-- 보합 -->
+                                            </div>
+                                        </div>
                                     </div>
                                 </a>
+                                <div class="favorite">
+                                    <button type="button"><span class="ir">관심종목</span></button>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" title="종목명">
+                                    <div class="stock-icon"><span>카카오뱅크</span></div>
+                                    <div class="stock-name">
+                                        <div class="stock-title">카카오뱅크</div>
+                                        <div class="flex-start">
+                                            <p class="price text-sm"><span>59,333</span>원</p>
+                                            <div class="stock-per">
+                                                <!-- <div class="stock-increase"><span>+99.99</span>%</div> --> <!-- 상승 -->
+                                                    <div class="stock-decrease"><span>-99.99</span>%</div> <!-- 하락 -->
+                                                    <!-- <div class="stock-steady"><span>99.99</span>%</div> --> <!-- 보합 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="favorite">
+                                    <button type="button"><span class="ir">관심종목</span></button>
+                                </div>
                             </li>
                         </ul>
                     </div>
                     <!-- // list-stock -->
                 </div>
             </section>
-            <div class="wrap-btn-fixed">
-                <button type="button" class="btn-lg bg-primary">서비스 신청하기</button>
+            <div class="wrap-btn-sticky">
+                <button type="button" class="btn-lg bg-primary">신청하기</button>
             </div>
         </div>
         <!-- // contents -->

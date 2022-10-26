@@ -2,7 +2,7 @@
 <html lang="ko">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no">
+        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no,viewport-fit=cover">
         <title>한국투자증권</title>    
         <link rel="stylesheet" href="/inc/css/style.css">
         <script type="text/javascript" src="/inc/js/jquery-3.6.0.min.js"></script>
@@ -20,9 +20,10 @@
         
         <div class="contents">
             <div class="service-info">
+                <h2 class="logos"><span class="ir">한국투자증권 x 카카오뱅크</span></h2> <!-- 2022-10-05 추가 -->
                 <div class="service-text">
                     <strong>서비스를 해지하시면</strong><br />
-                    카카오뱅크 시스템 이용이 불가합니다.
+                    국내주식투자 이용이 불가합니다.
                 </div>
                 <div class="title-sub">정말로 해지하시겠어요?</div>                
             </div>
@@ -41,17 +42,39 @@
                             </dl>
                         </div>
                     </div>
-                </div>
-                <div class="info-content">
-                    <div class="info-tit">서비스해지유의사항</div>
-                    <p class="sub-txt">국내주식서비스 이용은 카카오뱅크 제휴계좌만이용신청이 가능하고, 1인 1계좌만 가입 가능합니다. 그외 자세한 사항은 OOO설명서를 참고해주세요.</p>
-                </div>
+                </div>                
             </div>
             <div class="wrap-btn-fixed">
-                <button type="button" class="btn-lg btn-confirm btn-line">아니요.</button>
-                <button type="button" class="btn-lg bg-primary">예, 해지할게요.</button>
+                <button type="button" class="btn-lg btn-confirm btn-line">아니요</button>
+                <button type="button" class="btn-lg bg-primary" data-layer-href="slide-pop-cancel">예, 해지할게요</button>
             </div>
         </div>
         <!-- // contents -->
+        
+        <!-- slide-popup -->
+        <div id="layer-pop" class="layer-pop" slide-pop-cancel>
+            <div class="slide-content">
+                <div class="pop-info-tit">정말로 서비스를 해지하시겠어요?</div>
+                <div class="pop-content">                    
+                    <div class="trade-list">       
+                        <div class="list-wrap">
+                            <p class="pop-text-cont">
+                                서비스를 해지한 후에도 고객님의 계좌는 한국투자증권 모바일 앱에서 계속 사용할 수 있으며, 잔고&middot;내역을 포함한 거래신청정보는 유지됩니다.
+                            </p>
+                            <p class="pop-text-cont">
+                                <img class="img-logo" src="/inc/img/logos.svg" alt="카카오뱅크X한국투자">국내주식투자를 더 이상 이용하지 않으시려면 확인 버튼을 선택해주세요.
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="wrap-btn">
+                    <button type="button" class="btn-lg btn-line btn-confirm" data-layer-close>아니요</button>
+                    <button type="button" class="btn-lg bg-primary">예, 해지할게요</button>
+                </div>
+            </div>
+            <div class="dim"></div>
+        </div>
+        <!-- // slide-popup -->
     </body>
 </html>

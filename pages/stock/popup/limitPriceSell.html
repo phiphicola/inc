@@ -2,7 +2,7 @@
 <html lang="ko">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no">
+        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no,viewport-fit=cover">
         <title>한국투자증권</title>               
         <link rel="stylesheet" href="/inc/css/swiper-bundle.min.css">
         <link rel="stylesheet" href="/inc/css/style.css">        
@@ -16,6 +16,14 @@
             <div class="header-pop">
                 <div class="header-inner">
                     <button type="button" class="btn-close-pop" data-layer-close><span class="ir">닫기</span></button>
+                    <div class="header-stock">
+                        <strong class="stock-name">LG생활건강</strong>
+                        <div class="stock-per">
+                        <!-- <div class="stock-increase"><span class="price"><strong>59,333</strong>원</span><span>(+99.99</span>%)</div> --> <!-- 상승 -->
+                            <div class="stock-decrease"><span class="price"><strong>59,333</strong>원</span>(<span>-99.99</span>%)</div> <!-- 하락 -->
+                            <!-- <div class="stock-steady"><span class="price"><strong>59,333</strong>원</span>(<span>99.99</span>%)</div> --> <!-- 보합 -->
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- // header -->
@@ -34,7 +42,7 @@
                             <div class="output">
                                 <span class="screen">5</span><span>주</span>
                             </div>
-                            <div class="label-text">매도금액:<span>123,456,789</span>원</div>
+                            <div class="label-text">예상 매도금액:<span>123,456,789</span>원</div>
                             <div class="label-text color-red">매도가능 주수를 초과하였습니다.</div>
                             <div class="text-line"><span>30</span>주 가능</div>
                         </div>                    
@@ -60,7 +68,7 @@
                 
                 <div class="wrap-btn-fixed">
                     <!-- 활성화 disabled 삭제 -->
-                    <button type="button" class="btn-lg bg-buy" disabled>매도하기</button>
+                    <button type="button" class="btn-lg bg-sell" disabled>매도하기</button>
                 </div>
             </div>
             <!-- // contents -->

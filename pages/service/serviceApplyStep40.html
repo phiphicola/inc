@@ -2,7 +2,7 @@
 <html lang="ko">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no">
+        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no,viewport-fit=cover">
         <title>한국투자증권</title>    
         <link rel="stylesheet" href="/inc/css/style.css">
         <script type="text/javascript" src="/inc/js/jquery-3.6.0.min.js"></script>
@@ -10,7 +10,7 @@
         <script type="text/javascript" src="/inc/js/common-ui.js"></script>
     </head>
     <body class="bg-gray">
-        <header>
+        <header class="bg-header"> <!-- 10-24 class 추가 -->
             <div class="header-inner">
                 <button type="button" class="btn-prev"><span class="ir">이전</span></button>
                 <h1 class="header-title-center">이용신청 및 약관동의</h1>
@@ -32,43 +32,63 @@
                 
                 <div class="agree-box">
                     <div class="chk-sub">                        
-                        <div class="agree-list accordion2">
+                        <div class="agree-list"><!-- 2022-09-16 accordion2 삭제 -->
                             <div class="chk-top">
                                 <div class="form-group">
                                     <input type="checkbox" id="chk">
                                     <label for="chk">이용설명서 및 약관</label>
                                 </div>
-                                <button type="button" class="btn-select"><span class="ir">열기</span></button>
+                                <!-- 2022-09-16 버튼 삭제 -->
                             </div>
                             <ul class="agree-check">
-                                <li><a href="#" class="btn-text-link">계좌개설 주요약관</a></li>
-                                <li><a href="#" class="btn-text-link">수익증권 저축약관</a></li>
-                                <li><a href="#" class="btn-text-link">국내주식 주요 약관 및 설명서</a></li>
+                                <!-- 2022-09-19 체크박스 추가 -->
+                                <li>
+                                    <div class="form-group">
+                                        <input type="checkbox" id="agree-chk1">
+                                        <label for="agree-chk1">계좌개설 주요약관</label>
+                                    </div>
+                                    <button type="button" class="btn-link"><span class="ir">열기</span></button>
+                                </li>
+                                <li>
+                                    <div class="form-group">
+                                        <input type="checkbox" id="agree-chk2">
+                                        <label for="agree-chk2">수익증권 저축약관</label>
+                                    </div>
+                                    <button type="button" class="btn-link"><span class="ir">열기</span></button>
+                                </li>
+                                <li>
+                                    <div class="form-group">
+                                        <input type="checkbox" id="agree-chk3">
+                                        <label for="agree-chk3">국내주식 주요 약관 및 설명서</label>
+                                    </div>
+                                    <button type="button" class="btn-link"><span class="ir">열기</span></button>
+                                </li>
+                                <!-- // 2022-09-19 체크박스 추가 -->
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="agree-box">
                     <div class="chk-sub">                        
-                        <div class="agree-list accordion2">
+                        <div class="agree-list"><!-- 2022-09-16 accordion2 삭제 -->
                             <div class="chk-top">
                                 <div class="form-group">
                                     <input type="checkbox" id="chk2">
                                     <label for="chk2">개인(신용)정보 수집&middot;이용 동의</label>
                                 </div>
-                                <button type="button" class="btn-select"><span class="ir">열기</span></button>
+                                <button type="button" class="btn-link"><span class="ir">열기</span></button><!-- 2022-09-16 클래스 변경 -->
                                 <p class="sm-text">개인(신용)정보 수집&middot;이용 동의서(금융거래시)</p>
                             </div>
                             <ul class="agree-check">
                                 <li>
                                     <div class="form-group">
-                                        <input type="checkbox" id="chk-s1-1" class="chk-sub">
+                                        <input type="checkbox" id="chk-s1-1" class="inp-sub"><!-- 2022-09-16 클래스 변경 -->
                                         <label for="chk-s1-1"><span class="chk-sm">미동의</span>고유식별정보에 관한 사항</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-group">
-                                        <input type="checkbox" id="chk-s1-2" class="chk-sub">
+                                        <input type="checkbox" id="chk-s1-2" class="inp-sub"><!-- 2022-09-16 클래스 변경 -->
                                         <label for="chk-s1-2"><span class="chk-sm">미동의</span>수집&middot;이용에 관한사항</label>
                                     </div>
                                 </li>
@@ -91,42 +111,42 @@
                 </div>
                 <div class="agree-box">
                     <div class="chk-sub">                        
-                        <div class="agree-list accordion2">
+                        <div class="agree-list"><!-- 2022-09-16 accordion2 삭제 -->
                             <div class="chk-top">
                                 <div class="form-group">
                                     <input type="checkbox" id="chk4">
                                     <label for="chk4">(선택)고객편의서비스 제공에 관한 개인정보 수집&middot;이용동의</label>
                                 </div>
-                                <button type="button" class="btn-select"><span class="ir">열기</span></button>
-                                <p class="sm-text color-blue">개인(신용)정보 수집&middot;이용 동의서(금융거래시)</p>
+                                <button type="button" class="btn-link"><span class="ir">열기</span></button><!-- 2022-09-16 클래스 변경 -->
+                                <p class="sm-text color-blue">미동의하면 국내주식 혜택을 받을 수 없어요</p> <!-- 10-24 문구변경 -->
                             </div>
                             <ul class="agree-check">
                                 <li>
                                     <div class="form-group">
-                                        <input type="checkbox" id="chk-s2-1" class="chk-sub">
+                                        <input type="checkbox" id="chk-s2-1" class="inp-sub"><!-- 2022-09-16 클래스 변경 -->
                                         <label for="chk-s2-1"><span class="chk-sm">미동의</span>수집&middot;이용에 관한사항</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-group">
-                                        <input type="checkbox" id="chk-s2-2" class="chk-sub">
+                                        <input type="checkbox" id="chk-s2-2" class="inp-sub"><!-- 2022-09-16 클래스 변경 -->
                                         <label for="chk-s2-2"><span class="chk-sm">미동의</span>광고성 정보의 수신 동의</label>
                                     </div>
                                     <div class="flex-box">
                                         <div class="form-group">
-                                            <input type="checkbox" id="chk-s2-1-1">
+                                            <input type="checkbox" id="chk-s2-1-1" class="inp-sub"><!-- 2022-09-16 클래스 추가 -->
                                             <label for="chk-s2-1-1">전화</label>
                                         </div>
                                         <div class="form-group">
-                                            <input type="checkbox" id="chk-s2-1-2">
+                                            <input type="checkbox" id="chk-s2-1-2" class="inp-sub"><!-- 2022-09-16 클래스 추가 -->
                                             <label for="chk-s2-1-2">이메일</label>
                                         </div>
                                         <div class="form-group">
-                                            <input type="checkbox" id="chk-s2-1-3">
+                                            <input type="checkbox" id="chk-s2-1-3" class="inp-sub"><!-- 2022-09-16 클래스 추가 -->
                                             <label for="chk-s2-1-3">SMS</label>
                                         </div>
                                         <div class="form-group">
-                                            <input type="checkbox" id="chk-s2-1-4">
+                                            <input type="checkbox" id="chk-s2-1-4" class="inp-sub"><!-- 2022-09-16 클래스 추가 -->
                                             <label for="chk-s2-1-4">우편물</label>
                                         </div>
                                     </div>

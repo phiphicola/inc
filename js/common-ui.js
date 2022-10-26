@@ -1,29 +1,30 @@
 $(function(){
     clearBtn();
     tabs();
-    fixedBg();
+    titBlur();
     fixedCont();
     popupFunc();
+    tooltipFunc();
     accordion();
-    accordion2();
     bottomSheet();
-    checkMobile();
-    // listDrag();
+    checkOS();
 })
+
 // 이벤트 배너
 $(document).ready(function() {
     var swiper = new Swiper('.banner-slider', {
-        slidesPerView: 'auto',
-        spaceBetween: 8,
-        centeredSlides: true
+        slidesPerView:'auto',
+        spaceBetween:8,
+        centeredSlides:true
     });
 });
 
 // 카테고리 배너
 $(document).ready(function() {
-    var swiper = new Swiper('.category-slider', {
-        slidesPerView: 'auto',
-        spaceBetween: 8,
+    var swiper = new Swiper('.main-slider, .category-slider', {
+        slidesPerView:'auto',
+        spaceBetween:8,
+        watchSlidesProgress:true
     });
 });
 
@@ -43,6 +44,18 @@ $(function(){
     });
 });
 
+// 숫자 버튼 누를때 효과
+$(function(){
+    $('.input-buttons button').on('touchstart', function() {
+        $(this).addClass('active');
+    });
+    
+    $('.input-buttons button').on('touchend', function() {
+        $(this).removeClass('active');
+    });
+});
+
+// 공지사항 있을때 버튼 배경색 바뀜
 $(function(){
     var fixButton = $('.wrap-btn-sticky');
     var elHeight = $('.notice-wrap').outerHeight();
@@ -57,33 +70,15 @@ $(function(){
     });
 });
 
+// 계좌상세 더보기
 $(function(){
-    var blurTitle = $('.header-title-left.blur');
-    var hederHeight = $('header').outerHeight();
-    $(window).scroll(function() {
-        var scroll = $(window).scrollTop();
-        var val = hederHeight;
-        var valPercent = (scroll / val);
-        // console.log(valPercent)
-            blurTitle.css({
-                "opacity" : valPercent
-            });
+    $('.viewhide .more-view').on('click', function() {
+        $('.viewhide').find('.add-list').show();
+        $(this).hide();
     });
 });
 
-
-
-$(function(){
-    $('.chk-sub').on('change', function() {
-        if($(this).is(':checked')) {
-            $(this).next('label').find('.chk-sm').text('동의');            
-        } else {
-            $(this).next('label').find('.chk-sm').text('미동의');
-        }
-    })
-    
-});
-
+// 인풋 포커스 시 버튼 따라올라옴 방지
 $(function(){
     var fixBtn = $('.wrap-btn-fixed');    
     $('.input-type').on('focus', function() {
@@ -94,6 +89,28 @@ $(function(){
     })
     
 });
+
+$(function(){
+    $('iframe').on('load', function() {
+        var iHeight = $(this).contents().find('body')[0].scrollHeight;
+        $(this).attr("height", iHeight);
+    })
+});
+
+// 타이틀 블러
+function titBlur () {
+    var blurTitle = $('.blur');
+    var hederHeight = $('header').outerHeight();
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        var val = hederHeight;
+        var valPercent = (scroll / val);
+        // console.log(valPercent)
+            blurTitle.css({
+                "opacity" :valPercent
+            });
+    });
+}
 
 // 검색 삭제
 function clearBtn () {
@@ -119,21 +136,6 @@ function tabs () {
     });
 }
 
-// 공지사항 있을때 버튼 배경색 바뀜
-function fixedBg () {
-    var fixButton = $('.wrap-btn-sticky');
-    var elHeight = $('.notice-section').outerHeight();
-    $(window).scroll(function() {
-        var scroll = $(window).scrollTop();
-        var val = $(document).height() - $(window).height() - elHeight;
-        if  (scroll >= val) {
-            fixButton.addClass('bg-gray2');
-        }else {
-            fixButton.removeClass('bg-gray2');
-        }
-    });    
-}
-
 // 호가 정보 스크롤 시 디자인 변경
 function fixedCont () {
     var fixRate = $('.rate-container.fix');
@@ -156,40 +158,60 @@ function accordion () {
         return false;
      });
 }
-
-function accordion2 () {
-    $('.accordion2 .btn-select').on('click', function() {
-        $(this).parents('.chk-top').toggleClass('on');
-    });
-}
-
-
 //레이어 팝업
 function popupFunc () {
     var openFunc = $('[data-layer-href]');
     openFunc.on('click', function(){
         var layerHref = $(this).attr('data-layer-href');
-        $('[' + layerHref + ']').addClass('popup-open');
-        $('[' + layerHref + ']').attr('tabindex',0).focus();
+        if ($('[' + layerHref + ']').hasClass('full-pop')) {
+            $('[' + layerHref + ']').addClass('full-popup-open');  
+        } else {
+            $('[' + layerHref + ']').addClass('popup-open');    
+        }        
+        $('[' + layerHref + ']').attr('tabindex', ++tabIndex).focus();
         $('body').addClass('hidden');
         return false;
     })
     
-    var closeFunc = $('[data-layer-close], .dim');
+    var closeFunc = $('[data-layer-close], .dim, .select-form li button');
     closeFunc.on('click', function(){
-        $(this).closest('.layer-pop, .full-pop').removeClass('popup-open');
+        $(this).closest('.layer-pop, .full-pop').removeClass(['popup-open','full-popup-open' ]);
         $(this).closest('.layer-pop, .full-pop').removeAttr('tabindex');
-        $('body').removeClass('hidden');
+        popUtil.decreaseTabIndex();
     })
+}
+
+//툴팁
+function tooltipFunc () {
+    var openTrigger = $('.tooltip-cont .btn-trigger');
+    openTrigger.on('click', function(e){
+        $(this).next('.tooltip-view').toggleClass('open');
+        e.stopPropagation();
+    })    
+    $('body').on('click', function(){
+        openTrigger.next('.tooltip-view').removeClass('open');
+    })
+}
+
+function scrCenter() {
+    const winHeight = document.getElementById('scrollCeter')
+    winHeight.scrollIntoView({block:'center'})
 }
 
 // 토스트 팝업 스크립트
 function toast({title = '', message = '', type = 'info', duration = 3000, btns = ''}) {
+    
+    if($('#toast-popup').length == 0){
+		$(".contents").append('<div id="toast-popup"></div>');
+	}
+	
     const main = document.getElementById('toast-popup')
+    
     if (main) {
         const toast = document.createElement('div')        
         const autoRemoveId = setTimeout(function () {
             main.removeChild(toast)
+            main.classList.remove('show')
         }, duration + 1000)
         
         toast.onclick = function (e) {
@@ -204,6 +226,7 @@ function toast({title = '', message = '', type = 'info', duration = 3000, btns =
         toast.classList.add('toast', `toast-${type}`)
         toast.style.animation = `slideInBottom ease .3s, fadeOut linear 1s ${delay}s forwards`
         
+        
         toast.innerHTML = `
             <div class="toast-body">
                 <h3 class="toast-title">${title}</h3>
@@ -212,15 +235,13 @@ function toast({title = '', message = '', type = 'info', duration = 3000, btns =
             ${btns}             
         `
     main.appendChild(toast)
+    main.classList.add('show')
     }
 }
 
-
 // 터치 바텀 시트
 function bottomSheet() {
-    const bottomSheetCont = $('.sheet')
-    
-    
+    const bottomSheetCont = $('.sheet')  
     if (bottomSheetCont.length) {
         const $ = document.querySelector.bind(document)
         const openSheetButton = $('.open-sheet')
@@ -250,17 +271,6 @@ function bottomSheet() {
         const setIsSheetShow = (value) => {
             targetSheet.setAttribute('aria-hidden', String(!value))
         }
-
-        // openSheetButton.addEventListener('click', () => {
-        //     setSheetHeight(Math.min(50, 720 / window.innerHeight * 100))
-        //     setIsSheetShow(true)
-        //     document.body.classList.add('hidden')
-        // })
-
-        // sheet.querySelector('.dim').addEventListener('click', () => {
-        //     setIsSheetShow(false)
-        //     document.body.classList.remove('hidden')
-        // })
         
         jQuery('.open-sheet').on('click', function () {
             var openSheetHref = jQuery(this).attr('data-sheet-trigger');
@@ -270,6 +280,7 @@ function bottomSheet() {
             targetSheetContents = $targetSheetContents[0];
             $targetSheetDrag = $targetSheet.find('.draggable-area');
             targetSheetDrag = $targetSheetDrag[0];
+            
             
             setSheetHeight(Math.min(50, 720 / window.innerHeight * 100))
             setIsSheetShow(true)
@@ -285,13 +296,13 @@ function bottomSheet() {
             window.addEventListener('touchend', onDragEnd)
         })
         
-        jQuery('.sheet .dim').on('click', function () {
+        jQuery('.sheet .dim, .sheet').on('click', function () {
             setIsSheetShow(false)
             document.body.classList.remove('hidden')
         })
 
         const touchPosition = (event) => 
-            event.touches ? event.touches[0] : event
+            event.touches ? event.touches[0] :event
             
         let dragPosition
 
@@ -331,130 +342,25 @@ function bottomSheet() {
     }
 }
 
+function autoFrameHeight () {
+    $('.terms-import iframe').on('load', function(){
+        if(this.contentDocument) {
+            $(this).height(this.contentDocument.documentElement.scrollHeight);
+        } else {
+            $(this).height(this.contentWindow.document.body.scrollHeight);
+        }
+    })
+}
 
-// function listDrag() {
-
-
-//     const listDragContent = $('.list-drag');
-
-//         const list = document.querySelector('.list-drag')
-//         const listItems = document.querySelectorAll('.list-item')
-//         const listHidden = document.querySelector('.list-hidden')
+// os체크
+function checkOS() {
+    var varUA = navigator.userAgent.toLocaleLowerCase();
         
-//         // let dragIndex, dragSource
-    
-//         const getMouseOffset = (evt) => {
-//         const targetRect = evt.target.getBoundingClientRect()
-//         const offset = {
-//             // x: evt.pageX - targetRect.left,
-//             y: evt.pageY - targetRect.top
-//         }
-//         return offset
-//         }
-    
-//         const getElementVerticalCenter = (el) => {
-//         const rect = el.getBoundingClientRect()
-//         return (rect.bottom - rect.top) / 2
-//         }
-    
-//         const appendPlaceholder = (evt, idx) => {
-//         evt.preventDefault()
-//         if (idx === dragIndex) {
-//             return
-//         }
-        
-//         const offset = getMouseOffset(evt)
-//         const middleY = getElementVerticalCenter(evt.target)
-//         const placeholder = list.children[dragIndex]
-        
-//         // console.log(`hover on ${idx} ${offset.y > middleY ? 'bottom half' : 'top half'}`)
-//         if (offset.y > middleY) {
-//             list.insertBefore(evt.target, placeholder)
-//         } else if (list.children[idx + 1]) {
-//             list.insertBefore(evt.target.nextSibling || evt.target, placeholder)
-//         }
-//         return
-//         }
-    
-//         function sortable(rootEl, onUpdate) {
-//         var dragEl;
-        
-//         // Making all siblings movable
-//         [].slice.call(rootEl.children).forEach(function (itemEl) {
-//             itemEl.draggable = true;
-//         });
-        
-//         // Function responsible for sorting
-//         function _onDragOver(evt) {
-//             evt.preventDefault();
-//             evt.dataTransfer.dropEffect = 'move';
-            
-//             var target = evt.target;
-//             if (target && target !== dragEl && target.nodeName == 'LI') {
-//                 // Sorting
-//             const offset = getMouseOffset(evt)
-//             const middleY = getElementVerticalCenter(evt.target)
-    
-//             if (offset.y > middleY) {
-//                 rootEl.insertBefore(dragEl, target.nextSibling)
-//             } else {
-//                 rootEl.insertBefore(dragEl, target)
-//             }
-//             }
-//         }
-        
-//         // End of sorting
-//         function _onDragEnd(evt){
-//             evt.preventDefault();
-            
-//             dragEl.classList.remove('ghost');
-//             rootEl.removeEventListener('dragover', _onDragOver, false);
-//             rootEl.removeEventListener('dragend', _onDragEnd, false);
-    
-    
-//             // Notification about the end of sorting
-//             onUpdate(dragEl);
-//         }
-        
-//         // Sorting starts
-//         rootEl.addEventListener('dragstart', function (evt){
-//             dragEl = evt.target; // Remembering an element that will be moved
-            
-//             // Limiting the movement type
-//             evt.dataTransfer.effectAllowed = 'move';
-//             evt.dataTransfer.setData('Text', dragEl.textContent);
-    
-    
-//             // Subscribing to the events at dnd
-//             rootEl.addEventListener('dragover', _onDragOver, false);
-//             rootEl.addEventListener('dragend', _onDragEnd, false);
-    
-    
-//             setTimeout(function () {
-//                 // If this action is performed without setTimeout, then
-//                 // the moved object will be of this class.
-//                 dragEl.classList.add('ghost');
-//             }, 0)
-//         }, false);
-//         }
-                            
-//         // Using                    
-//         sortable(list, function (item) {
-//         // console.log(item);
-//         });
-
-// }
-
-function checkMobile(){
- 
-    var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
-    if ( varUA.indexOf('android') > -1) {
-        //안드로이드
-        return "android";
-    } else if ( varUA.indexOf("iphone") > -1||varUA.indexOf("ipad") > -1||varUA.indexOf("ipod") > -1 ) {
-        //IOS
+    if(varUA.indexOf('android') > -1){
+        document.body.classList.add('aos')
+        return 'android';
+    } else if(varUA.indexOf('iphone') > -1){
         document.body.classList.add('ios')
-        return "ios";
-    } 
-    
+        return 'ios';
+    }
 }

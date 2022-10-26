@@ -2,7 +2,7 @@
 <html lang="ko">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no">
+        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no,viewport-fit=cover">
         <title>한국투자증권</title>    
         <link rel="stylesheet" href="/inc/css/style.css">
         <script type="text/javascript" src="/inc/js/jquery-3.6.0.min.js"></script>
@@ -29,7 +29,7 @@
             <div class="agree-content">
                 <div class="info">
                     <!-- 08-31 팝업 연결 추가 -->
-                    <button type="button" class="btn-tooltip" data-layer-href="modal-popup"><span>투자정보 확인 안내</span></button>
+                    <button type="button" class="btn-tooltip" data-layer-href="layer-popup"><span>투자정보 확인 안내</span></button>
                 </div>
                 <div class="agree-box">
                     <div class="chk-sub">                        
@@ -208,15 +208,25 @@
             </div>
             <div class="dim"></div>
         </div>
-        <!-- // bottom sheet -->  
+        <!-- // bottom sheet -->         
         
-        <!-- 08-31 팝업 추가 -->
-        <div id="layer-pop" class="layer-pop" modal-popup>
-            <div class="modal-content">
+        
+        <!-- 09-06 팝업 변경 -->
+        <div id="layer-pop" class="layer-pop" layer-popup>
+            <div class="slide-content">
+                <!-- 09-07 구조 변경  -->
+                <div class="pop-info-tit">투자자정보 확인 유의사항</div>
                 <div class="pop-content">
-                    <div class="pop-info-txt">
-                        <p class="text-box">미국납세의무(시민권/영주권자, 미국세법상 미국 거주자 등)또는 대한민국 외 조세목적상 거주지가 있는 경우 계좌개설이 불가능하오니 가까운 영업점을 방문하여 주시기 바랍니다.</p>
-                    </div>
+                    <div class="trade-list">
+                        <div class="list-wrap">
+                            <ul class="list-bar">
+                                <li>미국납세의무(시민권/영주권자, 미국세법상 미국 거주자 등) 또는 대한민국 외 조세목적상 거주지가 있는 경우 계좌개설이 불가능하오니 가까운 영업점을 방문하여 주시기 바랍니다.</li>
+                                <li>위 항목은 기본 추천사항이며, 고객님께서 원하는 항목을 직접 선택할 수 있습니다.</li>
+                                <li>고객 기재사항에 따라 증빙자료를 요청할 수 있습니다.</li>
+                                <li>상시 점검항목의 결과에 따라 금융거래 일부가 제한될 수 있으며, 거래목적이 불명확하고 부적절하다고 당사가 판단하는 경우 거래가 제한될 수 있습니다.</li>
+                            </ul>
+                        </div>
+                    </div>                 
                 </div>
                 <div class="wrap-btn">
                     <button type="button" class="btn-lg bg-primary" data-layer-close>확인</button>
@@ -224,7 +234,6 @@
             </div>
             <div class="dim"></div>
         </div>
-        <!-- // modal-popup -->
-        
+        <!-- // layer-popup -->
     </body>
 </html>

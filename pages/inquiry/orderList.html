@@ -47,8 +47,9 @@
                                     <span class="won"><span>900,000</span>원</span><span class="per">(20%)</span>
                                 </div> -->
                                 <div class="account-copy">
-                                    <span id="iptAccount"></span>
-                                    <button type="button" id="accountCopy">1234567-01(위탁계z좌) 복사</button>
+                                    <!-- 09-06 복사 버튼 누르면 토스트 뜸.. -->
+                                    <button type="button" onclick="showToast();">1234567-01(위탁계좌) 복사</button>
+                                    
                                 </div>
                                 <div class="summary">
                                     <dl>
@@ -62,15 +63,19 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- 08-29 문구변경/클래스 추가 -->
-                        <div class="option select">
-                            <button type="button">평가금액순</button>
-                            <button type="button" class="on">수익률순</button>
-                        </div>
+                        
+                        <!-- 09-16 버튼 삭제 -->
                     </div>   
                 </section>
                 
                 <section class="section-list">
+                    <!-- 09-16 버튼 이동 -->
+                    <div class="period-view">
+                        <div class="text-sm ml-auto">
+                            <button type="button" class="filter" data-layer-href="slide-popup4">평가금액순</button>
+                        </div>
+                    </div>
+                    
                     <!-- 08-17 무한 스크롤 추가 -->
                     <div id="list-scroll" class="list-stock-type">
                         <ul id="list"> 
@@ -92,7 +97,8 @@
                                     <div class="price-cont">
                                         <div class="count">
                                             <span>1,000주</span>
-                                            <span>169,000</span>
+                                            <!-- 09-06 '원'추가 -->
+                                            <span>169,000원</span>
                                         </div>
                                         <p class="price"><span>9,999,999,999</span>원</p>
                                     </div>
@@ -115,7 +121,7 @@
                                     <div class="price-cont">
                                         <div class="count">
                                             <span>1,000주</span>
-                                            <span>169,000</span>
+                                            <span>169,000원</span>
                                         </div>
                                         <p class="price"><span>9,999,999,999</span>원</p>
                                     </div>
@@ -138,7 +144,7 @@
                                     <div class="price-cont">
                                         <div class="count">
                                             <span>1,000주</span>
-                                            <span>169,000</span>
+                                            <span>169,000원</span>
                                         </div>
                                         <p class="price"><span>9,999,999,999</span>원</p>
                                     </div>
@@ -161,7 +167,7 @@
                                     <div class="price-cont">
                                         <div class="count">
                                             <span>1,000주</span>
-                                            <span>169,000</span>
+                                            <span>169,000원</span>
                                         </div>
                                         <p class="price"><span>9,999,999,999</span>원</p>
                                     </div>
@@ -169,7 +175,12 @@
                             </li>
                         </ul>
                     </div>
-                    <!-- // list-stock-type -->                    
+                    <!-- // list-stock-type --> 
+                    
+                    <!-- 결과없음 -->
+                    <!-- <div class="no-result">
+                        <p>조회 내역이 없습니다.</p>
+                    </div> -->
                 </section>
             </div>
             <!-- // tabs1 --> 
@@ -177,16 +188,7 @@
             <div id="tabs2" class="tab-content">
                 <section class="section mb0">
                     <div class="stock-order">
-                        <div class="order-count">
-                            <dl>
-                                <dt>주문접수</dt>
-                                <dd><span>5</span>건</dd>
-                            </dl>
-                            <dl>
-                                <dt>주문체결</dt>
-                                <dd><span>13</span>건</dd>
-                            </dl>
-                        </div>
+                        <!-- 09-06 건수 삭제 -->
                         <div class="wrap-btn">
                             <button type="button" class="btn-select on">전체 <span>18</span></button>
                             <button type="button" class="btn-select">매수 <span>14</span></button>
@@ -339,8 +341,23 @@
                             </li>                            
                         </ul>
                     </div>
-                    <!-- // list-stock-type -->                    
+                    <!-- // list-stock-type -->     
+                    
+                    <!-- 09-06 결과없음 추가 -->
+                    <!-- 결과없음 -->
+                    <!-- <div class="no-result">
+                        <p>조회 내역이 없습니다.</p>
+                    </div> -->
+                                   
                 </section>
+                
+                <!-- 09-06 앱 바로가기 추가 -->
+                <div class="bottom-content">                
+                    <div class="wrap-btn">
+                        <button type="button" class="btn-xmd btn-line">한국투자증권 앱 바로가기</button>
+                    </div>
+                    <p class="info-text tac">3개월 이전 내역은 한국투자증권 앱에서 확인이 가능합니다.</p>
+                </div>
             </div>
             <!-- // tabs2 -->
         </div>
@@ -406,7 +423,7 @@
                 <div class="pop-content">
                     <div class="pop-info-txt">
                         <p class="stock-name">LG생활건강</p>
-                        <span>주문을 정정할까요?</span>
+                        <span>주문을 정정매도할까요?</span>
                     </div>
                     <div class="trade-info-txt">
                         <dl>
@@ -435,16 +452,18 @@
         <!-- 08-29 투자현황 유의사항 추가 -->
         <div id="layer-pop" class="layer-pop" slide-popup3>
             <div class="slide-content">
+                <!-- 09-07 구조 변경  -->
+                <div class="pop-info-tit">투자현황 유의사항</div>
                 <div class="pop-content">
                     <div class="trade-list">
-                        <div class="pop-info-txt f18">투자현황 유의사항</div>
                         <dl class="list-wrap">
                             <dt>보유종목</dt>
                             <dd>
                                 <ul class="list-bar">
                                     <li>총평가금액 및 수익률은 국내주식 기준입니다.</li>
+                                    <li>평가손익은 수수료, 제세금이 포함되지 않은 매입평균 금액으로 계산되어 보여집니다.</li>
                                     <li>23:00~01:30에 당사의 전산작업으로 인하여 당일 데이터가 정확하지 않을 수 있습니다.</li>
-                                    <li>계좌의 전체 자산현황은 한국투자증권 모바일앱을 이용해주세요.</li>
+                                    <li>전체 자산현황은 한국투자증권 모바일앱에서 확인해주세요.</li>
                                 </ul>
                                 <p class="list-asterisk">
                                     주식은 예금자 보호법 상 보호상품이 아닙니다.<br/>
@@ -465,80 +484,50 @@
                     </div>
                 </div>
                 <div class="wrap-btn">
-                    <button type="button" class="btn-lg btn-line btn-confirm" data-layer-close>닫기</button>
-                    <button type="button" class="btn-lg bg-primary">한국투자앱 바로가기</button>
+                    <button type="button" class="btn-lg bg-primary">확인</button>
                 </div>
             </div>
             <div class="dim"></div>
         </div>
         <!-- // slide-popup -->
         
-        <div id="toast-popup"></div>
-        <!-- 08-17 무한 스크롤 스크립트 추가 -->
-        <script>
-            $(document).ready(function() {
-                // var win = $(window);
-                
-                $(window).scroll(function() {
-                    // if ($(document).height() - win.height() == win.scrollTop()) {
-                    if($(window).scrollTop() >= $(document).height() - $(window).height()-60){
-                        $('.loader').show();
-                        
-                        $('#list-scroll ul').append(listCont());
-                        $('.loader').hide();
-                    }
-                })
-
-                $('#accountCopy').on('click', function() {
-                    // $('#iptAccount').attr('type', 'text');
-                    $('#iptAccount').select();
-
-                    var copyText = document.execCommand('copy');
-                    // $('#iptAccount').attr('type', 'hidden');
-
-                    toast({
-                        message: "복사됨",
-                        type: "center",
-                        duration: 1000
-                    })
-                });
-
-                
-            })
-            function listCont() {
-                var el =  [   
-                `
-                <a href="#" title="종목명" data-layer-href="slide-popup">
-                    <div class="stock-top">
-                        <div class="stock-name">
-                            <div class="stock-title">삼성전자</div>                                            
-                        </div>                                        
-                    </div>
-                    <div class="order-date">16일(수)<span class="time">16:27</span></div>
-                    
-                    <div class="stock-trade">
-                        <!-- 매도 -->
-                        <div class="stock-sell color-sell">
-                            <span class="trade">매도</span>
-                            <span class="count">3주</span>
-                            <span class="price"><span>300,000</span>원</span>
-                        </div>
-                    </div>
-                </a>
-                <div class="wrap-btn fix">
-                    <button type="button" class="btn-xs btn-line">정정</button>
-                    <button type="button" class="btn-xs btn-line">취소</button>
+        
+        <!-- slide-popup -->
+        <!-- 09-16 추가 -->
+        <div id="layer-pop" class="layer-pop" slide-popup4>
+            <div class="slide-content">
+                <div class="pop-content">
+                    <ul class="select-form">
+                        <li class="on">
+                            <button type="button" class="select">평가금액순</button>   
+                        </li>
+                        <li>
+                            <button type="button" class="select">수익률 높은순</button>   
+                        </li>
+                        <li>
+                            <button type="button" class="select">수익률 낮은순</button>
+                        </li>
+                    </ul>
                 </div>
-                `];
-                
-                var addList = '<li>';
-                addList += el.join('');
-                addList += '</li>';
-                
-                return addList;
+            </div>
+            <div class="dim"></div>
+        </div>
+        <!-- // slide-popup -->
+        
+        <!-- toast -->
+        <div id="toast-popup" class="complete"></div>
+        <!-- // toast -->
+        
+        <!-- 09-02 무한 스크롤 스크립트 수정 -->
+        <script>
+            // 09-06 복사 토스트 팝업 추가
+            function showToast() {
+                toast({
+                    message: "복사됨",
+                    type: "center",
+                    duration: 3000
+                })
             }
-            
-            
         </script>
     </body>
 </html>

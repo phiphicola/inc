@@ -2,7 +2,7 @@
 <html lang="ko">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no">
+        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no,viewport-fit=cover">
         <title>한국투자증권</title>               
         <link rel="stylesheet" href="/inc/css/swiper-bundle.min.css">
         <link rel="stylesheet" href="/inc/css/style.css">        
@@ -13,98 +13,163 @@
     <body>
         <!-- 여기부터 레이어로 띄움  style="visibility: visible; 삭제-->
         <div id="layer-pop" class="full-pop" style="visibility: visible;">
-            <div class="header-pop">
+            <div class="header-pop h-column"><!-- 10-12 클래스 추가 -->
                 <div class="header-inner">
                     <button type="button" class="btn-close-pop" data-layer-close><span class="ir">닫기</span></button>
-                    <h1 class="header-title-left">종목명</h1>
+                    <!-- 10-12 거래량/라벨 추가 -->
+                    <div class="title-content">
+                        <h1 class="header-title-left">종목명</h1>
+                        
+                        <!-- 10-13 현재가 추가 -->
+                        <div class="rate-container">
+                            <!-- 상승 -->
+                            <p class="price color-red"><span>1,741,000</span>원</p>
+                            <div class="stock-increase">
+                                <span class="won"><span>900,000</span>원</span><span class="per">(20%)</span>
+                            </div>
+                            <!-- 하락 -->
+                            <!-- <p class="price color-blue"><span>1,741,000</span>원</p> 
+                                <div class="stock-decrease">
+                                <span class="won"><span>900,000</span>원</span><span class="per">(20%)</span>
+                            </div> -->
+                            <!-- 보합 -->
+                            <!-- <p class="price"><span>1,741,000</span>원</p>  
+                                <div class="stock-steady">
+                                <span class="won"><span>900,000</span>원</span><span class="per">(20%)</span>
+                            </div> -->
+                        </div>
+                        <!-- // 10-13 현재가 추가 -->
+                        
+                        <div class="title-sub">거래량 <span>123,456,789</span>주</div>
+                    </div>
+                    <div class="badge"><span class="bg-red">상승VI</span></div>
+                    <!-- // 10-12 거래량/라벨 추가 -->
                 </div>
             </div>
             <!-- // header -->
         
             <div class="contents">
                 <div class="price-list">
+                    <!-- 상한가 -->
+                    <!-- 10-12 위치수정 -->
+                    <div class="upper-price"> 
+                        <div class="price-wrap">
+                            <span class="price color-red">3,145,500</span>
+                        </div>
+                    </div>
                     <div class="column">
                         <!-- 매도 -->
-                        <div class="check sell-check upper-price"> 
-                            <div class="price-per">
-                                <p class="price color-red">3,145,500</p>
-                                <div class="per"> 상한가</div>
-                            </div>
-                        </div>
                         <div class="check sell-check">
                             <div class="rate-wrap">
-                                <div class="rate-bar"><span class="cont">123</span></div> 
+                                <div class="rate-bar" vhidden style="width:0%"><span class="cont">0</span></div> <!-- 10-12 거래량 없을 경우 vhidden 추가 -->
                             </div>
-                            <div class="price-per">
+                            <div class="price-per" vhidden> <!-- 10-12 거래량 없을 경우 vhidden 추가 -->
                                 <p class="price">45,400</p>
                                 <div class="per"><span>0.56</span>%</div>
                             </div>
                         </div>
                         <div class="check sell-check">
                             <div class="rate-wrap">
-                                <div class="rate-bar"><span class="cont">335,000</span></div> 
+                                <div class="rate-bar" vhidden style="width:0%"><span class="cont">0</span></div> 
                             </div>
-                            <div class="price-per">
+                            <div class="price-per" vhidden>
+                                <p class="price">45,400</p>
+                                <div class="per"><span>0.56</span>%</div>
+                            </div>
+                        </div>
+                        <div class="check sell-check">
+                            <div class="rate-wrap">
+                                <div class="rate-bar" vhidden style="width:0%"><span class="cont">0</span></div> 
+                            </div>
+                            <div class="price-per" vhidden>
+                                <p class="price">45,400</p>
+                                <div class="per"><span>0.56</span>%</div>
+                            </div>
+                        </div>
+                        <div class="check sell-check">
+                            <div class="rate-wrap">
+                                <div class="rate-bar" vhidden style="width:0%"><span class="cont">0</span></div> 
+                            </div>
+                            <div class="price-per" vhidden>
+                                <p class="price">45,400</p>
+                                <div class="per"><span>0.56</span>%</div>
+                            </div>
+                        </div>
+                        <div class="check sell-check">
+                            <div class="rate-wrap">
+                                <div class="rate-bar" vhidden style="width:0%"><span class="cont">0</span></div> 
+                            </div>
+                            <div class="price-per" vhidden>
+                                <p class="price">45,400</p>
+                                <div class="per"><span>0.56</span>%</div>
+                            </div>
+                        </div>
+                        <div class="check sell-check">
+                            <div class="rate-wrap">
+                                <div class="rate-bar" style="width:55.56%;"><span class="cont">335,000</span></div> 
+                            </div>
+                            <div class="price-per color-blue">
                                 <p class="price">45,300</p>
                                 <div class="per"><span>0.56</span>%</div>
                             </div>
                         </div>
                         <div class="check sell-check">
                             <div class="rate-wrap">
-                                <div class="rate-bar"><span class="cont">123,456,789,000</span></div> 
+                                <div class="rate-bar" style="width:100%"><span class="cont">123,456,789,000</span></div> 
                             </div>
-                            <div class="price-per">
+                            <div class="price-per  color-red">
                                 <p class="price">45,200</p>
                                 <div class="per"><span>0.56</span>%</div>
-                            </div>
-                            <div class="badge"><span class="bg-red">상승VI</span></div>
+                            </div>                            
                         </div>
                         <div class="check sell-check">
                             <div class="rate-wrap">
-                                <div class="rate-bar"><span class="cont">364,456,789</span></div> 
+                                <div class="rate-bar" style="width:68.55%"><span class="cont">364,456,789</span></div> 
                             </div>
                             <div class="price-per">
+                                <span class="price-market">시</span> <!-- 10-13 거래 라벨 추가 -->                                
                                 <p class="price">45,100</p>
                                 <div class="per"><span>0.56</span>%</div>
                             </div>
                         </div>
                         <div class="check sell-check">
                             <div class="rate-wrap">
-                                <div class="rate-bar"><span class="cont">250</span></div> 
+                                <div class="rate-bar" style="width:43%"><span class="cont">250</span></div> 
                             </div>
                             <div class="price-per">
+                                <span class="price-high">고</span> <!-- 10-13 거래 라벨 추가 -->
                                 <p class="price">45,000</p>
                                 <div class="per"><span>0.56</span>%</div>
                             </div>
                         </div>
                         <div class="check sell-check">
                             <div class="rate-wrap">
-                                <div class="rate-bar"><span class="cont">50</span></div> 
+                                <div class="rate-bar" style="width:3%"><span class="cont">5</span></div> 
                             </div>
                             <div class="price-per">
-                                <p class="price">44,900</p>
+                                <span class="price-row">저</span> <!-- 10-13 거래 라벨 추가 -->
+                                <p class="price">44,900</p> 
                                 <div class="per"><span>0.56</span>%</div>
                             </div>
                         </div>
                         
                         <!-- 매수 -->
-                        <div class="check buy-check outline-pr">
+                        <div id="scrollCeter" class="check buy-check outline-pr"> <!-- 10-13 id 추가 -->
                             <div class="price-per">
-                                <p class="price">2,145,500</p>
-                                <div class="per"><span>0.56</span>%</div>
+                                <p class="price">9,999,999</p>
+                                <div class="per"><span>999.99</span>%</div>
                             </div>
                             <div class="rate-wrap">
-                                <div class="rate-bar"><span class="cont">5</span></div> 
+                                <div class="rate-bar" style="width:2.7%"><span class="cont">5</span></div> 
                             </div>
                         </div>
                         <div class="check buy-check">
-                            <div class="badge"><span class="bg-primary">전일증가</span></div>
                             <div class="price-per">
                                 <p class="price">44,500</p>
                                 <div class="per"><span>0.56</span>%</div>
                             </div>
                             <div class="rate-wrap">
-                                <div class="rate-bar"><span class="cont">100</span></div> 
+                                <div class="rate-bar" style="width:20%"><span class="cont">100</span></div> 
                             </div>                        
                         </div>
                         <div class="check buy-check">
@@ -113,7 +178,7 @@
                                 <div class="per"><span>0.56</span>%</div>
                             </div>
                             <div class="rate-wrap">
-                                <div class="rate-bar"><span class="cont">100,999,000</span></div> 
+                                <div class="rate-bar" style="width:98%"><span class="cont">100,999,000</span></div> 
                             </div>
                         </div>
                         <div class="check buy-check">
@@ -122,7 +187,7 @@
                                 <div class="per"><span>0.56</span>%</div>
                             </div>
                             <div class="rate-wrap">
-                                <div class="rate-bar"><span class="cont">5</span></div> 
+                                <div class="rate-bar" style="width:5%"><span class="cont">5</span></div> 
                             </div>
                         </div>
                         <div class="check buy-check">
@@ -131,23 +196,57 @@
                                 <div class="per"><span>0.56</span>%</div>
                             </div>
                             <div class="rate-wrap">
-                                <div class="rate-bar"><span class="cont">5</span></div> 
+                                <div class="rate-bar" style="width:5%"><span class="cont">5</span></div> 
                             </div>
                         </div>
-                        <div class="check buy-check lower-price">
+                        <div class="check buy-check">
                             <div class="price-per">
-                                <p class="price color-blue">44,500</p>
-                                <div class="per">하한가</div>
+                                <p class="price">2,145,500</p>
+                                <div class="per"><span>0.56</span>%</div>
                             </div>
+                            <div class="rate-wrap">
+                                <div class="rate-bar" style="width:5%"><span class="cont">5</span></div> 
+                            </div>
+                        </div>
+                        <div class="check buy-check">
+                            <div class="price-per">
+                                <p class="price">2,145,500</p>
+                                <div class="per"><span>0.56</span>%</div>
+                            </div>
+                            <div class="rate-wrap">
+                                <div class="rate-bar" style="width:5%"><span class="cont">5</span></div> 
+                            </div>
+                        </div>
+                        <div class="check buy-check">
+                            <div class="price-per">
+                                <p class="price">2,145,500</p>
+                                <div class="per"><span>0.56</span>%</div>
+                            </div>
+                            <div class="rate-wrap">
+                                <div class="rate-bar" style="width:5%"><span class="cont">5</span></div> 
+                            </div>
+                        </div>
+                        <div class="check buy-check">
+                            <div class="price-per">
+                                <p class="price">2,145,500</p>
+                                <div class="per"><span>0.56</span>%</div>
+                            </div>
+                            <div class="rate-wrap">
+                                <div class="rate-bar" style="width:5%"><span class="cont">5</span></div> 
+                            </div>
+                        </div>                        
+                    </div>
+                    
+                    <!-- 하한가 -->
+                    <!-- 10-12 위치수정 -->
+                    <div class="lower-price">
+                        <div class="price-wrap">
+                            <span class="price color-blue">44,500</span>
                         </div>
                     </div>
                 </div>
                 <!-- // 호가 -->
-                
-                <div class="fixed-content">
-                    <div class="sell">매도대기 <strong>5,914,362,000</strong></div>
-                    <div class="buy"><strong>5,914,362,000</strong> 매수대기</div>
-                </div>            
+                            
                 <div class="wrap-btn-fixed">
                     <button type="button" class="btn-lg bg-sell">매도하기</button>
                     <button type="button" class="btn-lg bg-buy">매수하기</button>
@@ -159,5 +258,13 @@
             <!-- // contents -->
         </div>
         <!-- // layer-pop -->
+        
+        <!-- 10-13 script 추가 -->
+        <script>
+            $(function(){
+                scrCenter();
+            })
+        </script>
+        <!-- //10-13 script 추가 -->
     </body>
 </html>

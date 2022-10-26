@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no,viewport-fit=cover">
+        <title>한국투자증권</title>    
+        <link rel="stylesheet" href="/inc/css/style.css">
+        <script type="text/javascript" src="/inc/js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="/inc/js/swiper-bundle.min.js"></script>
+        <script type="text/javascript" src="/inc/js/common-ui.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="header-inner">
+                <h1 class="header-title">한국투자증권 제공 국내주식 서비스</h1>
+                <button type="button" class="btn-close">닫기</button>
+            </div>
+        </header>
+        <!-- // header -->
+        
+        <div class="contents">
+            <section class="chart-content">
+                <!-- loading -->
+                <div class="loading-container">
+                    <div class="skeleton-number loader"></div>
+                    <div class="skeleton-stockname loader"></div>
+                    <div class="skeleton-stockprice loader"></div>
+                    <div class="skeleton-change loader"></div>
+                    <div class="skeleton-graph loader"></div>
+                    <div class="skeleton-graphbar loader"></div>
+                </div>
+                <!-- // loading -->
+                
+                <div class="chart-period">
+                    <button type="button" class="btn-chart-cell on">Live</button>
+                    <button type="button" class="btn-chart-cell">1주</button>
+                    <button type="button" class="btn-chart-cell">1달</button>
+                    <button type="button" class="btn-chart-cell">3달</button>
+                    <button type="button" class="btn-chart-cell">6달</button>
+                    <button type="button" class="btn-chart-cell">1년</button>
+                    <button type="button" class="btn-chart-cell">전체</button>
+                </div>
+                <div class="wrap-btn">
+                    <button type="button" class="btn-lg btn-line">호가</button>
+                </div>
+                
+                <div class="stock-card">
+                    <p class="card-tit">20주 보유중</p>
+                    <div class="price">
+                        <span class="won"><span>646,600</span>원</span>
+                        <div class="stock-increase">
+                            <span class="won"><span>+3,000</span>원</span>
+                            <span class="per">(+32.1%)</span>
+                        </div>
+                        <!-- <div class="stock-decrease">
+                            <span class="won"><span>-3,000</span>원</span>
+                            <span class="per">(-32.1%)</span>
+                        </div> -->
+                        <!-- <div class="stock-steady">
+                            <span class="won"><span>3,000</span>원</span>
+                            <span class="per">(32.1%)</span>
+                        </div> -->
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- // contents -->
+    </body>
+</html>

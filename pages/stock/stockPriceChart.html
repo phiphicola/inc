@@ -2,7 +2,7 @@
 <html lang="ko">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no">
+        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no,viewport-fit=cover">
         <title>한국투자증권</title>               
         <link rel="stylesheet" href="/inc/css/swiper-bundle.min.css">
         <link rel="stylesheet" href="/inc/css/style.css">        
@@ -14,6 +14,27 @@
         <header>
             <div class="header-inner">
                 <button type="button" class="btn-prev"><span class="ir">이전</span></button>
+                <!-- 10-24 현재가 추가-->
+                <div class="chart-info blur">
+                    <div class="chart-flex">
+                        <div class="chart-stock-name">
+                            <strong>LG생활건강</strong>                                
+                        </div>
+                    </div>
+                    <!-- 상승 -->
+                    <div class="stock-increase">
+                        <span class="won"><span>1,741,000</span>원</span><span class="per">(+20.00%)</span>
+                    </div>
+                    <!-- 하락 -->
+                    <!-- <div class="stock-decrease">
+                        <span class="won"><span>1,741,000</span>원</span><span class="per">(-20.00%)</span>
+                    </div> -->
+                    <!-- 보합 -->
+                    <!-- <div class="stock-steady">
+                        <span class="won"><span>1,741,000</span>원</span><span class="per">(0.00%)</span>
+                    </div> -->
+                </div>
+                <!-- 10-24 현재가 추가-->
             </div>
         </header>
         <!-- // header -->
@@ -22,16 +43,32 @@
             <section class="chart-content">
                 <div class="rate-container">                    
                     <div class="chart-info">
-                        <span class="chart-stock-num">322410</span>
+                        <!-- 09-06 툴팁 추가 -->
+                        <div class="flex-box">
+                            <span class="chart-stock-num">322410</span>
+                            <div class="tooltip-cont">
+                                <button type="button" class="btn-trigger tooltip-label">신저+2</button>
+                                <!-- <button type="button" class="btn-trigger tooltip-label2">경고/환기</button><button type="button" class="btn-trigger tooltip-label3">신고</button> -->
+                                <div class="tooltip-view">
+                                    <span class="tooltip-label">신저</span>
+                                    <span class="tooltip-label2">과열지정</span>
+                                    <span class="tooltip-label3">정지</span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="chart-flex">
-                            <div class="chart-stock-name">LG생활건강</div>
+                            <div class="chart-stock-name">
+                                <strong>LG생활건강</strong>                                
+                            </div>
+                            
                             <div class="favorite">
                                 <button type="button"><span class="ir">관심종목</span></button>
                             </div>
                         </div>
+                        <!-- 상승 -->
                         <p class="price color-red"><span>1,741,000</span>원</p>
                         <div class="stock-increase">
-                            <span class="won"><span>900,000</span>원</span><span class="per">(20%)</span>
+                            <span class="won"><span>900,000</span>원</span><span class="per">(20.00%)</span>
                         </div>
                         <!-- 하락 -->
                         <!-- <div class="stock-decrease">
@@ -39,6 +76,14 @@
                         </div> -->
                         <!-- 보합 -->
                         <!-- <div class="stock-steady">
+                            <span class="won"><span>900,000</span>원</span><span class="per">(20%)</span>
+                        </div> -->
+                        <!-- 상한가 -->
+                        <!-- <div class="stock-upper">
+                            <span class="won"><span>900,000</span>원</span><span class="per">(20%)</span>
+                        </div> -->
+                        <!-- 하한가 -->
+                        <!-- <div class="stock-lower">
                             <span class="won"><span>900,000</span>원</span><span class="per">(20%)</span>
                         </div> -->
                     </div>                    
@@ -80,7 +125,7 @@
                     <button type="button" class="btn-chart-cell">전체</button>
                 </div>
                 <div class="wrap-btn">
-                    <button type="button" class="btn-lg btn-line">호가</button>
+                    <button type="button" class="btn-xmd btn-block">호가</button><!-- 10-24 class 변경-->
                 </div>
                 
                 <div class="stock-card">
@@ -139,9 +184,13 @@
                             </dl>
                         </div>
                         <div class="invest-banner">
-                            <a href="#" class="link-arrow">
+                            <a href="#none" class="link-arrow">
                                 <div class="bnr-title">LG생활건강</div>
                                 <div class="bnr-cont">자세한 기업정보</div>
+                            </a>
+                            <!-- 09-16 기업정보 추가 -->
+                            <a href="#none" class="link-arrow">
+                                <div class="bnr-logo-air"><img src="/inc/img/logo-air.svg" alt="air로고"></div>
                             </a>
                         </div>
                     </div>
@@ -152,8 +201,16 @@
             <section class="section-swiper gap">
                 <!-- 08-29 타이틀 변경 -->
                 <div class="title-wrap">
-                    <h2>카카오 주주가 많이 샀어요</h2>
-                    <button type="button" class="btn-tooltip"><span class="ir">툴팁 열기</span></button>
+                    <h2>카카오 주주가 함께 샀어요</h2><!-- 09-22 텍스트 수정 -->
+                    <!-- 09-06 툴팁 추가 -->
+                    <div class="tooltip-cont">
+                        <button type="button" class="btn-trigger btn-tooltip"><span class="ir">툴팁 열기</span></button>
+                        <div class="tooltip-view left">
+                            <p class="tooltip-text">
+                                선택종목을 보유한 당사수익률 상위 고객들의 보유종목 순위
+                            </p>
+                        </div>
+                    </div>
                 </div>       
                 <!-- // 08-29 타이틀 변경 -->
                 <div class="swiper category-slider">
@@ -162,7 +219,7 @@
                             <div class="favorite">
                                 <button type="button"><span class="ir">관심종목</span></button>
                             </div>
-                            <a href="#">
+                            <a href="#none">
                                 <div class="stock-icon"><span>카카오뱅크</span></div>
                                 <div class="stock-name">
                                     <div class="stock-title ellipsis">라이프(최대12자)노출</div>
@@ -174,7 +231,7 @@
                             <div class="favorite">
                                 <button type="button"><span class="ir">관심종목</span></button>
                             </div>
-                            <a href="#">
+                            <a href="#none">
                                 <div class="stock-icon"><span>농협</span></div>
                                 <div class="stock-name">
                                     <div class="stock-title ellipsis">농협</div>
@@ -186,7 +243,7 @@
                             <div class="favorite">
                                 <button type="button"><span class="ir">관심종목</span></button>
                             </div>
-                            <a href="#">
+                            <a href="#none">
                                 <div class="stock-icon"><span>삼성전자</span></div>
                                 <div class="stock-name">
                                     <div class="stock-title ellipsis">삼성전자</div>
@@ -198,7 +255,7 @@
                             <div class="favorite">
                                 <button type="button"><span class="ir">관심종목</span></button>
                             </div>
-                            <a href="#">
+                            <a href="#none">
                                 <div class="stock-icon"><span>카카오뱅크</span></div>
                                 <div class="stock-name">
                                     <div class="stock-title ellipsis">라이프(최대12자)노출</div>
@@ -207,7 +264,7 @@
                             </a>
                         </div>
                         <div class="swiper-slide more-view">
-                            <a href="#">더보기</a>
+                            <a href="#none">더보기</a>
                         </div>
                     </div>
                 </div>
@@ -222,27 +279,27 @@
                 <div class="swiper category-slider">
                     <div class="swiper-wrapper box-color">
                         <div class="swiper-slide">
-                            <a href="#">
+                            <a href="#none">
                                 <p class="tag-text ellipsis">#게임/레저</p>
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#">
+                            <a href="#none">
                                 <p class="tag-text ellipsis">#스마트폰</p>
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#">
+                            <a href="#none">
                                 <p class="tag-text ellipsis">#금융</p>
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#">
+                            <a href="#none">
                                 <p class="tag-text ellipsis">#반도체</p>
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#">
+                            <a href="#none">
                                 <p class="tag-text ellipsis">#금융</p>
                             </a>
                         </div>
@@ -259,7 +316,7 @@
                     <div class="news-content">
                         <ul class="news-list">
                             <li>
-                                <a href="#">
+                                <a href="#none">
                                     <div class="news-text">
                                         <h3 class="news-title ellipsis2">블록체인 핀테크 '인피닛블록'프리 시드투자 유치</h3>
                                         <div class="time-name">
@@ -267,13 +324,11 @@
                                             <span class="name">이코노미스트</span>
                                         </div>
                                     </div>
-                                    <div class="news-img">
-                                        <img src="" alt="">
-                                    </div>
+                                    <!-- 09-06 이미지 삭제 -->
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="#none">
                                     <div class="news-text">
                                         <h3 class="news-title ellipsis2">블록체인 핀테크 '인피닛블록'프리 시드투자 유치블록 체인 핀테크 '인피닛블록'프리 시드투자 유치 블록체인 핀테크 '인피닛블록'프리 시드투자</h3>
                                         <div class="time-name">
@@ -281,13 +336,11 @@
                                             <span class="name">이코노미스트</span>
                                         </div>
                                     </div>
-                                    <div class="news-img">
-                                        <img src="" alt="">
-                                    </div>
+                                    <!-- 09-06 이미지 삭제 -->
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="#none">
                                     <div class="news-text">
                                         <h3 class="news-title ellipsis2">블록체인 핀테크 '인피닛블록'프리 시드투자 유치</h3>
                                         <div class="time-name">
@@ -300,7 +353,7 @@
                         </ul>
                     </div>
                     <div class="wrap-btn">
-                        <button type="button" class="btn-md btn-line">더보기</button>
+                        <button type="button" class="btn-xmd btn-block">더보기</button><!-- 10-24 class 변경-->
                     </div>
                 </div>
             </section>
@@ -311,7 +364,7 @@
                 <div class="notice-wrap">
                     <div class="foot-logo"><span class="ir">한국투자증권</span></div> <!-- 08-31 로고 변경 -->
                     <div class="foot-text">
-                        WTS 국내주식에서 제공하는 모든 투자정보는 고객의 투자판단을 위한 단순 참고용이며, 추천이나 권유 목적이 아닙니다.<br />
+                        국내주식투자에서 제공하는 모든 투자정보는 고객의 투자판단을 위한 단순 참고용이며, 추천이나 권유 목적이 아닙니다.<br />
                         또한 제 3자 데이터 제공업체에서 자료를 제공하므로 수신이 지연되거나 일부 정보가 정확하지 않을 수 있으며, 투자 결과에 대한 법적 책임소재의 증빙자료로 사용될 수 없습니다.
                     </div>
                     <div class="wrap-btn-notice">

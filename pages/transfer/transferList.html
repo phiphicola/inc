@@ -2,7 +2,7 @@
 <html lang="ko">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no">
+        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no,viewport-fit=cover">
         <title>한국투자증권</title>               
         <link rel="stylesheet" href="/inc/css/swiper-bundle.min.css">
         <link rel="stylesheet" href="/inc/css/style.css">        
@@ -10,7 +10,7 @@
         <script type="text/javascript" src="/inc/js/swiper-bundle.min.js"></script>
         <script type="text/javascript" src="/inc/js/common-ui.js"></script>
     </head>
-    <body>
+    <body class="bg-gray2">
         <header>
             <div class="header-inner">
                 <button type="button" class="btn-prev"><span class="ir">이전</span></button>
@@ -41,163 +41,231 @@
                             </div>
                         </div>
                         <div class="wrap-btn">
-                            <button type="button" class="btn-lg btn-line block-tag">
+                            <button type="button" class="btn-xmd btn-block block-tag"><!-- 10-24 class 변경-->
                                 <span class="label-text">카카오뱅크에서</span>
                                 <em>가져오기</em>
                             </button>
-                            <button type="button" class="btn-lg btn-line block-tag">
-                                <span class="label-text">카카오뱅크로</span>
+                            <button type="button" class="btn-xmd btn-block block-tag"><!-- 10-24 class 변경-->
+                                <span class="label-text">카카오뱅크에서</span>
                                 <em>보내기</em>
                             </button>
                         </div>
                     </div>                 
-                    <!-- 옵션 디자인 미정 -->
                     <div class="option">
-                        <button type="button" data-layer-href="open-option" class="on"><span>3개월</span><span>전체</span><span>최신순</span></button>
+                        <button type="button" data-layer-href="open-option"><span>3개월</span><span>전체</span><span>최신순</span></button>
                     </div>
                 </div>   
             </section>
             
             <section class="section-list">
                 <div class="list-account">
+                    <!-- 09-06 목록 디자인 변경 -->
                     <ul>
+                        <li><div class="transfer-date">2022</div></li><!-- 10-24 연도만 노출-->
                         <li>
                             <a href="#" title="이체내역" data-layer-href="slide-popup">
-                                <div class="date">
-                                    <span class="month"><span>01</span>월</span>
-                                    <p class="year">2022</p>
-                                </div>
                                 <div class="name-cont">
                                     <div class="name ellipsis">김이지</div>
-                                    <p class="time">17(수)<span>17:10</span></p>
+                                    <p class="time">10.17(수)<span>17:10</span></p> <!-- 10-24 날짜표기 변경. 일(요일)시간 >> 월.일(요일)시간-->
                                 </div>
                                 <div class="amount">
                                     <p class="color-plus">1,000,000원</p>
-                                    <span class="label-text">입금</span>
                                 </div>
                             </a>
                         </li>
                         <li>
                             <a href="#" title="이체내역">
-                                <div class="date blank"></div>
                                 <div class="name-cont">
-                                    <div class="name ellipsis">최대9글자까지노출됩니다</div>
-                                    <p class="time">17(수)<span>17:10</span></p>
+                                    <div class="name"><strong class="em">종목명</strong>내역 이벤트 입금내역 이벤트 입금내역 이벤트 입금내역 이벤트 입금</div>
+                                    <p class="time">10.17(수)<span>17:10</span></p>
                                 </div>
                                 <div class="amount">
                                     <p class="color-minus">1,000,000원</p>
-                                    <span class="label-text">출금</span>
                                 </div>
                             </a>
                         </li>
                         <li>
                             <a href="#" title="이체내역">
-                                <div class="date">
-                                    <span class="month"><span>01</span>월</span>
-                                    <p class="year">2022</p>
-                                </div>
                                 <div class="name-cont">
                                     <div class="name ellipsis">김이지</div>
-                                    <p class="time">17(수)<span>17:10</span></p>
+                                    <p class="time">10.17(수)<span>17:10</span></p>
                                 </div>
                                 <div class="amount">
                                     <p class="color-plus">1,000,000원</p>
-                                    <span class="label-text">입금</span>
                                 </div>
                             </a>
                         </li>
                         <li>
                             <a href="#" title="이체내역">
-                                <div class="date">
-                                    <span class="month"><span>01</span>월</span>
-                                    <p class="year">2022</p>
-                                </div>
                                 <div class="name-cont">
                                     <div class="name ellipsis">김이지</div>
-                                    <p class="time">17(수)<span>17:10</span></p>
+                                    <p class="time">10.17(수)<span>17:10</span></p>
                                 </div>
                                 <div class="amount">
                                     <p class="color-plus">1,000,000원</p>
-                                    <span class="label-text">입금</span>
                                 </div>
                             </a>
                         </li>
                         <li>
                             <a href="#" title="이체내역">
-                                <div class="date blank"></div>
                                 <div class="name-cont">
-                                    <div class="name ellipsis">최대9글자까지노출됩니다</div>
-                                    <p class="time">17(수)<span>17:10</span></p>
+                                    <div class="name">내역 이벤트 입금내역 이벤트 입금내역 이벤트 입금내역 이벤트 입금</div>
+                                    <p class="time">10.17(수)<span>17:10</span></p>
                                 </div>
                                 <div class="amount">
-                                    <p class="color-minus">99,999,000,000원</p>
-                                    <span class="label-text">출금</span>
+                                    <p class="color-minus">999,999,000,000원</p>
                                 </div>
                             </a>
                         </li>
                         <li>
                             <a href="#" title="이체내역">
-                                <div class="date">
-                                    <span class="month"><span>01</span>월</span>
-                                    <p class="year">2022</p>
-                                </div>
                                 <div class="name-cont">
                                     <div class="name ellipsis">김이지</div>
-                                    <p class="time">17(수)<span>17:10</span></p>
+                                    <p class="time">10.17(수)<span>17:10</span></p>
                                 </div>
                                 <div class="amount">
                                     <p class="color-plus">1,000,000원</p>
-                                    <span class="label-text">입금</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><div class="transfer-date">2022</div></li>
+                        <li>
+                            <a href="#" title="이체내역" data-layer-href="slide-popup">
+                                <div class="name-cont">
+                                    <div class="name ellipsis">김이지</div>
+                                    <p class="time">10.17(수)<span>17:10</span></p>
+                                </div>
+                                <div class="amount">
+                                    <p class="color-plus">1,000,000원</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="이체내역">
+                                <div class="name-cont">
+                                    <div class="name">내역 이벤트 입금내역 이벤트 입금내역 이벤트 입금내역 이벤트 입금</div>
+                                    <p class="time">10.17(수)<span>17:10</span></p>
+                                </div>
+                                <div class="amount">
+                                    <p class="color-minus">1,000,000원</p>
                                 </div>
                             </a>
                         </li>
                     </ul>
                 </div>
-                <!-- // list-stock-type -->                    
+                <!-- // list-account -->   
+                
+                <!-- 09-06 결과없음 추가 -->
+                <!-- 결과없음 -->
+                <!-- <div class="no-result">
+                    <p>조회 내역이 없습니다.</p>
+                </div> -->
             </section>
+            <!-- 09-06 앱 바로가기 추가 -->
+            <div class="bottom-content">                
+                <div class="wrap-btn">
+                    <button type="button" class="btn-xmd btn-line">한국투자증권 앱 바로가기</button>
+                </div>
+                <p class="info-text tac">3개월 이전 내역은 한국투자증권 앱에서 확인이 가능합니다.</p>
+            </div>
         </div>
         <!-- // contents -->
         
         <!-- slide-popup -->
-        <!-- 08-29 디자인 반영 -->
+        <!-- 09-07 디자인 반영 -->
         <div id="layer-pop" class="layer-pop" slide-popup>
             <div class="slide-content">
+                <div class="pop-info-tit">카카오뱅크</div>
                 <div class="pop-content">
-                    <div class="trade-list">
-                        <div class="pop-info-txt">카카오뱅크</div>
+                    <div class="trade-list viewhide">
                         <div class="trade-cell">
                             <dl>
-                                <dt>거래금액</dt>
-                                <dd><span>169,211</span>원</dd>
+                                <dt>거래구분</dt>
+                                <dd>Smart+코스닥주식매수</dd>
                             </dl>
                             <dl>
-                                <dt>수수료/세금</dt>
-                                <dd><span>1,222,999</span>원</dd>
+                                <dt>거래시간</dt>
+                                <dd>2022.08.08 00:49:00</dd>
                             </dl>
                             <dl>
                                 <dt>정산금액</dt>
                                 <dd><span>1,222,999</span>원</dd>
                             </dl>
-                        </div>
-                        <div class="trade-cell">
                             <dl>
-                                <dt>거래시간</dt>
-                                <dd><span>2022.08.08(월)</span> 00:49:00</dd>
+                                <dt>잔액</dt>
+                                <dd><span>1,222,999</span>원</dd>
                             </dl>
                             <dl>
-                                <dt>거래구분</dt>
-                                <dd>출금</dd>
+                                <dt>거래수량</dt>
+                                <dd>1주</dd>
+                            </dl>
+                            <dl>
+                                <dt>유가잔고</dt>
+                                <dd>1주</dd>
+                            </dl>
+                            <dl>
+                                <dt>거래단가</dt>
+                                <dd><span>1,222,999</span>원</dd>
+                            </dl>
+                        </div>
+                        <div class="trade-cell add-list">
+                            <dl>
+                                <dt>외화잔액</dt>
+                                <dd><span>1,222,999</span>원</dd>
+                            </dl>
+                            <dl>
+                                <dt>환율</dt>
+                                <dd><span>1,222,999</span>원</dd>
+                            </dl>
+                            <dl>
+                                <dt>수수료</dt>
+                                <dd><span>1,222,999</span>원</dd>
+                            </dl>
+                            <dl>
+                                <dt>거래세</dt>
+                                <dd><span>1,222,999</span>원</dd>
+                            </dl>
+                            <dl>
+                                <dt>세금</dt>
+                                <dd><span>1,222,999</span>원</dd>
+                            </dl>
+                            <dl>
+                                <dt>부가세</dt>
+                                <dd><span>1,222,999</span>원</dd>
+                            </dl>
+                            <dl>
+                                <dt>접속매체</dt>
+                                <dd>스마트폰</dd>
+                            </dl>
+                            <dl>
+                                <dt>상대기관</dt>
+                                <dd>-</dd>
                             </dl>
                             <dl>
                                 <dt>상대계좌</dt>
                                 <dd>-</dd>
                             </dl>
-                        </div>
-                        <div class="trade-cell">
                             <dl>
-                                <dt>거래 후 잔액</dt>
-                                <dd class="f15"><strong><span>999,999,999</span>원</strong></dd>
+                                <dt>상환금액</dt>
+                                <dd><span>1,222,999</span>원</dd>
                             </dl>
+                            <dl>
+                                <dt>상환이자</dt>
+                                <dd><span>1,222,999</span>원</dd>
+                            </dl>
+                            <dl>
+                                <dt>상환차익</dt>
+                                <dd><span>1,222,999</span>원</dd>
+                            </dl>
+                            <dl>
+                                <dt>대출잔액</dt>
+                                <dd><span>1,222,999</span>원</dd>
+                            </dl>
+                        </div>
+                        <div class="wrap-btn">
+                            <button type="button" class="btn-md btn-line more-view">더보기</button>
                         </div>
                     </div>
                 </div>
@@ -219,10 +287,10 @@
                         <dt>조회기간</dt>
                         <dd>
                             <div class="wrap-btn select">
-                                <button type="button" class="btn-col on">1개월</button>
+                                <button type="button" class="btn-col on">일주일</button>
+                                <button type="button" class="btn-col">1개월</button>
+                                <button type="button" class="btn-col">2개월</button>
                                 <button type="button" class="btn-col">3개월</button>
-                                <button type="button" class="btn-col">지난달</button>
-                                <!-- <button type="button" class="btn-col open-date">직접설정</button> -->
                             </div>
                         </dd>
                      </dl>

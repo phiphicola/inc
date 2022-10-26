@@ -2,7 +2,7 @@
 <html lang="ko">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no">
+        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no,viewport-fit=cover">
         <title>한국투자증권</title>    
         <link rel="stylesheet" href="/inc/css/style.css">
         <script type="text/javascript" src="/inc/js/jquery-3.6.0.min.js"></script>
@@ -19,37 +19,40 @@
         <!-- // header -->
         
         <div class="contents">
+            <!-- loading -->
+            <div class="loading-spinner">
+                <span class="spinner"></span>               
+            </div>
+            <!-- // loading -->
+            
             <section class="section">
-                <!-- loading -->
-                <div class="loading-spinner">
-                    <svg viewBox='0 0 100 100'>
-                        <path d='M95,50 A45,45 0 0,1 5,50 A45,45 0 0,1 50,5 ' />
-                    </svg>
-                </div>
-                <!-- // loading -->
-
                 <section class="chart-content">
                     <div class="rate-container">                    
                         <div class="chart-info">
                             <span class="chart-stock-num">322410</span>
                             <div class="chart-flex">
-                                <div class="chart-stock-name">LG생활건강</div>
+                                <div class="chart-stock-name">
+                                    <strong>LG생활건강</strong>
+                                    <div class="tooltip-cont">
+                                        <button type="button" class="btn-trigger tooltip-label">신저+2</button>
+                                        <!-- <button type="button" class="btn-trigger tooltip-label2">경고/환기</button><button type="button" class="btn-trigger tooltip-label3">신고</button> -->
+                                        <div class="tooltip-view">
+                                            <span class="tooltip-label">신저</span>
+                                            <span class="tooltip-label2">과열지정</span>
+                                            <span class="tooltip-label3">정지</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                                 <div class="favorite">
                                     <button type="button"><span class="ir">관심종목</span></button>
                                 </div>
                             </div>
+                            <!-- 상승 -->
                             <p class="price color-red"><span>1,741,000</span>원</p>
                             <div class="stock-increase">
                                 <span class="won"><span>900,000</span>원</span><span class="per">(20%)</span>
                             </div>
-                            <!-- 하락 -->
-                            <!-- <div class="stock-decrease">
-                                <span class="won"><span>900,000</span>원</span><span class="per">(20%)</span>
-                            </div> -->
-                            <!-- 보합 -->
-                            <!-- <div class="stock-steady">
-                                <span class="won"><span>900,000</span>원</span><span class="per">(20%)</span>
-                            </div> -->
                         </div>                    
                     </div>
                     <!-- 차트 움직일 때 활성 -->

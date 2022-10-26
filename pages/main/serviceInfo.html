@@ -2,7 +2,7 @@
 <html lang="ko">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no">
+        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no,viewport-fit=cover">
         <title>한국투자증권</title>    
         <link rel="stylesheet" href="/inc/css/style.css">
         <script type="text/javascript" src="/inc/js/jquery-3.6.0.min.js"></script>
@@ -23,14 +23,32 @@
                 한국투자증권과 함께<br />
                 국내주식거래 시작하기
             </h2>
-            <div class="ac">내용</div>
-            <div class="fixed-content main">
+            <div class="service-content">내용</div>
+            <!-- <div class="fixed-content main">
                 <p class="color-darkgray">한국투자증권에서 제공하는 서비스입니다.</p>
-            </div>              
+            </div>               -->
             <div class="wrap-btn-fixed">
-                <button type="button" class="btn-lg bg-primary">국내주식 둘러보기</button>
+                <button type="button" class="btn-line btn-confirm">둘러보기</button>
+                <button type="button" class="btn-lg bg-primary">서비스 신청하기</button>
             </div>
         </div>
         <!-- // contents -->
+        <!-- // slide-popup -->
+        <!-- toast -->
+        <div id="toast-popup"></div>
+        <!-- // toast -->
+        
+        <script>
+            $(document).ready(function() {
+                showToast();
+            });
+            function showToast() {
+                toast({
+                    message: "한국투자증권에서 제공하는 서비스입니다.",
+                    type: "info",
+                    duration: 3000
+                })
+            }
+        </script>
     </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="ko">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no">
+        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no,viewport-fit=cover">
         <title>한국투자증권</title>               
         <link rel="stylesheet" href="/inc/css/swiper-bundle.min.css">
         <link rel="stylesheet" href="/inc/css/style.css">        
@@ -27,6 +27,10 @@
             </div>
             <div class="wrap-btn">
                 <button type="button" class="btn-lg bg-buy" data-layer-href="slide-popup2">slide-up(지정가 선택)</button>
+            </div>
+            <!-- 2022-09-20 팝업 유형추가 -->
+            <div class="wrap-btn">
+                <button type="button" class="btn-lg bg-buy" data-layer-href="slide-popup3">slide-up(계좌동의 팝업)</button>
             </div>
             <div class="wrap-btn">
                 <button type="button" class="btn-lg bg-buy" data-layer-href="modal-popup">modal (버튼 두개)</button>
@@ -119,6 +123,10 @@
                             <dt>예상 매수금액</dt>
                             <dd><strong><span>22,222,999</span>원</strong></dd>
                         </dl>
+                        <!-- 09-06 유의문구 추가 -->
+                        <div class="line-top">
+                            <p class="attention">시장가 거래시 주문시점 금액과 실제 결제액에 차이가 발생할 수 있어요.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="wrap-btn">
@@ -173,10 +181,40 @@
         </div>
         <!-- // slide-popup2 -->
         
+        <!-- slide-popup3 -->
+        <!-- 2022-09-20 팝업 유형추가 -->
+        <div id="layer-pop" class="layer-pop" slide-popup3>
+            <div class="slide-content">
+                <div class="pop-content">
+                    <div class="pop-info-tit chk">
+                        <div class="form-group">
+                            <input type="checkbox" id="agree">
+                            <label for="agree">연결한 계좌가 본인 소유임을 동의합니다.</label>
+                            <!-- <label for="agree">카카오뱅크 인증사용 동의</label> -->
+                        </div>
+                    </div>
+                    <div class="trade-list">
+                        <div class="pop-text-cont">동의하지 않을 경우 이용 신청이 불가합니다.</div>
+                        <!-- <div class="pop-text-cont">국내주식 서비스 이용시 카카오뱅크 인증을 통한 로그인, 매매, 이체 등의 서비스 이용에 동의합니다.</div> -->
+                    </div>
+                </div>
+                <div class="wrap-btn">
+                    <button type="button" class="btn-lg bg-primary" data-layer-close>확인</button>
+                </div>
+                <!-- <div class="wrap-btn">
+                    <button type="button" class="btn-lg btn-line btn-confirm">아니요</button>
+                    <button type="button" class="btn-lg bg-primary">네, 동의해요</button>
+                </div> -->
+            </div>
+            <div class="dim"></div>
+        </div>
+        <!-- // slide-popup3 -->
+        
         <!-- modal-popup -->
         <div id="layer-pop" class="layer-pop" modal-popup>
             <div class="modal-content">
                 <div class="pop-content">
+                    <div class="pop-info-tit">팝업의 타이틀</div>
                     <div class="pop-info-txt">
                         <p class="stock-name">카카오뱅크에서</p>
                         <span class="color-red"><span>678,900</span>원</span>을 가져온 후<br />매수할까요?
@@ -251,12 +289,13 @@
                 })
             }
             
+            
             function showToastClose() {
                 toast({
                     title: "토스트 제목", //제목 필요 있을 경우만 노출
                     message: "토스트 팝업의 내용ㅇㅇ",
                     type: "close",
-                    duration: 300000,
+                    duration: 3000,
                     
                     // 닫기 버튼
                     btns: `       

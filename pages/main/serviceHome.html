@@ -35,17 +35,56 @@
                         <!-- <div class="stock-steady"><span>99.99</span>%</div> -->
                     </div>
                     <div class="wrap-btn mt40">
-                        <button type="button" class="btn-lg btn-line">이체내역</button>
-                        <button type="button" class="btn-lg btn-line">투자현황</button>
+                        <button type="button" class="btn-xmd btn-block">이체내역</button><!-- 10-24 class 변경-->
+                        <button type="button" class="btn-xmd btn-block">투자현황</button><!-- 10-24 class 변경-->
                     </div>
                 </div>
             </section>
             
+            <section class="search-content">
+                <div class="search-wrap">
+                    <button type="button" class="btn-search">종목(코드)검색</button>
+                </div>
+            </section>
+            
+            <section class="section-swiper">
+                <div class="swiper main-slider">
+                    <div class="swiper-wrapper main-card">
+                        <div class="swiper-slide card">
+                            <a href="#">
+                                <p>코스피 &#x1F1F0;&#x1F1F7;</p>
+                                <strong class="price color-plus">2,243.70</strong>
+                                <div class="stock-increase"><span>+99.99</span>%</div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide card">
+                            <a href="#">
+                                <p>코스피200 &#x1F1F0;&#x1F1F7;</p>
+                                <strong class="price color-minus">2,243.70</strong>
+                                <div class="stock-decrease"><span>-99.99</span>%</div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide card">
+                            <a href="#">
+                                <p>코스닥 &#x1F1F0;&#x1F1F7;</p>
+                                <strong class="price">2,243.70</strong>
+                                <div class="stock-steady"><span>99.99</span>%</div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide card">
+                            <a href="#">
+                                <p>Wink 0210 &#x1F1FA;&#x1F1F8;</p>
+                                <strong class="price color-minus">2,243.70</strong>
+                                <div class="stock-decrease"><span>-99.99</span>%</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // 배너 -->
+            
             <section class="section">
                 <div class="section-inner">
-                    <div class="search-wrap">
-                        <button type="button" class="btn-search">종목(코드)검색</button>
-                    </div>
                     <div class="title-wrap">
                         <h2>관심종목</h2>
                         <div class="text-sm ml-auto"><button type="button" class="filter" data-layer-href="slide-popup">등락률 높은순</button></div>
@@ -54,7 +93,10 @@
                         <ul>
                             <li>
                                 <a href="#" title="종목명">
-                                    <div class="stock-icon"><span>삼성전자</span></div>
+                                    <div class="stock-icon">
+                                        <span>삼성전자</span>
+                                        <img src="/inc/img/dummy-bank.png" alt="" style="display:none">
+                                    </div>
                                     <div class="stock-name">
                                         <div class="stock-title">삼성전자</div>
                                         <p class="price text-sm"><span>59,333</span>원</p>
@@ -68,7 +110,10 @@
                             </li>
                             <li>
                                 <a href="#" title="종목명">
-                                    <div class="stock-icon"><span>카카오뱅크</span></div>
+                                    <div class="stock-icon">
+                                        <span>카카오뱅크</span>
+                                        <img src="/inc/img/dummy-bank.png" alt="">
+                                    </div>
                                     <div class="stock-name">
                                         <div class="stock-title">카카오뱅크</div>
                                         <p class="price text-sm"><span>59,333</span>원</p>
@@ -82,7 +127,10 @@
                             </li>
                             <li>
                                 <a href="#" title="종목명">
-                                    <div class="stock-icon"><span>삼성전자</span></div>
+                                    <div class="stock-icon">
+                                        <span>삼성전자</span>
+                                        <img src="/inc/img/dummy-bank.png" alt="" style="display:none">
+                                    </div>
                                     <div class="stock-name">
                                         <div class="stock-title">삼성전자</div>
                                         <p class="price text-sm"><span>59,333</span>원</p>
@@ -96,7 +144,10 @@
                             </li>
                             <li>
                                 <a href="#" title="종목명">
-                                    <div class="stock-icon"><span>카카오뱅크</span></div>
+                                    <div class="stock-icon">
+                                        <span>카카오뱅크</span>
+                                        <img src="/inc/img/dummy-bank.png" alt="">
+                                    </div>
                                     <div class="stock-name">
                                         <div class="stock-title">카카오뱅크</div>
                                         <p class="price text-sm"><span>59,333</span>원</p>
@@ -110,7 +161,10 @@
                             </li>
                             <li>
                                 <a href="#" title="종목명">
-                                    <div class="stock-icon"><span>삼성전자</span></div>
+                                    <div class="stock-icon">
+                                        <span>삼성전자</span>
+                                        <img src="/inc/img/dummy-bank.png" alt="" style="display:none">
+                                    </div>
                                     <div class="stock-name">
                                         <div class="stock-title">삼성전자</div>
                                         <p class="price text-sm"><span>59,333</span>원</p>
@@ -126,7 +180,7 @@
                     </div>
                     <!-- // list-stock -->
                     <div class="wrap-btn">
-                        <button type="button" class="btn-md btn-line">더보기</button>
+                        <button type="button" class="btn-xmd btn-block">더보기</button><!-- 10-24 class 변경-->
                     </div>
                     
                     <div class="no-result">
@@ -135,6 +189,22 @@
                 </div>
             </section>
             <!-- // 관심종목 -->
+            
+            <!-- 10-25 가이드배너 추가 -->
+            <section class="section">
+                <div class="section-inner">
+                    <div class="banner-guide">
+                        <a href="#none" class="link-arrow">
+                            <div class="banner-tit">이용가이드</div>
+                            <div class="banner-txt">
+                                <div class="tit-info">이용가이드 안내</div>
+                                <div class="tit-content">텍스트 내용이 들어갈 예정입니다</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- //10-25 가이드배너 추가 -->
             
             <section class="section">
                 <div class="section-inner">
@@ -146,158 +216,10 @@
                         <ul>
                             <li>
                                 <a href="#" title="종목명">
-                                    <div class="stock-icon"><img src="https://www.adobe.com/express/create/media_1fd4a6f2e688c9c269ec460ca1095e89953e33c28.png?width=2000&format=webply&optimize=medium" alt=""></div>
-                                    <div class="stock-name">
-                                        <div class="stock-title">삼성전자</div>
-                                        <div class="flex-start">
-                                            <p class="price text-sm"><span>59,333</span>원</p>
-                                            <div class="stock-per">
-                                                <!-- <div class="stock-increase"><span>+99.99</span>%</div> --> <!-- 상승 -->
-                                                <!-- <div class="stock-decrease"><span>-99.99</span>%</div> --> <!-- 하락 -->
-                                                <div class="stock-steady"><span>99.99</span>%</div> <!-- 보합 -->
-                                            </div>
-                                        </div>
+                                    <div class="stock-icon">
+                                        <span>삼성전자</span>
+                                        <img src="/inc/img/dummy-bank.png" alt="" style="display:none">
                                     </div>
-                                </a>
-                                <div class="favorite">
-                                    <button type="button"><span class="ir">관심종목</span></button>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#" title="종목명">
-                                    <div class="stock-icon"><img src="https://naradesign.github.io/html5/img/example.jpg" alt=""></div>
-                                    <div class="stock-name">
-                                        <div class="stock-title">카카오뱅크</div>
-                                        <div class="flex-start">
-                                            <p class="price text-sm"><span>59,333</span>원</p>
-                                            <div class="stock-per">
-                                                <!-- <div class="stock-increase"><span>+99.99</span>%</div> --> <!-- 상승 -->
-                                                <!-- <div class="stock-decrease"><span>-99.99</span>%</div> --> <!-- 하락 -->
-                                                <div class="stock-steady"><span>99.99</span>%</div> <!-- 보합 -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="favorite">
-                                    <button type="button"><span class="ir">관심종목</span></button>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#" title="종목명">
-                                    <div class="stock-icon"><span>삼성전자</span></div>
-                                    <div class="stock-name">
-                                        <div class="stock-title">삼성전자</div>
-                                        <div class="flex-start">
-                                            <p class="price text-sm"><span>59,333</span>원</p>
-                                            <div class="stock-per">
-                                                <div class="stock-increase"><span>+99.99</span>%</div> <!-- 상승 -->
-                                                <!-- <div class="stock-decrease"><span>-99.99</span>%</div> --> <!-- 하락 -->
-                                                <!-- <div class="stock-steady"><span>99.99</span>%</div> --> <!-- 보합 -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="favorite">
-                                    <button type="button"><span class="ir">관심종목</span></button>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#" title="종목명">
-                                    <div class="stock-icon"><span>카카오뱅크</span></div>
-                                    <div class="stock-name">
-                                        <div class="stock-title">카카오뱅크</div>
-                                        <div class="flex-start">
-                                            <p class="price text-sm"><span>59,333</span>원</p>
-                                            <div class="stock-per">
-                                                <!-- <div class="stock-increase"><span>+99.99</span>%</div> --> <!-- 상승 -->
-                                                    <div class="stock-decrease"><span>-99.99</span>%</div> <!-- 하락 -->
-                                                    <!-- <div class="stock-steady"><span>99.99</span>%</div> --> <!-- 보합 -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="favorite">
-                                    <button type="button"><span class="ir">관심종목</span></button>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#" title="종목명">
-                                    <div class="stock-icon"><span>카카오뱅크</span></div>
-                                    <div class="stock-name">
-                                        <div class="stock-title">카카오뱅크</div>
-                                        <div class="flex-start">
-                                            <p class="price text-sm"><span>59,333</span>원</p>
-                                            <div class="stock-per">
-                                                <!-- <div class="stock-increase"><span>+99.99</span>%</div> --> <!-- 상승 -->
-                                                    <div class="stock-decrease"><span>-99.99</span>%</div> <!-- 하락 -->
-                                                    <!-- <div class="stock-steady"><span>99.99</span>%</div> --> <!-- 보합 -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="favorite">
-                                    <button type="button"><span class="ir">관심종목</span></button>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- // list-stock -->
-                    <div class="wrap-btn">
-                        <button type="button" class="btn-md btn-line">더보기</button>
-                    </div>
-                </div>                
-            </section>
-            <!-- // 조회 BEST -->
-            
-            <section class="section-swiper">
-                <div class="swiper banner-slider">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide banner-wrap">
-                            <a href="#" class="link-arrow">
-                                <p>카카오뱅크 제휴 주식계좌 개설하고</p>
-                                <strong>국내 주식 1주 받기</strong>
-                            </a>
-                        </div>
-                        <div class="swiper-slide banner-wrap">
-                            <a href="#" class="link-arrow">
-                                <p>카카오뱅크 제휴 주식계좌 개설하고</p>
-                                <strong>국내 주식 1주 받기</strong>
-                            </a>
-                        </div>
-                        <div class="swiper-slide banner-wrap">
-                            <a href="#" class="link-arrow">
-                                <p>카카오뱅크 제휴 주식계좌 개설하고</p>
-                                <strong>국내 주식 1주 받기</strong>
-                            </a>
-                        </div>
-                        <div class="swiper-slide banner-wrap">
-                            <a href="#" class="link-arrow">
-                                <p>카카오뱅크 제휴 주식계좌 개설하고</p>
-                                <strong>국내 주식 1주 받기</strong>
-                            </a>
-                        </div>
-                        <div class="swiper-slide banner-wrap">
-                            <a href="#" class="link-arrow">
-                                <p>카카오뱅크 제휴 주식계좌 개설하고</p>
-                                <strong>국내 주식 1주 받기</strong>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- // 이벤트 배너 -->
-            
-            <section class="section">
-                <div class="section-inner">
-                    <div class="title-wrap">
-                        <h2>거래 BEST</h2>                        
-                        <div class="text-sm ml-auto">KOSPI</div>
-                    </div>
-                    <div class="list-stock">
-                        <ul>
-                            <li>
-                                <a href="#" title="종목명">
-                                    <div class="stock-icon"><span>삼성전자</span></div>
                                     <div class="stock-name">
                                         <div class="stock-title">삼성전자</div>
                                         <div class="flex-start">
@@ -335,7 +257,10 @@
                             </li>
                             <li>
                                 <a href="#" title="종목명">
-                                    <div class="stock-icon"><span>삼성전자</span></div>
+                                    <div class="stock-icon">
+                                        <span>삼성전자</span>
+                                        <img src="/inc/img/dummy-bank.png" alt="" style="display:none">
+                                    </div>
                                     <div class="stock-name">
                                         <div class="stock-title">삼성전자</div>
                                         <div class="flex-start">
@@ -354,7 +279,10 @@
                             </li>
                             <li>
                                 <a href="#" title="종목명">
-                                    <div class="stock-icon"><span>카카오뱅크</span></div>
+                                    <div class="stock-icon">
+                                        <span>카카오뱅크</span>
+                                        <img src="/inc/img/dummy-bank.png" alt="">
+                                    </div>
                                     <div class="stock-name">
                                         <div class="stock-title">카카오뱅크</div>
                                         <div class="flex-start">
@@ -373,7 +301,10 @@
                             </li>
                             <li>
                                 <a href="#" title="종목명">
-                                    <div class="stock-icon"><span>카카오뱅크</span></div>
+                                    <div class="stock-icon">
+                                        <span>카카오뱅크</span>
+                                        <img src="/inc/img/dummy-bank.png" alt="">
+                                    </div>
                                     <div class="stock-name">
                                         <div class="stock-title">카카오뱅크</div>
                                         <div class="flex-start">
@@ -394,91 +325,214 @@
                     </div>
                     <!-- // list-stock -->
                     <div class="wrap-btn">
-                        <button type="button" class="btn-md btn-line">더보기</button>
+                        <button type="button" class="btn-xmd btn-block">더보기</button><!-- 10-24 class 변경-->
+                    </div>
+                </div>                
+            </section>
+            <!-- // 조회 BEST -->
+            
+            
+            <section class="section-swiper">
+                <div class="swiper banner-slider">
+                    <div class="swiper-wrapper">
+                        <!-- 10-25 배너 디자인 변경 -->
+                        <div class="swiper-slide banner-wrap" style="background-color:#4d6bc5"> <!-- 색상 운영시 바뀜 -->
+                            <a href="#" class="link-arrow">
+                                <div class="txtarea">
+                                    <p>카카오뱅크 제휴</p>
+                                    <strong>국내 주식 1주 받기</strong>
+                                </div>
+                                <div class="img-wrap"><img src="/inc/img/banner001.png" alt="배너이미지" width="100" height="92"></div><!-- 이미지 운영시 바뀜 -->
+                            </a>
+                        </div>
+                        <!--// 10-25 배너 디자인 변경 -->
+                        <div class="swiper-slide banner-wrap" style="background-color:#c4534f">
+                            <a href="#" class="link-arrow">
+                                <div class="txtarea">
+                                    <p>카카오뱅크 제휴</p>
+                                    <strong>국내 주식 1주 받기</strong>
+                                </div>
+                                <div class="img-wrap"><img src="/inc/img/banner001.png" alt="배너이미지" width="100" height="92"></div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide banner-wrap" style="background-color:#4d6bc5">
+                            <a href="#" class="link-arrow">
+                                <div class="txtarea">
+                                    <p>카카오뱅크 제휴</p>
+                                    <strong>국내 주식 1주 받기</strong>
+                                </div>
+                                <div class="img-wrap"><img src="/inc/img/banner001.png" alt="배너이미지" width="100" height="92"></div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide banner-wrap" style="background-color:#c4534f">
+                            <a href="#" class="link-arrow">
+                                <div class="txtarea">
+                                    <p>카카오뱅크 제휴</p>
+                                    <strong>국내 주식 1주 받기</strong>
+                                </div>
+                                <div class="img-wrap"><img src="/inc/img/banner001.png" alt="배너이미지" width="100" height="92"></div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide banner-wrap" style="background-color:#4d6bc5">
+                            <a href="#" class="link-arrow">
+                                <div class="txtarea">
+                                    <p>카카오뱅크 제휴</p>
+                                    <strong>국내 주식 1주 받기</strong>
+                                </div>
+                                <div class="img-wrap"><img src="/inc/img/banner001.png" alt="배너이미지" width="100" height="92"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // 이벤트 배너 -->
+            
+            <section class="section">
+                <div class="section-inner">
+                    <div class="title-wrap">
+                        <h2>거래 BEST</h2>                        
+                        <div class="text-sm ml-auto">KOSPI</div>
+                    </div>
+                    <div class="list-stock">
+                        <ul>
+                            <li>
+                                <a href="#" title="종목명">
+                                    <div class="stock-icon">
+                                        <span>삼성전자</span>
+                                        <img src="/inc/img/stcokImg/000050.png" alt="">
+                                    </div>
+                                    <div class="stock-name">
+                                        <div class="stock-title">삼성전자</div>
+                                        <div class="flex-start">
+                                            <p class="price text-sm"><span>59,333</span>원</p>
+                                            <div class="stock-per">
+                                                <!-- <div class="stock-increase"><span>+99.99</span>%</div> --> <!-- 상승 -->
+                                                <!-- <div class="stock-decrease"><span>-99.99</span>%</div> --> <!-- 하락 -->
+                                                <div class="stock-steady"><span>99.99</span>%</div> <!-- 보합 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="favorite">
+                                    <button type="button"><span class="ir">관심종목</span></button>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" title="종목명">
+                                    <div class="stock-icon">
+                                        <span>카카오뱅크</span>
+                                        <img src="/inc/img/dummy-bank.png" alt="" style="display:none">                                        
+                                    </div>
+                                    <div class="stock-name">
+                                        <div class="stock-title">카카오뱅크</div>
+                                        <div class="flex-start">
+                                            <p class="price text-sm"><span>59,333</span>원</p>
+                                            <div class="stock-per">
+                                                <!-- <div class="stock-increase"><span>+99.99</span>%</div> --> <!-- 상승 -->
+                                                <!-- <div class="stock-decrease"><span>-99.99</span>%</div> --> <!-- 하락 -->
+                                                <div class="stock-steady"><span>99.99</span>%</div> <!-- 보합 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="favorite">
+                                    <button type="button"><span class="ir">관심종목</span></button>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" title="종목명">
+                                    <div class="stock-icon">
+                                        <span>삼성전자</span>
+                                        <img src="/inc/img/stcokImg/000370.png" alt="">
+                                    </div>
+                                    <div class="stock-name">
+                                        <div class="stock-title">삼성전자</div>
+                                        <div class="flex-start">
+                                            <p class="price text-sm"><span>59,333</span>원</p>
+                                            <div class="stock-per">
+                                                <div class="stock-increase"><span>+99.99</span>%</div> <!-- 상승 -->
+                                                <!-- <div class="stock-decrease"><span>-99.99</span>%</div> --> <!-- 하락 -->
+                                                <!-- <div class="stock-steady"><span>99.99</span>%</div> --> <!-- 보합 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="favorite">
+                                    <button type="button"><span class="ir">관심종목</span></button>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" title="종목명">
+                                    <div class="stock-icon">
+                                        <span>카카오뱅크</span>
+                                        <img src="/inc/img/dummy-bank.png" alt="" style="display:none">
+                                    </div>
+                                    <div class="stock-name">
+                                        <div class="stock-title">카카오뱅크</div>
+                                        <div class="flex-start">
+                                            <p class="price text-sm"><span>59,333</span>원</p>
+                                            <div class="stock-per">
+                                                <!-- <div class="stock-increase"><span>+99.99</span>%</div> --> <!-- 상승 -->
+                                                    <div class="stock-decrease"><span>-99.99</span>%</div> <!-- 하락 -->
+                                                    <!-- <div class="stock-steady"><span>99.99</span>%</div> --> <!-- 보합 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="favorite">
+                                    <button type="button"><span class="ir">관심종목</span></button>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" title="종목명">
+                                    <div class="stock-icon">
+                                        <span>카카오뱅크</span>
+                                        <img src="/inc/img/dummy-bank.png" alt="" style="display:none">
+                                    </div>
+                                    <div class="stock-name">
+                                        <div class="stock-title">카카오뱅크</div>
+                                        <div class="flex-start">
+                                            <p class="price text-sm"><span>59,333</span>원</p>
+                                            <div class="stock-per">
+                                                <!-- <div class="stock-increase"><span>+99.99</span>%</div> --> <!-- 상승 -->
+                                                    <div class="stock-decrease"><span>-99.99</span>%</div> <!-- 하락 -->
+                                                    <!-- <div class="stock-steady"><span>99.99</span>%</div> --> <!-- 보합 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="favorite">
+                                    <button type="button"><span class="ir">관심종목</span></button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- // list-stock -->
+                    <div class="wrap-btn">
+                        <button type="button" class="btn-xmd btn-block">더보기</button><!-- 10-24 class 변경-->
                     </div>
                 </div>                
             </section>
             <!-- // 거래 BEST -->
+                    
             
-            <!-- 카테고리 미확정 -->
-            <section class="section-swiper">
-                <div class="title-wrap">
-                    <h2>카테고리</h2>
-                    <div class="text-sm ml-auto"><button type="button" class="filter">필터</button></div>
-                </div>
-                <div class="swiper category-slider">
-                    <div class="swiper-wrapper category-wrap">
-                        <div class="swiper-slide">
-                            <div class="category type1">
-                                <div class="box"><!-- content --></div>
-                                <p class="ca-tit">게임/레저</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="category type2">
-                                <div class="box"><!-- content --></div>
-                                <p class="ca-tit">스마트폰</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="category type3">
-                                <div class="box"><!-- content --></div>
-                                <p class="ca-tit">엔터테인먼트</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="category type4">
-                                <div class="box"><!-- content --></div>
-                                <p class="ca-tit">온라인<br />마켓플레이</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="category type5">
-                                <div class="box"><!-- content --></div>
-                                <p class="ca-tit">의료/제약</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="category type6">
-                                <div class="box"><!-- content --></div>
-                                <p class="ca-tit">클라우드</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="category type7">
-                                <div class="box"><!-- content --></div>
-                                <p class="ca-tit">커뮤니케이션</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="category type8">
-                                <div class="box"><!-- content --></div>
-                                <p class="ca-tit">반도체</p>
-                            </div>
-                        </div>                        
-                        <div class="swiper-slide">
-                            <div class="category type9">
-                                <div class="box"><!-- content --></div>
-                                <p class="ca-tit">데이터 센터</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="category type10">
-                                <div class="box"><!-- content --></div>
-                                <p class="ca-tit">소프트웨어</p>
-                            </div>
-                        </div>
-                    </div>
+            <!-- 10-14 배너 추가 -->
+            <section class="section">
+                <div class="section-inner">
+                    <a href="#none" class="section-banner">
+                        <span class="bnr-label">매일 모아보는 투자솔루션</span>
+                        <p class="bnr-tit">M<span class="dot">.</span>ZIP</p>
+                    </a>                    
                 </div>
             </section>
-            <!-- // 카테고리 -->            
+            <!-- // 10-14 배너 추가 -->
             
             <!-- 08-31 footer 변경 -->
             <section class="footer">
                 <div class="notice-wrap">
                     <div class="foot-logo"><span class="ir">한국투자증권</span></div> <!-- 08-31 로고 변경 -->
                     <div class="foot-text">
-                        WTS 국내주식에서 제공하는 모든 투자정보는 고객의 투자판단을 위한 단순 참고용이며, 추천이나 권유 목적이 아닙니다.<br />
+                        국내주식투자에서 제공하는 모든 투자정보는 고객의 투자판단을 위한 단순 참고용이며, 추천이나 권유 목적이 아닙니다.<br />
                         또한 제 3자 데이터 제공업체에서 자료를 제공하므로 수신이 지연되거나 일부 정보가 정확하지 않을 수 있으며, 투자 결과에 대한 법적 책임소재의 증빙자료로 사용될 수 없습니다.
                     </div>
                     <div class="wrap-btn-notice">
