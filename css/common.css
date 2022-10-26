@@ -130,8 +130,8 @@ header .btn-share{
     flex-direction:column;
     justify-content:space-between;
     height:100%;
-    height:calc(constant(safe-area-inset-bottom) + 30px);
-    height:calc(env(safe-area-inset-bottom) + 30px);
+    height:100% calc(constant(safe-area-inset-bottom) + 30px);
+    height:100% calc(env(safe-area-inset-bottom) + 30px);
 }
 /* .ios .contents{
     height:calc(100% + 30px)
