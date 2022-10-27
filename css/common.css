@@ -133,6 +133,10 @@ header .btn-share{
     justify-content:space-between;
     height:100%;
 }
+.contents > div{
+    -webkit-flex:1;
+    flex:1
+}
 .full-pop .contents{
     overflow-y:auto;
     height:100%;
