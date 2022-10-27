@@ -133,7 +133,7 @@ header .btn-share{
     justify-content:space-between;
     height:100%;
 }
-.contents > div{
+.contents > *{
     -webkit-flex:1;
     flex:1
 }
