@@ -253,8 +253,10 @@ header + .contents{
     justify-content:center;
 }
 .wrap-btn-sticky{
+    -webkit-position:sticky;
     position:sticky;
     bottom:0;
+    left:0;
     padding:0 16px 30px;
     display:-webkit-flex;
     display:flex;    
