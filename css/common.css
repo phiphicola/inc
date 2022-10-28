@@ -127,10 +127,6 @@ header .btn-share{
     background:#fff;
 }
 .contents{
-    display:-webkit-flex;
-    display:flex;    
-    flex-direction:column;
-    justify-content:space-between;
 }
 .ios .contents{
     height:-webkit-fill-available
