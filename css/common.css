@@ -127,9 +127,10 @@ header .btn-share{
     background:#fff;
 }
 .contents{
-}
-.ios .contents{
-    height:-webkit-fill-available
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-between;
 }
 .full-pop .contents{
     overflow-y:auto;
