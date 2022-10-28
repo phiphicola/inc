@@ -129,7 +129,6 @@ header .btn-share{
 .contents{
     display:flex;
     flex-direction: column;
-    align-items:center;
     justify-content: space-between;
 }
 .full-pop .contents{
