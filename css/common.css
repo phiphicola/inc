@@ -131,12 +131,16 @@ header .btn-share{
     display:flex;    
     flex-direction:column;
     justify-content:space-between;
-    height:100%;
+    height:100%;    
+}
+.ios .contents{
     height:-webkit-fill-available
 }
 .full-pop .contents{
     overflow-y:auto;
-    height:100%;
+    height:100%;    
+}
+.ios .full-pop .contents{
     height:-webkit-fill-available
 }
 .header-pop + .contents,
