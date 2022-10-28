@@ -132,10 +132,12 @@ header .btn-share{
     flex-direction:column;
     justify-content:space-between;
     height:100%;
+    height:-webkit-fill-available
 }
 .full-pop .contents{
     overflow-y:auto;
     height:100%;
+    height:-webkit-fill-available
 }
 .header-pop + .contents,
 header + .contents{
