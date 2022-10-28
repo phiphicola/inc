@@ -133,9 +133,6 @@ header .btn-share{
     justify-content:space-between;
     height:100%;
 }
-.ios .contents{
-    height:calc(100% + 34px)
-}
 .full-pop .contents{
     overflow-y:auto;
     height:100%;
