@@ -364,7 +364,18 @@ function checkOS() {
         jQuery('.search-wrap input').each(function(){
             jQuery(this).bind('focus', function(){
                 jQuery('.full-pop').css({
-                    'background-color':'red'
+                    'background-color':'red',
+                })
+                jQuery('body').css({
+                    'position':'fixed',
+                })
+            })
+            jQuery(this).bind('blur', function(){
+                jQuery('.full-pop').css({
+                    'background-color':'',
+                })
+                jQuery('body').css({
+                    'position':'',
                 })
             })
         })
