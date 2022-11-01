@@ -8,9 +8,28 @@ $(function(){
     accordion();
     bottomSheet();
     checkOS();
-    searchInp();
 })
 
+$(document).ready(function() {
+    $('.search-wrap input').each(function(){
+        $(this).bind('focus', function(){
+            $(this).css({
+                'background-color':'red',
+            })
+            $('body').css({
+                'position':'fixed',
+            })
+        })
+        $(this).bind('blur', function(){
+            $(this).css({
+                'background-color':'',
+            })
+            $('body').css({
+                'position':'',
+            })
+        })
+    })
+})
 // 이벤트 배너
 $(document).ready(function() {
     var swiper = new Swiper('.banner-slider', {
@@ -240,17 +259,6 @@ function toast({title = '', message = '', type = 'info', duration = 3000, btns =
     }
 }
 
-function searchInp() {
-const form = document.querySelector('.search-wrap input');
-
-        form.addEventListener('focus', (event) => {
-        event.target.style.background = 'pink';
-        }, true);
-
-        form.addEventListener('blur', (event) => {
-        event.target.style.background = '';
-        }, true);
-    }
 // 터치 바텀 시트
 function bottomSheet() {
     const bottomSheetCont = $('.sheet')  
@@ -373,7 +381,8 @@ function checkOS() {
         return 'android';
     } else if(varUA.indexOf('iphone') > -1){
         document.body.classList.add('ios')
-       
+        
+
         
         return 'ios';
     }
