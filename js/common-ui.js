@@ -361,24 +361,16 @@ function checkOS() {
         return 'android';
     } else if(varUA.indexOf('iphone') > -1){
         document.body.classList.add('ios')
-        jQuery('.search-wrap input').each(function(){
-            jQuery(this).bind('focus', function(){
-                jQuery(this).css({
-                    'background-color':'red',
-                })
-                jQuery('body').css({
-                    'position':'fixed',
-                })
-            })
-            jQuery(this).bind('blur', function(){
-                jQuery(this).css({
-                    'background-color':'',
-                })
-                jQuery('body').css({
-                    'position':'',
-                })
-            })
-        })
+       
+        const form = document.querySelector('.search-wrap input');
+
+        form.addEventListener('focus', (event) => {
+        event.target.style.background = 'pink';
+        }, true);
+
+        form.addEventListener('blur', (event) => {
+        event.target.style.background = '';
+        }, true);
         return 'ios';
     }
 }
