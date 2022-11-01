@@ -22,6 +22,7 @@ $(document).ready(function() {
                 'width':'100%',
                 'heiht':'100vh',
                 'position':'fixed',
+                'overflow':'hidden',
             })
         })
         $(this).bind('blur', function(){
@@ -29,11 +30,13 @@ $(document).ready(function() {
                 'position':'',
                 'height':'',
                 'background':'',
+                
             })
             $('body').css({
                 'width':'',
                 'heiht':'',
                 'position':'',
+                'overflow':'',
             })
         })
     })
