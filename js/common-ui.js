@@ -13,18 +13,26 @@ $(function(){
 $(document).ready(function() {
     $('.search-wrap input').each(function(){
         $(this).bind('focus', function(){
-            $(this).css({
-                'background-color':'red',
+            $('.pull-pop').css({
+                'position':'absolute',
+                'height':'100vh',
+                'background':'#222',
             })
             $('body').css({
+                'width':'100%',
+                'heiht':'100vh',
                 'position':'fixed',
             })
         })
         $(this).bind('blur', function(){
-            $(this).css({
-                'background-color':'',
+            $('.pull-pop').css({
+                'position':'',
+                'height':'',
+                'background':'',
             })
             $('body').css({
+                'width':'',
+                'heiht':'',
                 'position':'',
             })
         })
