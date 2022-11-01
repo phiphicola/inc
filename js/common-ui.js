@@ -363,7 +363,7 @@ function checkOS() {
         document.body.classList.add('ios')
         jQuery('.search-wrap input').each(function(){
             jQuery(this).bind('focus', function(){
-                jQuery('.full-pop').css({
+                jQuery(this).css({
                     'background-color':'red',
                 })
                 jQuery('body').css({
@@ -371,7 +371,7 @@ function checkOS() {
                 })
             })
             jQuery(this).bind('blur', function(){
-                jQuery('.full-pop').css({
+                jQuery(this).css({
                     'background-color':'',
                 })
                 jQuery('body').css({
