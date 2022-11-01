@@ -361,6 +361,13 @@ function checkOS() {
         return 'android';
     } else if(varUA.indexOf('iphone') > -1){
         document.body.classList.add('ios')
+        jQuery('.search-wrap input').each(function(){
+            jQuery(this).bind('focus', function(){
+                jQuery('.full-pop').css({
+                    'background-color':'red'
+                })
+            })
+        })
         return 'ios';
     }
 }
