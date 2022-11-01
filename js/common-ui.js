@@ -13,6 +13,7 @@ $(function(){
 $(document).ready(function() {
     $('.search-wrap input').each(function(){
         $(this).bind('focus', function(){
+            $(this).css('background','pink')
             $('.pull-pop').css({
                 'position':'absolute',
                 'height':'100vh',
