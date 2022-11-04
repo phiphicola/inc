@@ -8,39 +8,47 @@ $(function(){
     accordion();
     bottomSheet();
     checkOS();
+    hidekeyboard();
 })
 
+function hidekeyboard() {
+    document.activeElement.blur();
+    $('input').blur();
+}
 $(document).ready(function() {
-    $('.search-wrap input').each(function(){
-        $(this).bind('focus', function(){
-            $(this).css('background','pink')
-            $('.pull-pop').css({
-                'position':'absolute',
-                'height':'100vh',
-                'background':'#222',
-            })
-            $('body').css({
-                'width':'100%',
-                'heiht':'100vh',
-                'position':'fixed',
-                'overflow':'hidden',
-            })
-        })
-        $(this).bind('blur', function(){
-            $('.pull-pop').css({
-                'position':'',
-                'height':'',
-                'background':'',
+
+    // $('.search-wrap input').each(function(){
+    //     $(this).bind('focus', function(){
+    //         $(this).css('background','pink')
+    //         $('.header-pop').css({
+    //             'position':'absolute',
+    //             'background':'#222',
+    //         })
+    //         $('.full-pop').css({
+    //             'position':'absolute',
+    //             'background':'#222',
+    //         })
+    //         $('body').css({
+    //             'width':'100%',
+    //             'height':'100vh',
+    //             'position':'fixed',
+    //             'overflow':'hidden',
+    //         })
+    //     })
+    //     $(this).bind('blur', function(){
+    //         $('.header-pop').css({
+    //             'position':'',
+    //             'background':'',
                 
-            })
-            $('body').css({
-                'width':'',
-                'heiht':'',
-                'position':'',
-                'overflow':'',
-            })
-        })
-    })
+    //         })
+    //         $('body').css({
+    //             'width':'',
+    //             'height':'',
+    //             'position':'',
+    //             'overflow':'',
+    //         })
+    //     })
+    // })
 })
 // 이벤트 배너
 $(document).ready(function() {

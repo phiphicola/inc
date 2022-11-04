@@ -35,8 +35,8 @@ body{
     line-height:inherit;        
     height:100%;    
     color:#222;
-    padding-bottom:calc(constant(safe-area-inset-bottom) - 30px);
-    padding-bottom:calc(env(safe-area-inset-bottom) - 30px);
+    padding-bottom:calc(constant(safe-area-inset-bottom) - 34px);
+    padding-bottom:calc(env(safe-area-inset-bottom) - 34px);
 }
 hr{
     border-top-width:1px;    
