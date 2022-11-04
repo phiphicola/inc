@@ -130,7 +130,7 @@ header .btn-share{
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height:100%;
+    /* min-height:100%; */
 }
 .ios .contents{
     min-height:calc(100% + 34px);
