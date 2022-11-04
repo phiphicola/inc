@@ -19,7 +19,7 @@ function hidekeyboard() {
         if (!elem) { return false }
       
         let tag = elem.tagName
-        return tag == 'INPUT' || elem.isContentEditable || elem.tabIndex >= 0
+        return tag == 'INPUT' || tag == 'SELECT' || tag == 'TEXTAREA' || elem.isContentEditable || elem.tabIndex >= 0
       }
       
       document.addEventListener('touchend', (e) => {
