@@ -12,8 +12,30 @@ $(function(){
 })
 
 function hidekeyboard() {
-    document.activeElement.blur();
-    $('input').blur();
+    // document.activeElement.blur();
+    // $('input').blur();
+
+    const acceptsInput = (elem) => {
+        if (!elem) { return false }
+      
+        let tag = elem.tagName
+        return tag == 'INPUT' || elem.isContentEditable || elem.tabIndex >= 0
+      }
+      
+      document.addEventListener('touchend', (e) => {
+        let target = e.target
+        let dontDiscardKeyboard = target.classList.contains('search-wrap')
+      
+        // On iOS tapping anywhere doesn’t
+        // automatically discard keyboard
+        if (dontDiscardKeyboard) {
+         e.preventDefault()
+         // DO ACTION HERE
+        } else if (!acceptsInput(target)) {
+         document.activeElement.blur()
+        }
+      })
+      
 }
 $(document).ready(function() {
 
