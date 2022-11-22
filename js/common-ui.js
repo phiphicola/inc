@@ -30,9 +30,11 @@ function hidekeyboard() {
         // automatically discard keyboard
         if (dontDiscardKeyboard) {
          e.preventDefault()
+         document.classList.add('fixbody')
          // DO ACTION HERE
         } else if (!acceptsInput(target)) {
          document.activeElement.blur()
+         
         }
       })
       
@@ -429,3 +431,5 @@ function checkOS() {
         return 'ios';
     }
 }
+
+

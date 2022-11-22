@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no,viewport-fit=cover">
+        <title>한국투자증권</title>    
+        <link rel="stylesheet" href="/inc/css/style.css">
+        <script type="text/javascript" src="/inc/js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="/inc/js/swiper-bundle.min.js"></script>
+        <script type="text/javascript" src="/inc/js/common-ui.js"></script>
+    </head>
+    <body>
+        <!-- 여기부터 레이어로 띄움  style="visibility: visible; 삭제-->
+        <div id="layer-pop" class="full-pop" style="visibility: visible;">
+            <div class="header-pop">
+                <div class="header-inner">
+                    <button type="button" class="btn-close-pop" data-layer-close><span class="ir">닫기</span></button>
+                </div>
+            </div>
+            <!-- // header -->       
+        
+            <div class="contents intro">
+                <div class="intro-visual">
+                    <div class="text-box">
+                        <div class="animation"></div>
+                    </div>
+                    <dl class="agree-info-box"></dl>
+                </div>
+                <div class="list-info accordion">
+                    <ul>
+                        <li>
+                            <p class="title">event</p>
+                            <div class="list-sub">
+                                dgffgdgfdgdfdfg<br/>
+                                dgfgdfgdffdg<br/>
+                                gfddgf<br/>
+                                dgffgdgfdgdfdfg<br/>
+                                dgfgdfgdffdg<br/>
+                                gfddgf<br/>
+                                dgffgdgfdgdfdfg<br/>
+                                dgfgdfgdffdg<br/>
+                                gfddgf<br/>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="title">event</p>
+                            <div class="list-sub">
+                                dgffgdgfdgdfdfg<br/>
+                                dgfgdfgdffdg<br/>
+                                gfddgf<br/>
+                                dgffgdgfdgdfdfg<br/>
+                                dgfgdfgdffdg<br/>
+                                gfddgf<br/>
+                                dgffgdgfdgdfdfg<br/>
+                                dgfgdfgdffdg<br/>
+                                gfddgf<br/>
+                                dgffgdgfdgdfdfg<br/>
+                                dgfgdfgdffdg<br/>
+                                gfddgf<br/>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="wrap-btn-sticky">
+                    <button type="button" class="btn-line btn-confirm">둘러보기</button>
+                    <button type="button" class="btn-lg bg-primary">서비스 신청하기</button>
+                </div>
+            </div>
+            <!-- // contents -->
+        </div>
+        <!-- // slide-popup -->
+        <!-- toast -->
+        <div id="toast-popup"></div>
+        <!-- // toast -->
+        
+        <script>
+            $(document).ready(function() {
+                showToast();
+            });
+            function showToast() {
+                toast({
+                    message: "한국투자증권에서 제공하는 서비스입니다.",
+                    type: "info",
+                    duration: 3000
+                })
+            }
+        </script>
+    </body>
+</html>

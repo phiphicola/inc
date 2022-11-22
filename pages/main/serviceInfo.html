@@ -18,16 +18,51 @@
         </header>
         <!-- // header -->
         
-        <div class="contents">
-            <h2 class="title-center">
-                한국투자증권과 함께<br />
-                국내주식거래 시작하기
-            </h2>
-            <div class="service-content">내용</div>
-            <!-- <div class="fixed-content main">
-                <p class="color-darkgray">한국투자증권에서 제공하는 서비스입니다.</p>
-            </div>               -->
-            <div class="wrap-btn-fixed">
+        <div class="contents intro">
+            <div class="intro-visual">
+                <div class="text-box">
+                    <div class="animation"></div>
+                </div>
+                <dl class="agree-info-box"></dl>
+            </div>
+            <p class="count">50,000</p>
+            <div class="list-info accordion">
+                <ul>
+                    <li>
+                        <p class="title">event</p>
+                        <div class="list-sub">
+                            dgffgdgfdgdfdfg<br/>
+                            dgfgdfgdffdg<br/>
+                            gfddgf<br/>
+                            dgffgdgfdgdfdfg<br/>
+                            dgfgdfgdffdg<br/>
+                            gfddgf<br/>
+                            dgffgdgfdgdfdfg<br/>
+                            dgfgdfgdffdg<br/>
+                            gfddgf<br/>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="title">event</p>
+                        <div class="list-sub">
+                            dgffgdgfdgdfdfg<br/>
+                            dgfgdfgdffdg<br/>
+                            gfddgf<br/>
+                            dgffgdgfdgdfdfg<br/>
+                            dgfgdfgdffdg<br/>
+                            gfddgf<br/>
+                            dgffgdgfdgdfdfg<br/>
+                            dgfgdfgdffdg<br/>
+                            gfddgf<br/>
+                            dgffgdgfdgdfdfg<br/>
+                            dgfgdfgdffdg<br/>
+                            gfddgf<br/>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="wrap-btn-sticky">
                 <button type="button" class="btn-line btn-confirm">둘러보기</button>
                 <button type="button" class="btn-lg bg-primary">서비스 신청하기</button>
             </div>
@@ -49,6 +84,27 @@
                     duration: 3000
                 })
             }
+
+
+            $(function() {
+                $('.count').each(function() {
+                    var $this = $(this),
+                    countTo = $this;
+                    $({ countNum: $this.text()}).animate({
+                        countNum: countTo
+                    },{
+                        duration: 1000,
+                        easing: 'linear',
+                        step: function(){
+                            $this.text(Math.floor(this.countNum));
+                        },
+                        complete: function() {
+                            $this.text(this.countNum);
+                        }
+                    })
+                })
+            })
+
         </script>
     </body>
 </html>
