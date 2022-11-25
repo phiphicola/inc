@@ -97,10 +97,10 @@
 
         <script>
             window.onload = function(){
+                var high = $('body').height();
+                window.parent.postMessage(high, "http://fromlist.iptime.org/"); // www.a-site.com 과 a-site.com 은 다르고 http와 https는 다르다.
 
-window.parent.postMessage(document.body.scrollHeight, "http://fromlist.iptime.org/"); // www.a-site.com 과 a-site.com 은 다르고 http와 https는 다르다.
-
-}
+            }
         </script>
     </body>
 </html>
