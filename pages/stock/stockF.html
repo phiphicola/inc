@@ -101,12 +101,19 @@
             //     window.parent.postMessage(high, "http://fromlist.iptime.org/phiphicola.github.io/inc/pages/stock/frame.html"); // www.a-site.com 과 a-site.com 은 다르고 http와 https는 다르다.
 
             // }
-            window.addEventListener('load', function() {
-                const message = { height: document.body.scrollHeight, width: document.body.scrollWidth };	
+            // window.addEventListener('load', function() {
+            //     const message = { height: document.body.scrollHeight, width: document.body.scrollWidth };	
 
-                window.top.postMessage(message, "*");
-            });
+            //     window.top.postMessage(message, "*");
+            // });
 
+
+            function callResize()  
+                {  
+                    var height = document.body.scrollHeight;  
+                    parent.resizeTopIframe(height);  
+            }  
+            window.onload =callResize;  
         </script>
     </body>
 </html>
