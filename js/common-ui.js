@@ -74,7 +74,7 @@ $(document).ready(function() {
     //     })
     // })
 })
-// 이벤트 배너
+// 이벤트 배너ß
 $(document).ready(function() {
     var swiper = new Swiper('.banner-slider', {
         slidesPerView:'auto',
@@ -91,7 +91,7 @@ $(document).ready(function() {
         watchSlidesProgress:true,
         autoplay:{
             delay:0,
-            disableOnInteraction:false
+            disableOnInteraction:true
         },
         speed:3000
 
