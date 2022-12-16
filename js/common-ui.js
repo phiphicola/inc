@@ -89,7 +89,10 @@ $(document).ready(function() {
         slidesPerView:'auto',
         spaceBetween:8,
         watchSlidesProgress:true,
-        autoplay:true
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          }
 
     });
 });
