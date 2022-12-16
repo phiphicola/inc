@@ -89,11 +89,7 @@ $(document).ready(function() {
         slidesPerView:'auto',
         spaceBetween:8,
         watchSlidesProgress:true,
-        autoplay:{
-            delay:0,
-            disableOnInteraction:true
-        },
-        speed:3000
+        autoplay:true
 
     });
 });
