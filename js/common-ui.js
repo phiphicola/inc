@@ -88,7 +88,13 @@ $(document).ready(function() {
     var swiper = new Swiper('.main-slider, .category-slider', {
         slidesPerView:'auto',
         spaceBetween:8,
-        watchSlidesProgress:true
+        watchSlidesProgress:true,
+        autoplay:{
+            delay:0,
+            disableOnInteraction:false
+        },
+        speed:3000
+
     });
 });
 
