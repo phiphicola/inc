@@ -90,9 +90,10 @@ $(document).ready(function() {
         spaceBetween:8,
         watchSlidesProgress:true,
         autoplay: {
-            delay: 2500,
+            delay: 0,
             disableOnInteraction: false,
-          }
+          },
+          speed:2000
 
     });
 });
